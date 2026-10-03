@@ -1,0 +1,7 @@
+<div class="container animation" grab:swipe="touchmove">
+    <text class="title">磁盘速度测试</text>
+    <text class="result">文件写入速度: {{ write }}\n文件读取速度: {{ read }}\n文件复制速度: {{ copy }}\n文件移动速度: {{ move }}</text>
+    <input type="button" class="button" grab:click="start">{{ state }}</input>
+    <progress class="progress" type="horizontal" percent="{{ percent }}"></progress>
+    <marquee class="operation">{{ operation }}</marquee>
+</div>

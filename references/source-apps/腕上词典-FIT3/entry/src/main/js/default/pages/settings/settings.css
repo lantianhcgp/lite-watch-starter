@@ -1,0 +1,261 @@
+.list {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.loading-container {
+    justify-content: center;
+}
+
+.wait {
+    width: 108px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.wait-text {
+    font-size: 30px;
+}
+
+.title {
+    font-size: 30px;
+    margin-left: 51px;
+}
+
+.title-time {
+    font-size: 30px;
+    margin-right: 51px;
+}
+
+.title-tips {
+    color: rgb(128, 128, 128);
+    margin-top: -3px;
+}
+
+.select-view {
+    width: 100%;
+    height: 250px;
+    selected-font-size: 38px;
+    font-size: 30px;
+    selected-color: #5EA1FF;
+    margin-top: 5px;
+}
+
+.button {
+    width: 304px;
+    height: 76px;
+    font-size: 38px;
+    margin-top: 46px;
+    background-color: #1F71FF;
+}
+
+.item {
+    width: 100%;
+    height: 135px;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    width: 99%;
+    height: 123px;
+    justify-content: flex-start;
+}
+
+.text_container {
+    height: 100%;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.settings_text {
+    font-size: 38px;
+    text-align: center;
+}
+
+.settings_tips {
+    color: rgb(128, 128, 128);
+}
+
+.switch {
+    height: 70px;
+    width: 70px;
+}
+
+.right {
+    width: 56px;
+    height: 56px;
+}
+
+.toast-container {
+    height: 80px;
+    top: 188px;
+    background-color: #fc404040;
+    border-radius: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast-ani {
+    animation-delay: 60ms;
+    animation-duration: 250ms;
+    animation-timing-function: ease-in;
+}
+
+@keyframes appearIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes appearOut {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+.title-item {
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+
+.radio-item {
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-text-container {
+    width: 280px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    flex-direction: column;
+}
+
+.select-text {
+    font-size: 38px;
+    width: 233px;
+    text-align: center;
+}
+
+.select-tips {
+    margin-top: 2px;
+    color: gray;
+}
+
+.empty-item {
+    width: 100%;
+    height: 80px;
+}
+
+.radio {
+    width: 100px;
+    height: 100px;
+}
+
+.shadow {
+    width: 466px;
+    height: 80px;
+}
+
+.theme-item {
+    width: 100%;
+    height: 135px;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-color-background {
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: #404040;
+    border-radius: 50px;
+    margin-left: 14px;
+}
+
+.theme-color-text {
+    font-size: 48px;
+    font-family: HarmonyOSCondensed-Regular;
+}
+
+.theme-color {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-preview {
+    width: 100%;
+    height: 380px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.theme-preview-container {
+    width: 372px;
+    height: 235px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border-radius: 30px;
+    border-width: 3px;
+    border-color: #404040;
+}
+
+.theme-preview-text {
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+
+.theme-preview-chinese {
+    width: 340px;
+    margin-top: 16px;
+}
+
+.theme-preview-english {
+    width: 340px;
+}
+
+.theme-preview-title {
+    margin-top: 20px;
+}
+
+.theme-name {
+    font-size: 38px;
+    width: 190px;
+    text-align: center;
+}
+
+.theme-radio {
+    width: 100px;
+    height: 100px;
+}

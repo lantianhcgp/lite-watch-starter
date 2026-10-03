@@ -1,0 +1,97 @@
+<stack class="list animation">
+    <list class="list" ref="list" onswipe="touchmove">
+        <list-item class="title-item">
+            <text class="title">设置</text>
+        </list-item>
+        <list-item class="sort-item">
+            <text class="sort-text">手电筒</text>
+        </list-item>
+        <list-item class="item" grab:click="ChangeKeyBoolean('EnableFlicker')">
+            <div class="text_container">
+                <text class="settings_text">启用闪烁</text>
+            </div>
+            <switch class="switch" checked="{{ isEnableFlicker }}"></switch>
+        </list-item>
+        <list-item class="item" grab:click="Flicker_Frequency">
+            <div class="text_container">
+                <text class="settings_text">闪烁频率</text>
+                <text class="settings_tips">{{ Flicker_Frequency_value }}</text>
+            </div>
+            <image class="right" src="common/right.png"></image>
+        </list-item>
+        <list-item class="item" grab:click="Flicker_Color">
+            <div class="text_container">
+                <text class="settings_text">闪烁颜色</text>
+            </div>
+            <image class="right" src="common/right.png"></image>
+        </list-item>
+        <list-item class="divider-item">
+            <image src="common/divider.png" class="divider"></image>
+        </list-item>
+        <list-item class="sort-item">
+            <text class="sort-text">应用管理</text>
+        </list-item>
+        <list-item class="item" grab:click="ChangeKeyBoolean('ShowAppName')">
+            <div class="text_container">
+                <text class="settings_text">显示应用名称</text>
+                <text class="settings_tips">实验功能 可能存在异常</text>
+            </div>
+            <switch class="switch" checked="{{ isShowAppName }}"></switch>
+        </list-item>
+        <list-item class="item" grab:click="ReAnalysis">
+            <div class="text_container">
+                <text class="settings_text">重新分析应用信息</text>
+                <text class="settings_tips">每三天自动重新分析</text>
+            </div>
+            <image class="right" src="common/right.png"></image>
+        </list-item>
+        <list-item class="divider-item">
+            <image src="common/divider.png" class="divider"></image>
+        </list-item>
+        <list-item class="sort-item">
+            <text class="sort-text">日志</text>
+        </list-item>
+        <list-item class="item" grab:click="Enable_Log">
+            <div class="text_container">
+                <text class="settings_text">启用日志跟踪</text>
+                <text class="settings_tips">请勿随意开启</text>
+            </div>
+            <switch class="switch" checked="{{ isEnableLog }}"></switch>
+        </list-item>
+        <list-item class="item" grab:click="CleanLog">
+            <div class="text_container">
+                <text class="settings_text">清除日志</text>
+            </div>
+            <image class="right" src="common/right.png"></image>
+        </list-item>
+        <list-item class="divider-item">
+            <image src="common/divider.png" class="divider"></image>
+        </list-item>
+        <list-item class="sort-item">
+            <text class="sort-text">系统</text>
+        </list-item>
+        <list-item class="item" grab:click="ChangeKeyBoolean('AlwaysOn')">
+            <div class="text_container">
+                <text class="settings_text">屏幕常亮</text>
+            </div>
+            <switch class="switch" checked="{{ isAlwaysOn }}"></switch>
+        </list-item>
+        <list-item class="item" grab:click="ChangeKeyBoolean('ScreenOffAlive')">
+            <div class="text_container">
+                <text class="settings_text">息屏保活</text>
+            </div>
+            <switch class="switch" checked="{{ isScreenOffAlive }}"></switch>
+        </list-item>
+        <list-item class="item" grab:click="SortHome">
+            <div class="text_container">
+                <text class="settings_text">首页排序</text>
+            </div>
+            <image class="right" src="common/right.png"></image>
+        </list-item>
+        <list-item class="item-short"></list-item>
+    </list>
+    <div class="toast_container ani" show="{{ toast_show }}" if="{{toast_if}}"
+         style="width : {{ toast_width }} px; left : {{ toast_left }} px; animation-name : {{ ani_name }};">
+        <text class="ani" style="animation-name : {{ ani_name }};">{{ error_text }}</text>
+    </div>
+</stack>

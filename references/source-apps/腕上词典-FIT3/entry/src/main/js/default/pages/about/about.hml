@@ -1,0 +1,11 @@
+<div class="container" on:swipe="touchmove">
+    <div class="title-item">
+        <text class="title">关于应用</text>
+        <text class="title-time">{{ timeString }}</text>
+    </div>
+    <div class="container" style="align-items: center;margin-top: 50px;">
+        <image src="common/icon.png" class="icon"></image>
+        <text class="app_name">腕上词典 V{{ versionName }}({{ versionCode }})\n作者@nxtei&.yukino&cnoim\n贡献者@棽木&东东</text>
+        <text class="opensource-thanks" grab:click="opensourcethanks">开源感谢 ></text>
+    </div>
+</div>

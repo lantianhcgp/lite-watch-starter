@@ -1,0 +1,17 @@
+<swiper class="container animation" ref="swiper" vertical="true" loop="false" onswipe="onswipe">
+    <div class="container">
+        <text class="title">开源感谢</text>
+        <div class="thanks-container">
+            <text class="thanks-title">LiteWearable_Tools</text>
+            <text class="thanks-url">https://github.com/alone-86/Lite\nWearable_Tools</text>
+        </div>
+        <div class="thanks-container" style="height : 170px;">
+            <text class="thanks-title">LiteWearable_InputMethod</text>
+            <text class="thanks-url">https://github.com/alone-86/LiteWear\nable_InputMethod/</text>
+        </div>
+    </div>
+    <div class="container">
+        <marquee scrollamount="10" class="icon-text">Toolbox icons created by SumberRejeki - Flaticon</marquee>
+        <image src="common/icon-author.png" class="author"></image>
+    </div>
+</swiper>

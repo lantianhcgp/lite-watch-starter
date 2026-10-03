@@ -1,0 +1,117 @@
+<stack class="container">
+    <div class="container animation" if="{{ isShowLoading }}">
+        <image class="wait" src="common/wait.png"></image>
+        <text>正在分析应用信息</text>
+        <text class="wait-tips">分析: {{ analysis_bundle_name }}</text>
+    </div>
+    <progress class="progress animation" if="{{ isShowLoading }}" type="arc" percent="{{ percent }}"></progress>
+    <div class="container animation" show="{{ isShowMain }}" onswipe="mainswipe">
+        <list class="container" ref="list">
+            <list-item class="title-item">
+                <text class="title">应用管理</text>
+            </list-item>
+            <list-item class="content-item" for="{{ content }}" grab:click="replacedetails($idx)">
+                <image class="app-icon" freeze="true" src="{{ $item.app_image }}"></image>
+                <div class="text-container">
+                    <text class="app-text" freeze="true">{{ isShowAppName ? $item.app_name : $item.app_bundle_name }}
+                    </text>
+                    <text class="app-sub-text" freeze="true">{{ $item.app_total_size }}</text>
+                </div>
+            </list-item>
+            <list-item class="content-item" grab:click="founduninstall">
+                <image class="app-icon" src="common/app_uninstall.png"></image>
+                <div class="text-container">
+                    <text class="app-text">找回预装应用</text>
+                </div>
+            </list-item>
+            <list-item class="title-item"></list-item>
+        </list>
+    </div>
+    <div class="container animation" if="{{ isShowDetails }}" onswipe="detailsswipe">
+        <list class="container" ref="details">
+            <list-item class="app-title-item">
+                <image src="{{ details.app_image }}" class="app-details-icon"></image>
+                <marquee class="app-title" scrollamount="10">{{
+                    isShowAppName ? details.app_name : details.app_bundle_name }}</marquee>
+                <marquee class="app-version" scrollamount="10">版本：{{ details.app_version_name }}({{
+                    details.app_version_code }})</marquee>
+            </list-item>
+            <list-item class="app-operation-item">
+                <div class="app-operation-each-item" grab:click="uninstall">
+                    <image src="/common/app_uninstall_small.png" class="app-operation-each-icon"></image>
+                    <text class="app-operation-text">卸载</text>
+                </div>
+                <div class="app-operation-each-item" grab:click="clean">
+                    <image src="/common/app_clean_small.png" class="app-operation-each-icon"></image>
+                    <text class="app-operation-text">清除数据</text>
+                </div>
+                <div class="app-operation-each-item" grab:click="hide">
+                    <image src="/common/app_{{ isHide ? 'show' : 'hide' }}_small.png" class="app-operation-each-icon">
+                    </image>
+                    <text class="app-operation-text">{{ isHide ? '显示' : '隐藏' }}</text>
+                </div>
+            </list-item>
+            <list-item freeze="true" class="details-content-item" if="{{ isShowAppName }}">
+                <text freeze="true" class="content-title">应用包名：</text>
+                <marquee freeze="true" class="content" scrollamount="10">{{ details.app_bundle_name }}</marquee>
+            </list-item>
+            <list-item freeze="true" class="details-content-item">
+                <text freeze="true" class="content-title">应用总大小：</text>
+                <marquee freeze="true" class="content" scrollamount="10">{{ details.app_total_size }}</marquee>
+            </list-item>
+            <list-item freeze="true" class="details-content-item">
+                <text freeze="true" class="content-title">应用大小：</text>
+                <marquee freeze="true" class="content" scrollamount="10">{{ details.app_run_size }}</marquee>
+            </list-item>
+            <list-item freeze="true" class="details-content-item">
+                <text freeze="true" class="content-title">应用数据大小：</text>
+                <marquee freeze="true" class="content" scrollamount="10">{{ details.app_data_size }}</marquee>
+            </list-item>
+            <list-item freeze="true" class="details-content-item">
+                <text freeze="true" class="content-title">应用作者：</text>
+                <marquee freeze="true" class="content" scrollamount="10">{{ details.app_vendor }}</marquee>
+            </list-item>
+            <list-item freeze="true" class="details-content-item">
+                <text freeze="true" class="content-title">应用目标 API：</text>
+                <marquee freeze="true" class="content" scrollamount="10">{{ details.app_target_api }}</marquee>
+            </list-item>
+            <list-item freeze="true" class="details-content-item">
+                <text freeze="true" class="content-title">应用最低 API：</text>
+                <marquee freeze="true" class="content" scrollamount="10">{{ details.app_min_api }}</marquee>
+            </list-item>
+            <list-item class="content-item"></list-item>
+        </list>
+    </div>
+    <div class="container animation" if="{{ isShowWarning }}" onswipe="warningswipe">
+        <image src="{{ details.app_image }}" class="app-details-icon"></image>
+        <marquee class="app-title" scrollamount="10">{{ details.app_name }}</marquee>
+        <text class="warning-text">{{ warning_text }}</text>
+        <text class="warning-tips">{{ warning_tips }}</text>
+        <div class="checkbox-container" onclick="checkbox_click" if="{{ want_type == 'uninstall' ? true : false }}">
+            <input type="checkbox" class="checkbox" checked="{{ isUninstallPreinstalled }}"></input>
+            <text class="checkbox-tips">卸载预装应用(3.0)</text>
+        </div>
+        <div class="image-container">
+            <input class="disagree" grab:click="exit"></input>
+            <input class="agree" grab:click="agree"></input>
+        </div>
+    </div>
+    <div class="container animation" if="{{ isShowUninstall }}" onswipe="uninstallswipe">
+        <list class="container" ref="uninstall">
+            <list-item class="title-item">
+                <text class="title">找回预装应用</text>
+            </list-item>
+            <list-item class="content-item" style="justify-content : center;" for="{{ uninstall_content }}"
+                       grab:click="reinstall($idx)">
+                <div class="text-container" style="width : 80%;">
+                    <text class="app-text" style="width : 100%; height : 100px; text-align : center;">{{ $item }}</text>
+                </div>
+            </list-item>
+            <list-item class="content-item"></list-item>
+        </list>
+    </div>
+    <div class="toast_container ani" show="{{ toast_show }}" if="{{ toast_if }}"
+         style="width : {{ toast_width }} px; left : {{ toast_left }} px; animation-name : {{ ani_name }};">
+        <text class="ani" style="animation-name : {{ ani_name }};">{{ error_text }}</text>
+    </div>
+</stack>

@@ -1,0 +1,85 @@
+@import '../../common/animation.css';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    margin-top: 30px;
+    font-size: 38px;
+}
+
+.title-tips {
+    font-size: 30px;
+    color: gray;
+}
+
+.button {
+    background-color: dodgerblue;
+    width: 200px;
+    height: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.scan-progress {
+    width: 40px;
+    height: 40px;
+    stroke-width: 5px;
+    start-angle: 360deg;
+    total-angle: 360deg;
+    margin-right: 10px;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.title-tips-container {
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.list {
+    width: 100%;
+    height: 336px;
+}
+
+.item {
+    width: 100%;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bluetooth-name {
+    width: 420px;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.bluetooth-details {
+    font-size: 26px;
+    width: 420px;
+    height: 35px;
+    color: gray;
+    text-align: center;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}

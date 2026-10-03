@@ -1,0 +1,118 @@
+@font-face {
+    font-family: HarmonyOSCondensed-Regular;
+    src: url("/common/font/HarmonyOS_Sans_Condensed_Regular.ttf");
+}
+
+.stack-container {
+    width: 466px;
+    height: 466px;
+}
+
+.container {
+    width: 466px;
+    height: 466px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.first-container {
+    width: 466px;
+    height: 32px;
+    margin-top: 10px;
+}
+
+.day-container {
+    width: 346px;
+    height: 275px;
+    margin-top: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.more-container {
+    left: 157px;
+    top: 383px;
+    width: 150px;
+    height: 70px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.more {
+    width: 40px;
+    height: 40px;
+    margin-top: 2px;
+}
+
+.more-text {
+    margin-left: 10px;
+    font-size: 30px;
+    width: 60px;
+    height: 40px;
+}
+
+.week-text {
+    font-size: 26px;
+    letter-spacing: 20px;
+    font-weight: 500;
+}
+
+.text {
+    width: 42px;
+    height: 42px;
+    padding-left: 3px;
+    margin-left: 5px;
+    font-size: 26px;
+    text-align: center;
+    padding-bottom: 2px;
+    padding-top: 3px;
+    margin-bottom: 4px;
+    border-radius: 17px;
+    font-family: HarmonyOSCondensed-Regular;
+}
+
+.title {
+    font-size: 38px;
+    margin-top: 28px;
+    font-weight: 500;
+}
+
+.week-container {
+    width: 466px;
+    height: 28px;
+    margin-top: 8px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    left: 400px;
+    width: 56px;
+    height: 466px;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 56px;
+    height: 56px;
+}
+
+.left {
+    left: 10px;
+    width: 56px;
+    height: 466px;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}

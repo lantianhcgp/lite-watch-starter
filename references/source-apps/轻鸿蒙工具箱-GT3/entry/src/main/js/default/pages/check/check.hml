@@ -1,0 +1,14 @@
+<div class="container animation" grab:swipe="onswipe">
+    <text class="title">系统检测</text>
+    <list class="list" ref="list">
+        <list-item class="list-item" grab:click="restart">
+            <text class="content-title">点击重启应用</text>
+            <text class="content-text">解决部分问题</text>
+        </list-item>
+        <list-item class="list-item" for="{{ content }}">
+            <text freeze="true" class="content-title">{{ $item.title }}</text>
+            <text freeze="true" class="content-text">{{ $item.text }}</text>
+        </list-item>
+        <list-item class="list-item"></list-item>
+    </list>
+</div>

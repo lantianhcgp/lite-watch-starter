@@ -1,0 +1,24 @@
+<stack class="container">
+    <div class="container" if="{{ search_if }}">
+        <image class="wait" src="common/wait.png"></image>
+        <text>正在分析音乐</text>
+        <text class="wait-tips">分析: {{ title == '' ? '未知' : title }}</text>
+    </div>
+    <div class="container" show="{{ main_if }}">
+        <list class="list" ref="list">
+            <list-item class="title-item">
+                <text class="title">全部音乐</text>
+                <text class="title-tips">共 {{ content.length }} 首</text>
+            </list-item>
+            <list-item class="item" for="{{ main_if ? content : [] }}">
+                <image src="common/music_file.png" class="music-image"></image>
+                <div class="text_container">
+                    <text class="music-title">{{ $item.title }}</text>
+                    <text class="music-singer">{{ $item.singer }}</text>
+                </div>
+            </list-item>
+            <list-item class="item"></list-item>
+        </list>
+    </div>
+    <progress class="progress" if="{{ search_if }}" type="arc" percent="{{ search_percent }}"></progress>
+</stack>

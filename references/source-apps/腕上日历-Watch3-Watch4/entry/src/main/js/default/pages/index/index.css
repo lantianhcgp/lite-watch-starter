@@ -1,0 +1,84 @@
+.container {
+    width: 466px;
+    height: 466px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #00FFFFFF;
+border-radius: 0px;
+}
+
+.icon{
+    width: 150px;
+    height: 150px;
+}
+
+.text{
+    font-size: 38px;
+    margin-top: 10px;
+}
+
+.title {
+    font-size: 38px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.error-text{
+    margin-top: 30px;
+    width: 320px;
+    height: 120px;
+    letter-spacing: 2px;
+}
+
+.button{
+    margin-top: 30px;
+    width: 200px;
+    height: 60px;
+    background-color: dodgerblue;
+}
+
+.private-text {
+    letter-spacing: 1px;
+    font-size: 30px;
+    text-align: center;
+    width: 400px;
+    height: 210px;
+    font-weight: 500;
+}
+
+.agree {
+    margin-top: 5px;
+    width: 180px;
+    height: 60px;
+    background-color: cornflowerblue;
+    text-color: white;
+}
+
+.disagree{
+    width: 180px;
+    height: 60px;
+    margin-top: 15px;
+    background-color: lightslategray;
+    text-color: white;
+}
+
+.animation {
+    width: 100%;
+    height: 100%;
+    animation-name: appear;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    background-color: black;
+}
+
+@keyframes appear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

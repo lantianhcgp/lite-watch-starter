@@ -1,0 +1,40 @@
+@import '../../common/animation.css';
+
+.container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    font-size: 38px;
+    margin-top: 30px;
+}
+
+.list {
+    width: 100%;
+    height: 386px;
+}
+
+.item {
+    width: 100%;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.up {
+    width: 56px;
+    height: 56px;
+    background-color: transparent;
+    background-image: url('common/sort_up.png');
+}
+
+.name {
+    width: 300px;
+    font-size: 38px;
+    text-align: center;
+}

@@ -1,0 +1,13 @@
+<div class="container animation" onswipe="onswipe">
+    <text class="title">定位</text>
+    <div class="button-container">
+        <input type="button" class="button" value="查询" onclick="get"></input>
+        <input type="button" class="button" style="margin-left : 30px;" value="订阅" onclick="sub"></input>
+    </div>
+    <text class="data">经度: {{ longitude }}</text>
+    <text class="data">纬度: {{ latitude }}</text>
+    <text class="data">精确度: {{ accuracy }}</text>
+    <text class="data small">定位时间: {{ locate_time }}</text>
+    <text class="data small">系统时间: {{ sys_time }}</text>
+    <text class="tips">查询模式: 单次调用\n订阅模式: 变化刷新</text>
+</div>

@@ -1,0 +1,41 @@
+<stack class="container">
+    <div class="container animation" onswipe="onswipe">
+        <text class="title">随机数生成</text>
+        <div class="sub-container first">
+            <text>最小值:</text>
+            <input type="button" class="button" value="-" onclick="reduce('min')" onlongpress="reduce_longpress('min')"
+                   onlongpressrelease="reduce_longpressrelease"></input>
+            <text class="text">{{ min }}</text>
+            <input type="button" class="button" value="+" onclick="increase('min')"
+                   onlongpress="increase_longpress('min')"
+                   onlongpressrelease="increase_longpressrelease"></input>
+        </div>
+        <div class="sub-container">
+            <text>最大值:</text>
+            <input type="button" class="button" value="-" onclick="reduce('max')" onlongpress="reduce_longpress('max')"
+                   onlongpressrelease="reduce_longpressrelease"></input>
+            <text class="text">{{ max }}</text>
+            <input type="button" class="button" value="+" onclick="increase('max')"
+                   onlongpress="increase_longpress('max')"
+                   onlongpressrelease="increase_longpressrelease"></input>
+        </div>
+        <div class="sub-container">
+            <text>生成数量:</text>
+            <input type="button" class="button" value="-" onclick="reduce('count')"
+                   onlongpress="reduce_longpress('count')"
+                   onlongpressrelease="reduce_longpressrelease"></input>
+            <text class="text">{{ count }}</text>
+            <input type="button" class="button" value="+" onclick="increase('count')"
+                   onlongpress="increase_longpress('count')"
+                   onlongpressrelease="increase_longpressrelease"></input>
+        </div>
+        <input type="button" class="generate" value="生成" onclick="generate"></input>
+    </div>
+    <stack class="result-container" show="{{ show_result }}">
+        <div class="result-container">
+            <text class="result">生成结果为: {{ result }}</text>
+            <input type="button" class="generate" onclick="generate" value="再次生成"></input>
+            <input type="button" class="generate" value="重新设置" onclick="exit"></input>
+        </div>
+    </stack>
+</stack>

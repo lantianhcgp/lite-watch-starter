@@ -1,0 +1,5 @@
+<div class="container">
+    <text class="title">关于应用</text>
+    <image src="/common/icon.png" class="icon"></image>
+    <text class="app_name">腕上日历 V{{ versionName }}({{ versionCode }})\n作者@cnoim\n图标设计@柳溪</text>
+</div>

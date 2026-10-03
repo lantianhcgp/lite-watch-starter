@@ -1,0 +1,12 @@
+<stack class="stack">
+    <list class="list" onswipe="onswipe" ref="list">
+        <list-item class="title-item">
+            <text class="title">轻鸿蒙工具箱</text>
+        </list-item>
+        <list-item class="item" freeze="true" for="{{ content }}" onclick="replace({{ $item.value }})">
+            <text freeze="true" class="text">{{ $item.name }}</text>
+            <image class="right_image" src="common/right.png"></image>
+        </list-item>
+        <list-item class="item"></list-item>
+    </list>
+</stack>

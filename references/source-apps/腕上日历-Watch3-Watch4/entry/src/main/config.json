@@ -1,0 +1,92 @@
+{
+  "app": {
+    "vendor": "cnoim",
+    "bundleName": "com.cnoim.wearable.calendar",
+    "version": {
+      "code": 103,
+      "name": "2.7.7"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "mainAbility": "com.cnoim.wearable.calendar.MainAbility",
+    "deviceType": [
+      "wearable"
+    ],
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "visible": true,
+        "name": "com.cnoim.wearable.calendar.MainAbility",
+        "icon": "$media:icon",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "singleton"
+      }
+    ],
+    "metaData": {
+      "customizeData": [
+        {
+          "extra": "",
+          "name": "hwc-theme",
+          "value": "androidhwext:style/Theme.Emui.Translucent.NoTitleBar"
+        }
+      ]
+    },
+    "distro": {
+      "moduleType": "entry",
+      "installationFree": false,
+      "deliveryWithInstall": true,
+      "moduleName": "entry"
+    },
+    "package": "com.cnoim.wearable.calendar",
+    "name": ".MyApplication",
+    "js": [
+      {
+        "pages": [
+          "pages/index/index",
+          "pages/index1/index1",
+          "pages/details/details",
+          "pages/index2/index2",
+          "pages/timer/timer",
+          "pages/settings/settings",
+          "pages/more/more",
+          "pages/jumpto/jumpto",
+          "pages/adjustholiday/adjustholiday",
+          "pages/solarterm/solarterm",
+          "pages/festival/festival",
+          "pages/daydetails/daydetails",
+          "pages/about/about",
+          "pages/timerSettings/timerSettings",
+          "pages/startSettings/startSettings"
+        ],
+        "name": "default",
+        "window": {
+          "designWidth": 466,
+          "autoDesignWidth": false
+        }
+      }
+    ],
+    "reqPermissions": [
+      {
+        "reason": "使用手表震动能力，提升用户体验。",
+        "usedScene": {
+          "ability": [
+            "com.cnoim.wearable.calendar.MainAbility"
+          ],
+          "when": "always"
+        },
+        "name": "ohos.permission.VIBRATE"
+      }
+    ]
+  }
+}

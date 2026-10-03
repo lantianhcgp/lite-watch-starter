@@ -1,0 +1,116 @@
+@import '../../common/animation.css';
+
+.list {
+    width: 100%;
+    height: 100%;
+}
+
+.title-item {
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.title {
+    width: 100%;
+    font-size: 38px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.item {
+    width: 100%;
+    height: 140px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.item-short {
+    width: 100%;
+    height: 60px;
+}
+
+.divider-item {
+    width: 100%;
+    height: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sort-item {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_container {
+    height: 100%;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.divider {
+    width: 100%;
+    height: 12px;
+}
+
+.settings_text {
+    font-size: 38px;
+    text-align: center;
+}
+
+.sort-text {
+    color: gray;
+}
+
+.settings_tips {
+    color: gray;
+    margin-top: 4px;
+}
+
+.switch {
+    height: 80px;
+    width: 80px;
+}
+
+.right {
+    width: 56px;
+    height: 56px;
+}
+
+.toast_container {
+    height: 80px;
+    top: 188px;
+    background-color: #fa404040;
+    border-radius: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ani {
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+/*
+@keyframes appear {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}*/

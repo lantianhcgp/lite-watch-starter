@@ -1,0 +1,8 @@
+<stack class="container animation" onswipe="onswipe">
+    <div class="container" if="{{ flashlight_state }}" style="background-color : {{ background_color }};"
+         onclick="switch_state"></div>
+    <div class="container" if="{{ ! flashlight_state }}" onclick="switch_state">
+        <input type="button" class="button"></input>
+        <text class="time">{{ current_time }}</text>
+    </div>
+</stack>

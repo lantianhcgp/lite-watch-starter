@@ -1,0 +1,64 @@
+@import '../../common/animation.css';
+
+.container {
+    width: 454px;
+    height: 454px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.result-container {
+    width: 454px;
+    height: 454px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #b3000000;
+    color: #b3000000;
+}
+
+.result {
+    margin-bottom: 10px;
+    width: 380px;
+    text-align: center;
+}
+
+.title {
+    font-size: 38px;
+    margin-top: 30px;
+}
+
+.first {
+    margin-top: 10px;
+}
+
+.sub-container {
+    width: 454px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.button {
+    margin-left: 20px;
+    width: 65px;
+    height: 65px;
+    background-color: #26ffffff;
+}
+
+.text {
+    width: 60px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.generate {
+    width: 200px;
+    height: 60px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-item {
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-size: 30px;
+    margin-left: 51px;
+}
+
+.title-time {
+    font-size: 30px;
+    margin-right: 51px;
+}
+
+.icon {
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+}
+
+.app_name {
+    text-align: center;
+    width: 466px;
+    font-size: 30px;
+    margin-top: 10px;
+    font-family: HarmonyOSCondensed-Regular;
+}
+
+.opensource-thanks {
+    letter-spacing: 1px;
+    margin-top: 5px;
+    color: rgb(128, 128, 128);
+}

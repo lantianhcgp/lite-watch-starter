@@ -1,0 +1,132 @@
+.container {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 466px;
+    height: 466px;
+}
+
+.timer-container {
+    width: 466px;
+    height: 85px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.progress {
+    width: 466px;
+    height: 466px;
+    background-color: #3e00bfff;
+    color: #00bfff;
+    start-angle: 0deg;
+    total-angle: 360deg;
+    stroke-width: 35px;
+}
+
+.title {
+    margin-top: 40px;
+    font-size: 38px;
+}
+
+.item-container {
+    width: 466px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.item-text {
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+.select-text{
+    font-size: 30px;
+}
+
+.text {
+    font-size: 38px;
+    margin-top: 115px;
+    font-weight: 500;
+}
+
+.right {
+    margin-left: 110px;
+    width: 56px;
+    height: 56px;
+}
+
+.image {
+    width: 56px;
+    height: 56px;
+}
+
+.percent {
+    width: 82px;
+    height: 82px;
+}
+
+.timer {
+    width: 466px;
+    height: 98px;
+    text-align: center;
+    font-size: 104px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    line-height: 98px;
+}
+
+.left {
+    margin-left: 2px;
+}
+
+.point {
+    width: 24px;
+    height: 82px;
+}
+
+.switch {
+    margin-left: 10px;
+    width: 100px;
+    height: 80px;
+}
+
+.percent-text {
+    font-size: 30px;
+    text-align: center;
+    width: 466px;
+    color: gray;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.about-title {
+    font-size: 38px;
+    text-align: center;
+    width: 466px;
+    margin-top: 30px;
+}
+
+.icon {
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.app_name{
+    text-align: center;
+    width: 466px;
+    font-size: 30px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+.tips{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: gray;
+}

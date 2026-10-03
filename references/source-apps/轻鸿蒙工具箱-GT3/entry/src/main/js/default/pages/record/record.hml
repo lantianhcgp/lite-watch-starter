@@ -1,0 +1,7 @@
+<stack class="container" @swipe="handleSwipe">
+    <div class="container">
+        <image src="/common/{{ icon_type }}.png" class="warning-icon"></image>
+        <text class="warning-text">{{ warning_text }}</text>
+    </div>
+    <input type="button" class="button" value="{{ input_text }}" @click="handleClick"></input>
+</stack>

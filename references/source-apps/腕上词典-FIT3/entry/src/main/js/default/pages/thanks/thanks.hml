@@ -1,0 +1,41 @@
+<stack class="container">
+    <swiper class="container" show="{{ isShowMain }}" ref="swiper" vertical="true" loop="false" on:swipe="onswipe">
+        <div class="container">
+            <div class="title-item">
+                <text class="title">开源感谢</text>
+                <text class="title-time">{{ timeString }}</text>
+            </div>
+            <div class="thanks-container">
+                <text class="thanks-title" style="font-family : {{ 'HarmonyOSCondensed-Regular' }};">LiteWearable_Tools
+                </text>
+                <text class="thanks-url" @click="watchQrCode('https://github.com/alone-86/LiteWearable_Tools')"
+                      style="font-family : {{ 'HarmonyOSCondensed-Regular' }};">
+                    https://github.com/alone-86/LiteWearable_Tools</text>
+            </div>
+            <div class="thanks-container">
+                <text class="thanks-title" style="font-family : {{ 'HarmonyOSCondensed-Regular' }};">
+                    LiteWearable_InputMethod</text>
+                <text class="thanks-url" @click="watchQrCode('https://github.com/alone-86/LiteWearable_InputMethod')"
+                      style="font-family : {{ 'HarmonyOSCondensed-Regular' }};">
+                    https://github.com/alone-86/LiteWearable_InputMethod</text>
+            </div>
+        </div>
+        <div class="container">
+            <marquee scrollamount="10" class="icon-text" style="font-family : {{ 'HarmonyOSCondensed-Regular' }};">
+                Dictionary icons</marquee>
+            <image src="/common/icon_author.png" class="author"></image>
+            <marquee scrollamount="10" class="icon-text"
+                     style="margin-top : 0px; font-family : {{ 'HarmonyOSCondensed-Regular' }};">created by Freepik
+            </marquee>
+        </div>
+    </swiper>
+    <div class="container" show="{{ isShowQrCode }}" @swipe="qrSwipe">
+        <div class="title-item">
+            <text class="title">请扫描二维码</text>
+            <text class="title-time">{{ timeString }}</text>
+        </div>
+        <div class="qr-container">
+            <qrcode class="qrcode" value="{{ QrValue }}"></qrcode>
+        </div>
+    </div>
+</stack>

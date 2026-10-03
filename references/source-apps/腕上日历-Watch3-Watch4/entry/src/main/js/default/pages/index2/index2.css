@@ -1,0 +1,153 @@
+.container {
+    justify-content: flex-start;
+    align-items: center;
+    width: 466px;
+    height: 466px;
+    flex-direction: column;
+}
+
+.swipe {
+    width: 150px;
+    height: 466px;
+}
+
+.about-container {
+    margin-top: 25px;
+    width: 466px;
+    height: 95px;
+    flex-direction: row;
+}
+
+.list-container {
+    height: 466px;
+    width: 466px;
+    scrollbar-color: #a8ffffff;
+}
+
+.title-text-item {
+    width: 466px;
+    height: 100px;
+
+}
+
+.item {
+    width: 466px;
+    height: 140px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.background {
+    background-color: rgb(36, 36, 36);
+    border-radius: 70px;
+    width: 92%;
+    height: 130px;
+}
+
+.empty-item {
+    width: 100%;
+    height: 140px;
+}
+
+.error-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 380px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.button {
+    margin-top: 15px;
+    width: 200px;
+    height: 60px;
+    background-color: dodgerblue;
+}
+
+.title {
+    font-size: 38px;
+    text-align: center;
+    width: 466px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.settings {
+    margin-left: 10px;
+    width: 95px;
+    height: 95px;
+}
+
+.timer {
+    margin-left: 10px;
+    width: 95px;
+    height: 95px;
+}
+
+.about {
+    margin-left: 10px;
+    width: 95px;
+    height: 95px;
+}
+
+.timer_text {
+    width: 246px;
+    text-align: center;
+    margin-left: 10px;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.twowords_text {
+    margin-left: 10px;
+    width: 246px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 38px;
+}
+
+.right {
+    margin-left: 10px;
+    width: 56px;
+    height: 56px;
+}
+
+.right1 {
+    margin-left: 10px;
+    width: 56px;
+    height: 56px;
+}
+
+.list {
+    width: 466px;
+    height: 466px;
+}
+
+.title-item {
+    height: 75px;
+    width: 466px;
+}
+
+.text-item {
+    width: 466px;
+    height: 460px;
+}
+
+.hide-container {
+    width: 466px;
+    height: 60px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide-text {
+    color: darkgray;
+    margin-left: 10px;
+}
+
+.qrcode{
+    width: 188px;
+    height: 188px;
+}

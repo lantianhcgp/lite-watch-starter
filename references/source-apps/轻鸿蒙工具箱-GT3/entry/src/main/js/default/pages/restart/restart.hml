@@ -1,0 +1,4 @@
+<div class="container">
+    <image src="common/loading.bin" class="loading-image"></image>
+    <text class="tips">正在强制重启</text>
+</div>

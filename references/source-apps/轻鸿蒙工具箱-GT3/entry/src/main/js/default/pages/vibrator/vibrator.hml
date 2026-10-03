@@ -1,0 +1,16 @@
+<div class="container animation" onswipe="onswipe">
+    <text class="title">震动器</text>
+    <div class="sub-container first">
+        <text>间隔时间:</text>
+        <input type="button" class="button" value="-" onclick="reduce('interval')"></input>
+        <text class="text">{{ interval }}ms</text>
+        <input type="button" class="button" value="+" onclick="increase('interval')"></input>
+    </div>
+    <div class="sub-container">
+        <text>持续时间:</text>
+        <input type="button" class="button" value="-" onclick="reduce('duration')"></input>
+        <text class="text">{{ duration }}s</text>
+        <input type="button" class="button" value="+" onclick="increase('duration')"></input>
+    </div>
+    <input type="button" class="start" onclick="start" value="{{ start_text }}"></input>
+</div>

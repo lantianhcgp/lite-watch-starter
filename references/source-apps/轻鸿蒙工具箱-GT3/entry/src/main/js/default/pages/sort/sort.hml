@@ -1,0 +1,10 @@
+<div class="container animation" onswipe="onswipe">
+    <text class="title">首页排序</text>
+    <list class="list" ref="list">
+        <list-item class="item" for="{{ content }}">
+            <input type="button" grab:click="up($idx)" class="up"></input>
+            <text class="name">{{ $item.name }}</text>
+        </list-item>
+        <list-item class="item"></list-item>
+    </list>
+</div>

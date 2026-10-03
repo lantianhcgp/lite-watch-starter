@@ -1,0 +1,12 @@
+<stack class="container animation">
+    <div class="container" grab:swipe="touchmove">
+        <text class="title">关于应用</text>
+        <input type="button" class="icon" grab:click="developer"></input>
+        <text class="app_name">轻鸿蒙工具箱 V{{ versionName }}\n作者@cnoim\n贡献者@tizan</text>
+        <text class="opensource-thanks" grab:click="opensourcethanks">开源感谢 ></text>
+    </div>
+    <div class="toast_container ani" show="{{ toast_show }}" if="{{ toast_if }}"
+         style="width : {{ toast_width }} px; left : {{ toast_left }} px; animation-name : {{ ani_name }};">
+        <text class="ani" style="animation-name : {{ ani_name }};">{{ error_text }}</text>
+    </div>
+</stack>

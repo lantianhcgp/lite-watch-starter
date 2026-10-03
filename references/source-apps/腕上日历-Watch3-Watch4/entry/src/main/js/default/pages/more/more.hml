@@ -1,0 +1,54 @@
+<stack class="stack-container">
+    <div class="container">
+        <list class="list" rotationvibrate="true" itemscale="false" scrollbar="auto">
+            <list-item class="title-item" style="height: 100px;" clickeffect="false"></list-item>
+            <list-item class="list-item" @click="jumpfestival">
+                <div class="list-item background">
+                    <div class="text-container">
+                        <text class="text festival">查看节日</text>
+                    </div>
+                    <image src="/common/right.png" class="right"></image>
+                </div>
+            </list-item>
+            <list-item class="list-item" @click="jumpsolar">
+                <div class="list-item background">
+                    <div class="text-container">
+                        <text class="text festival">查看节气</text>
+                    </div>
+                    <image src="/common/right.png" class="right"></image>
+                </div>
+            </list-item>
+            <list-item class="list-item" @click="jumpadjust">
+                <div class="list-item background">
+                    <div class="text-container">
+                        <text class="text festival">查看调休</text>
+                    </div>
+                    <image src="/common/right.png" class="right"></image>
+                </div>
+            </list-item>
+            <list-item class="list-item" @click="jumpto">
+                <div class="list-item background">
+                    <div class="text-container">
+                        <text class="text">跳转到日期</text>
+                        <text class="tips">也可长按月份标题弹出</text>
+                    </div>
+                    <image src="/common/right.png" class="right"></image>
+                </div>
+            </list-item>
+            <list-item class="list-item" @click="jumpnow">
+                <div class="list-item background">
+                    <div class="text-container">
+                        <text class="text">返回今天</text>
+                    </div>
+                    <image src="/common/right.png" class="right"></image>
+                </div>
+            </list-item>
+            <list-item class="list-item" style="height: 90px;" clickeffect="false"></list-item>
+        </list>
+    </div>
+    <div class="container">
+        <div class="title-item">
+            <text class="title">更多</text>
+        </div>
+    </div>
+</stack>

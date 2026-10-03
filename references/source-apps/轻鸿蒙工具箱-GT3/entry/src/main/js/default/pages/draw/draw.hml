@@ -1,0 +1,8 @@
+<stack class="container" @click="handleclick" @longpress="handlelongpress" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
+    <div class="container">
+        <text class="tips">正在加载图像...</text>
+        <text class="tips_small">PS:长按界面退出图像查看</text>
+    </div>
+    <canvas class="canvas" ref="canvas" if="{{ isRender }}" style="background-color : {{ background_color }};"></canvas>
+    <slider class="slider" ref="slider" max="1" @change="handlesliderchange"></slider>
+</stack>

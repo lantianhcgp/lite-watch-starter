@@ -1,0 +1,43 @@
+@import '../../common/animation.css';
+
+.container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    font-size: 38px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container {
+    width:100%;
+    height:80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    width: 130px;
+    height: 60px;
+    border-radius: 0px;
+    background-color: dodgerblue;
+}
+
+.data {
+    margin-top: 5px;
+}
+
+.tips {
+    margin-top: 10px;
+    color: gray;
+    font-size: 26px;
+}
+
+.small {
+    font-size: 26px;
+}

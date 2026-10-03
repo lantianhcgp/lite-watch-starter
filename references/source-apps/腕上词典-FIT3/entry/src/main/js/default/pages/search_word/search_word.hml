@@ -1,0 +1,7 @@
+<stack class="_empty">
+    <div class="_empty">
+        <image class="wait" src="common/wait.png"></image>
+        <text class="title">正在搜索单词</text>
+        <text class="tips">⚡闪电加速中</text>
+    </div>
+</stack>

@@ -1,0 +1,1 @@
+function replaceAll(a,b,c){return a.split(b).join(c)}export{replaceAll}

@@ -1,0 +1,119 @@
+{
+  "app": {
+    "vendor": "cnoim",
+    "bundleName": "com.cnoim.wearable.toolbox.user",
+    "version": {
+      "code": 24,
+      "name": "1.7.2"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "deviceType": [
+      "liteWearable"
+    ],
+    "abilities": [
+      {
+        "name": "default",
+        "icon": "$media:icon",
+        "label": "$string:entry_MainAbility",
+        "type": "page"
+      }
+    ],
+    "distro": {
+      "moduleType": "entry",
+      "deliveryWithInstall": true,
+      "moduleName": "entry"
+    },
+    "js": [
+      {
+        "pages": [
+          "pages/index/index",
+          "pages/check/check",
+          "pages/speed/speed",
+          "pages/health/health",
+          "pages/location/location",
+          "pages/settings/settings",
+          "pages/app/app",
+          "pages/ramdomnum/ramdomnum",
+          "pages/vibrator/vibrator",
+          "pages/flashlight/flashlight",
+          "pages/resetlist/resetlist",
+          "pages/flashlight_settings/flashlight_settings",
+          "pages/restart/restart",
+          "pages/sort/sort",
+          "pages/home/home",
+          "pages/about/about",
+          "pages/thanks/thanks",
+          "pages/bluetooth/bluetooth",
+          "pages/music/music",
+          "pages/clean/clean",
+          "pages/draw/draw",
+          "pages/draw_function/draw_function",
+          "pages/record/record",
+          "pages/collect2/collect2",
+          "pages/record/record"
+        ],
+        "name": "default"
+      }
+    ],
+    "reqPermissions": [
+      {
+        "reason": "控制振动器振动",
+        "usedScene": {
+          "when": "inuse"
+        },
+        "name": "ohos.permission.VIBRATE"
+      },
+      {
+        "reason": "使用定位传感器",
+        "usedScene": {
+          "when": "inuse"
+        },
+        "name": "ohos.permission.LOCATION"
+      },
+      {
+        "reason": "使用运动传感器",
+        "usedScene": {
+          "when": "inuse"
+        },
+        "name": "ohos.permission.ACTIVITY_MOTION"
+      },
+      {
+        "reason": "使用心率传感器",
+        "usedScene": {
+          "when": "inuse"
+        },
+        "name": "ohos.permission.READ_HEALTH_DATA"
+      },
+      {
+        "reason": "使用多设备协同特性",
+        "usedScene": {
+          "when": "always"
+        },
+        "name": "ohos.permission.ACCESS_DISTRIBUTED_ABILITY"
+      },
+      {
+        "reason": "修改音频权限",
+        "usedScene": {
+          "when": "always"
+        },
+        "name": "ohos.permission.MODIFY_AUDIO_SETTINGS"
+      },
+      {
+        "reason": "使用加速度传感器",
+        "usedScene": {
+          "when": "always"
+        },
+        "name": "ohos.permission.ACCELEROMETER"
+      },
+      {
+        "reason": "使用陀螺仪传感器",
+        "usedScene": {
+          "when": "always"
+        },
+        "name": "ohos.permission.GYROSCOPE"
+      }
+    ]
+  }
+}

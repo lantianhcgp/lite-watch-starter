@@ -1,0 +1,29 @@
+<stack class="container">
+    <list class="list-container" ref="list" rotationvibrate="true" itemscale="false" scrollbar="auto">
+        <list-item class="title-text-item" clickeffect="false">
+            <text class="title">更多</text>
+        </list-item>
+        <list-item class="item" @click="timer">
+            <div class="item background">
+                <image src="/common/timer.png" class="timer"></image>
+                <text class="timer_text">时间进度条</text>
+                <image src="/common/right.png" class="right1"></image>
+            </div>
+        </list-item>
+        <list-item class="item" @click="settings">
+            <div class="item background">
+                <image src="/common/settings.png" class="settings"></image>
+                <text class="twowords_text">设置</text>
+                <image src="/common/right.png" class="right"></image>
+            </div>
+        </list-item>
+        <list-item class="item" @click="about">
+            <div class="item background">
+                <image src="/common/about.png" class="about"></image>
+                <text class="twowords_text">关于</text>
+                <image src="/common/right.png" class="right"></image>
+            </div>
+        </list-item>
+        <list-item class="item" style="height: 90px;" clickeffect="false"></list-item>
+    </list>
+</stack>

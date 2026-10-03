@@ -1,0 +1,34 @@
+<div class="container">
+    <list class="list-container" rotationvibrate="true" itemscale="false" scrollbar="auto">
+        <list-item class="title-item" clickeffect="false">
+            <text class="title">选择一个选项</text>
+        </list-item>
+        <list-item class="radio-item" @click="dayclick">
+            <div class="radio-item radio-background">
+                <text class="select-text">今日</text>
+                <image class="radio" src="/common/radio-{{ daychecked }}.png"></image>
+            </div>
+        </list-item>
+        <list-item class="radio-item" @click="weekclick">
+            <div class="radio-item radio-background">
+                <text class="select-text">本周</text>
+                <image class="radio" src="/common/radio-{{ weekchecked }}.png"></image>
+            </div>
+        </list-item>
+        <list-item class="radio-item" @click="monthclick">
+            <div class="radio-item radio-background">
+                <text class="select-text">本月</text>
+                <image class="radio" src="/common/radio-{{ monthchecked }}.png"></image>
+            </div>
+        </list-item>
+        <list-item class="radio-item" @click="yearclick">
+            <div class="radio-item radio-background">
+                <text class="select-text">今年</text>
+                <image class="radio" src="/common/radio-{{ yearchecked }}.png"></image>
+            </div>
+        </list-item>
+        <list-item class="tips-item" clickeffect="false">
+            <text class="tips">该功能用于设置"时间进度条"功能被打开时默认打开的页面。</text>
+        </list-item>
+    </list>
+</div>

@@ -1,0 +1,3 @@
+<div class="container" grab:swipe="onswipe">
+    <image src="common/icon.bin" class="icon"></image>
+</div>

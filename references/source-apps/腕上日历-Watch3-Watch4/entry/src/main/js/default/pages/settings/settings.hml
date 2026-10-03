@@ -1,0 +1,29 @@
+<stack class="container">
+    <div class="all-container" show="{{ main_if }}">
+        <list class="list-container" rotationvibrate="true" itemscale="false" scrollbar="auto">
+            <list-item class="text-item" clickeffect="false">
+                <text class="title">设置</text>
+            </list-item>
+            <list-item class="item" @click="selectpages">
+                <div class="item background">
+                    <image src="/common/start.png" class="image"></image>
+                    <div class="text-container">
+                        <text class="whenstart-text">启动时打开</text>
+                        <text class="whenstart-tips-text">{{ whenstart }}</text>
+                    </div>
+                    <image src="/common/right.png" class="right"></image>
+                </div>
+            </list-item>
+            <list-item class="item" @click="timer">
+                <div class="item background">
+                    <image src="/common/timer.png" class="image"></image>
+                    <div class="text-container">
+                        <text class="whenstart-text">时间进度条\n启动页设置</text>
+                    </div>
+                    <image src="/common/right.png" class="right"></image>
+                </div>
+            </list-item>
+            <list-item class="item" style="height: 80px;" clickeffect="false"></list-item>
+        </list>
+    </div>
+</stack>

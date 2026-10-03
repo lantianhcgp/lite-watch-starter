@@ -1,0 +1,45 @@
+<stack class="container ">
+    <div class="container" @swipe="handleswipe" show="{{ isShowMain }}">
+        <div class="title-container">
+            <text class="title">函数绘画</text>
+            <text class="title-tips">PREVIEW</text>
+        </div>
+        <div class="expression-container">
+            <marquee class="expression">{{ expression }}</marquee>
+            <input type="button" class="expression-button" @click="handleDraw">→</input>
+        </div>
+        <div class="symbol-container">
+            <list class="symbol-container" ref="list" style="flex-direction : column;">
+                <list-item freeze="true" class="symbol-container" style="height : {{ item_height }} px;">
+                    <input type="button" class="symbol-button" @click="handleDelete" value="删除"></input>
+                    <input freeze="true" type="button" class="symbol-button" @click="handleAddSymbol({{ $item.value }})"
+                           for="{{ symbols }}"
+                           value="{{ $item.name }}"></input>
+                </list-item>
+            </list>
+        </div>
+        <div class="help-container" @click="handleHelp">
+            <image src="common/help_icon.png" class="help-icon"></image>
+            <text class="help">使用帮助</text>
+        </div>
+    </div>
+    <list class="container" ref="help" @swipe="handleHelpSwipe" show="{{ isShowHelp }}">
+        <list-item class="title-container">
+            <text class="title">使用帮助</text>
+        </list-item>
+        <list-item class="main-help-container">
+            <text class="help-text">输入的表达式遵循 JavaScript 表达式原则。</text>
+            <text class="help-text">乘号(×)必须手动输入，不会自动补充。</text>
+            <text class="help-text">以下是一些关于 JavaScript Math 对象内置属性和方法的说明：</text>
+        </list-item>
+        <list-item class="sub-help-container" for="{{ isShowHelp ? property_content : [] }}">
+            <text class="help-text">属性: {{ $item.name }}</text>
+            <text class="help-text">描述: {{ $item.value }}</text>
+        </list-item>
+        <list-item class="sub-help-container" for="{{ isShowHelp ? method_content : [] }}">
+            <text class="help-text">方法: {{ $item.name }}</text>
+            <text class="help-text">描述: {{ $item.value }}</text>
+        </list-item>
+        <list-item class="title-container"></list-item>
+    </list>
+</stack>

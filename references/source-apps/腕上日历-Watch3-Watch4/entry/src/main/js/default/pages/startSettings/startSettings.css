@@ -1,0 +1,68 @@
+.container {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 466px;
+    height: 466px;
+}
+
+.list-container {
+    height: 466px;
+    width: 466px;
+    scrollbar-color: #a8ffffff;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 38px;
+    text-align: center;
+    width: 466px;
+}
+
+.select-text {
+    font-size: 38px;
+    width: 233px;
+    text-align: center;
+    margin-left: 60px;
+    font-weight: 500;
+}
+
+.radio {
+    width: 60px;
+    height: 60px;
+}
+
+.title-item {
+    width: 466px;
+    height: 100px;
+}
+
+.radio-item {
+    width: 466px;
+    height: 140px;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-background {
+    background-color: rgb(36, 36, 36);
+    border-radius: 70px;
+    width: 92%;
+    height: 130px;
+}
+
+.tips {
+    margin-top: -60px;
+    height: 200px;
+    width: 360px;
+    font-size: 38px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 46px;
+}
+
+.tips-item {
+    width: 466px;
+    height: 300px;
+    justify-content: center;
+}

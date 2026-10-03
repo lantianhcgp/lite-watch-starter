@@ -1,0 +1,121 @@
+@import '../../common/animation.css';
+
+.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ff2b2b2b;
+}
+
+.list {
+    width: 330px;
+    height: 100%;
+    background-color: #ff2b2b2b;
+}
+
+.title {
+    font-size: 38px;
+    text-align: center;
+    width: 100%;
+}
+
+.title-item {
+    width: 100%;
+    height: 80px;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.radio-item {
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.select-text {
+    font-size: 38px;
+    width: 233px;
+    text-align: center;
+    margin-left: 40px;
+}
+
+.empty-item {
+    width: 100%;
+    height: 60px;
+}
+
+.radio {
+    width: 150px;
+    height: 100px;
+}
+
+.select_item {
+    width: 345px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.select_container {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    border-color: dimgray;
+    background-color: transparent;
+}
+
+.add {
+    background-image: url('common/add.png')
+}
+
+.random {
+    background-image: url('common/random.png');
+}
+
+.ok {
+    background-image: url('common/ok.png');
+}
+
+.select_text {
+    font-size: 30px;
+}
+
+.toast_container {
+    height: 80px;
+    top: 188px;
+    background-color: #fa404040;
+    border-radius: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ani {
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+/*
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}*/

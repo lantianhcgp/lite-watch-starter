@@ -1,0 +1,16 @@
+<stack class="container">
+    <div class="container" if="{{ main_if }}">
+        <image src="/common/icon.png" class="icon"></image>
+    </div>
+    <div class="container" if="{{ error_if }}">
+        <text class="title">致命错误</text>
+        <text class="error-text">系统设置的年份超过应用可以接收的范围，禁止进入！</text>
+        <input type="button" class="button" value="退出应用" onclick="exit"></input>
+    </div>
+    <div class="container" if="{{ private_if }}">
+        <text class="title">隐私政策</text>
+        <text class="private-text">本应用由个人开发者周俊阳开发。本应用不会收集您的任何个人信息，数据均在手表本地处理。点击同意即可开始使用。</text>
+        <button type="capsule" value="同意" class="agree" @click="agree"></button>
+        <button type="capsule" value="不同意" class="disagree" @click="exit"></button>
+    </div>
+</stack>

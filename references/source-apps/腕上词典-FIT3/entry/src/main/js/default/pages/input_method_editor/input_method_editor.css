@@ -1,0 +1,343 @@
+.container {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-item {
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-size: 30px;
+    margin-left: 51px;
+}
+
+.title-time {
+    font-size: 30px;
+    margin-right: 51px;
+}
+
+.tips-container {
+    width: 100%;
+    height: 424px;
+    margin-top: 42px;
+    background-color: #cc000000;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tips-button {
+    width: 215px;
+    height: 70px;
+    background-color: dodgerblue;
+    margin-top: 180px;
+}
+
+.stack-container {
+    width: 100%;
+    height: 100%;
+}
+
+.delete-stack {
+    width: 95px;
+    height: 50px;
+}
+
+.words {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.button-container {
+    width: 466px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.button {
+    width: 45px;
+    height: 70px;
+    font-size: 30px;
+    background-color: transparent;
+    border-radius: 0px;
+}
+
+.button:active {
+    background-color: #4dffffff;
+}
+
+.delete-image {
+    width: 51px;
+    height: 34px;
+    left: 300px;
+    top: 390px;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+.case_style {
+    width: 40px;
+    height: 60px;
+    background-color: transparent;
+    background-image: url("common/xiaoxie.png");
+}
+
+.case_style:checked {
+    background-image: url("common/daxie.png");
+}
+
+.change-button {
+    border-radius: 5px;
+    background-color: #3c4043;
+    width: 50px;
+}
+
+.search-button {
+    margin-left: 15px;
+    border-radius: 5px;
+    background-color: #3c4043;
+    width: 110px;
+}
+
+.delete-button {
+    margin-left: 15px;
+    border-radius: 5px;
+    background-color: #3c4043;
+    background-image: url("common/delete_word.png");
+    width: 80px;
+}
+
+.change-button {
+    border-radius: 5px;
+    background-color: #3c4043;
+    width: 50px;
+}
+
+.toast-container {
+    height: 80px;
+    top: 188px;
+    background-color: #fc404040;
+    border-radius: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast-ani {
+    animation-delay: 60ms;
+    animation-duration: 250ms;
+    animation-timing-function: ease-in;
+}
+
+@keyframes appearIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes appearOut {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+.im-container {
+    width: 100%;
+    height: 370px;
+/*    background-color: #262626;*/
+    flex-direction: column;
+}
+
+.im-candidate-list {
+    height: 54px;
+    width: 234px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.im-candidate-item {
+    width: 54px;
+    height: 54px;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.im-bottom-tab-container {
+    width: 100%;
+    height: 72px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 4px;
+}
+
+.im-button-container {
+    width: 100%;
+    height: 67px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.im-sub-container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.im-candidate-full-root-item {
+    width: 100%;
+/*    left: 43px;*/
+    flex-wrap: wrap;
+}
+
+.im-candidate-full-item {
+    width: 98px;
+    height: 70px;
+    font-size: 38px;
+    margin: 2px;
+    text-align: center;
+}
+
+.im-candidate-full-item:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.im-candidate-rotation-box {
+    width: 65px;
+    height: 65px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: white;
+}
+
+.im-candidate-spinner-button:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.im-candidate-text {
+    width: 54px;
+    height: 54px;
+    font-size: 38px;
+    text-overflow: ellipsis;
+    background-color: transparent;
+}
+
+.im-candidate-text:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.im-button {
+    background-color: transparent;
+    width: 38px;
+    height: 76px;
+    margin: 1px;
+    font-size: 38px;
+    font-family: HarmonyOSCondensed-Regular;
+/*    font-family: RobotoCondensed-Regular;*/
+}
+
+.im-button:active {
+    background-color: #80383838;
+}
+
+.im-tab-button {
+    width: 66px;
+    height: 66px;
+    padding-top: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.im-tab-button:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.im-tab-button-language-container {
+    width: 120px;
+    height: 60px;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.im-tab-button-language {
+    margin-top: 3px;
+    margin-right: 10px;
+    width: 48px;
+    height: 48px;
+}
+
+/*.edit-main-title {*/
+/*    width: 100%;*/
+/*    height: 30px;*/
+/*    margin-top: 12px;*/
+/*    text-align: center;*/
+/*    font-size: 26px;*/
+/*}*/
+
+.edit-text {
+    width: 374px;
+    height: 40px;
+    font-family: HarmonyOSCondensed-Regular;
+    text-align: right;
+    margin-left: 16px;
+}
+
+.edit-text-caret {
+    height: 32px;
+    width: 2px;
+    margin-top: 2px;
+    background-color: white;
+    animation-name: caretAni;
+    animation-duration: 800ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    direction: alternate;
+}
+
+.button-with-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.im-none {
+    width: 0px;
+    height: 0px;
+}
+
+.edit-text-container {
+    width: 100%;
+    height: 64px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+@keyframes caretAni {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}

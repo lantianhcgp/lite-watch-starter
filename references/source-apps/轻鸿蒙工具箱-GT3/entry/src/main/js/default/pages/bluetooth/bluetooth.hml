@@ -1,0 +1,16 @@
+<div class="container animation" onswipe="onswipe">
+    <text class="title">蓝牙设备扫描</text>
+    <input type="button" class="button" value="开始扫描" if="{{ show_scan }}" onclick="scan"></input>
+    <div class="title-tips-container">
+        <progress class="scan-progress" type="arc" percent="25"></progress>
+        <text class="title-tips">{{ scan_state }}</text>
+    </div>
+    <list class="list" ref="list">
+        <list-item class="item" for="{{ content }}">
+            <marquee class="bluetooth-name">{{ content[$idx].addr }}({{ content[$idx].addrType == 0 ? "公共" : "随机" }})</marquee>
+            <marquee class="bluetooth-details">信号强度: {{ content[$idx].rssi }} 发射功率: {{ content[$idx].txpower }}</marquee>
+            <marquee class="bluetooth-details">广播数据: {{ content[$idx].data }}</marquee>
+        </list-item>
+        <list-item class="item"></list-item>
+    </list>
+</div>

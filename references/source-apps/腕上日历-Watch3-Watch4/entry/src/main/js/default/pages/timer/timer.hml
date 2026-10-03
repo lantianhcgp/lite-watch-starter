@@ -1,0 +1,42 @@
+<swiper class="container" vertical="true" loop="false" indicator="false" index="{{ index }}" onchange="indexonchange">
+    <stack class="container">
+        <progress type="arc" class="progress" percent="{{ daytimer }}"></progress>
+        <div class="container">
+            <text class="text">今日 已经过去了</text>
+            <div class="timer-container">
+                <text class="timer">{{ daytimer }}%</text>
+            </div>
+            <text class="percent-text">共计 {{ daytotal }}</text>
+        </div>
+    </stack>
+    <stack class="container">
+        <progress type="arc" class="progress" percent="{{ weektimer }}"></progress>
+        <div class="container">
+            <text class="text">本周 已经过去了</text>
+            <div class="timer-container">
+                <text class="timer">{{ weektimer }}%</text>
+            </div>
+            <text class="percent-text">共计 {{ weektotal }}</text>
+        </div>
+    </stack>
+    <stack class="container">
+        <progress type="arc" class="progress" percent="{{ monthtimer }}"></progress>
+        <div class="container">
+            <text class="text">本月 已经过去了</text>
+            <div class="timer-container">
+                <text class="timer">{{ monthtimer }}%</text>
+            </div>
+            <text class="percent-text">共计 {{ monthtotal }}</text>
+        </div>
+    </stack>
+    <stack class="container">
+        <progress type="arc" class="progress" percent="{{ yeartimer }}"></progress>
+        <div class="container">
+            <text class="text">今年 已经过去了</text>
+            <div class="timer-container">
+                <text class="timer">{{ yeartimer }}%</text>
+            </div>
+            <text class="percent-text">共计 {{ yeartotal }}</text>
+        </div>
+    </stack>
+</swiper>

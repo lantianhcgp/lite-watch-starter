@@ -1,0 +1,11 @@
+<stack class="container" onswipe="onswipe">
+    <div class="container animation">
+        <text class="title">重置应用列表</text>
+        <text class="warning">确定要重置该设备的应用列表吗? 若您的设备出现应用安装却无法找到、应用列表错乱、应用列表显示不正常，可以通过该功能解决。\n警告: 该功能将重置应用排序! 在操作前请谨慎处理。</text>
+        <input type="button" class="button" value="重置" onclick="reset"></input>
+    </div>
+    <div class="toast_container ani" show="{{ toast_show }}" if="{{toast_if}}"
+         style="width : {{ toast_width }} px; left : {{ toast_left }} px; animation-name : {{ ani_name }};">
+        <text class="ani" style="animation-name : {{ ani_name }};">{{ error_text }}</text>
+    </div>
+</stack>

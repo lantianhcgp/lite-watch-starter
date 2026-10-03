@@ -1,0 +1,45 @@
+<stack class="container animation">
+    <list class="container" ref="frequency_list" show="{{ frequency_if }}" onswipe="frequencyswipe">
+        <list-item class="title-item">
+            <text class="title">闪烁频率</text>
+        </list-item>
+        <list-item class="radio-item" for="{{ frequency_content }}">
+            <text class="select-text">{{ $item.object_string }}</text>
+            <input type="radio" class="radio" checked="{{ $item.object_checked }}" name="selectpages"
+                   value="{{ $item.object_name }}" onchange="radio_change($idx)">
+            </input>
+        </list-item>
+        <list-item class="empty-item"></list-item>
+    </list>
+    <div class="container" show="{{ color_if }}" onswipe="colorswipe">
+        <list class="list" ref="color_list">
+            <list-item class="title-item">
+                <text class="title">闪烁颜色</text>
+            </list-item>
+            <list-item class="select_item" style="height : {{ color_list_height + 60 }};">
+                <input class="select_container" grab:click="color_click($idx)" for="{{ color_content }}"
+                       style="background-color : {{ $item.background }};">
+                </input>
+                <input class="select_container add" onclick="replace_select"></input>
+            </list-item>
+        </list>
+    </div>
+    <div class="container" show="{{ select_if }}" onswipe="selectswipe">
+        <list class="list" ref="select_list">
+            <list-item class="title-item">
+                <text class="title">添加颜色</text>
+            </list-item>
+            <list-item class="select_item" style="height : {{ select_list_height + 60 }};">
+                <input class="select_container ok" onclick="ok"></input>
+                <input class="select_container random" onclick="select_random"></input>
+                <input class="select_container" grab:click="select_click($idx)" for="{{ select_content }}"
+                       style="border-width : {{ $item.width }} px; background-color : {{ $item.background }};">
+                </input>
+            </list-item>
+        </list>
+    </div>
+    <div class="toast_container ani" show="{{ toast_show }}" if="{{ toast_if }}"
+         style="width : {{ toast_width }} px; left : {{ toast_left }} px; animation-name : {{ ani_name }};">
+        <text class="ani" style="animation-name : {{ ani_name }};">{{ error_text }}</text>
+    </div>
+</stack>

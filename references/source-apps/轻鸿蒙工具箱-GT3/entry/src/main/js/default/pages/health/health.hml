@@ -1,0 +1,10 @@
+<div class="container animation" onswipe="onswipe">
+    <text class="title">传感器查看</text>
+    <text class="data">步数: {{ steps }} 步</text>
+    <text class="data">气压: {{ pressure }} Pa</text>
+    <text class="data">心率: {{ heartRate }} 次/分</text>
+    <text class="data">加速度X轴: {{ axisX }}</text>
+    <text class="data">加速度Y轴: {{ axisY }}</text>
+    <text class="data">加速度Z轴: {{ axisZ }}</text>
+    <text class="data">当前佩戴状态: {{ onbody }}</text>
+</div>
