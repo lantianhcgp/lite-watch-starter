@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="header">
+        <text class="title">{{ pageTitle }}</text>
+    </div>
+    <list class="form-list" ref="formList">
+        <list-item class="row">
+            <text class="lbl">&#x8bfe;&#x7a0b;</text>
+            <input type="text" class="inp" placeholder="&#x8bfe;&#x7a0b;&#x540d;" value="{{ courseName }}" onchange="onNameInput"></input>
+        </list-item>
+        <list-item class="row">
+            <text class="lbl">&#x6559;&#x5e08;</text>
+            <input type="text" class="inp" placeholder="&#x6559;&#x5e08;&#x540d;" value="{{ teacher }}" onchange="onTeacherInput"></input>
+        </list-item>
+        <list-item class="row">
+            <text class="lbl">&#x661f;&#x671f;</text>
+            <picker-view type="text" range="{{ dayRange }}" selected="{{ dayIndex }}" onchange="onDayChange" class="pick"></picker-view>
+        </list-item>
+        <list-item class="row">
+            <text class="lbl">&#x5f00;&#x59cb;</text>
+            <picker-view type="text" range="{{ periodRange }}" selected="{{ startPeriodIndex }}" onchange="onStartPeriodChange" class="pick"></picker-view>
+        </list-item>
+        <list-item class="row">
+            <text class="lbl">&#x7ed3;&#x675f;</text>
+            <picker-view type="text" range="{{ periodRange }}" selected="{{ endPeriodIndex }}" onchange="onEndPeriodChange" class="pick"></picker-view>
+        </list-item>
+        <list-item class="row">
+            <text class="lbl">&#x5468;&#x6b21;</text>
+            <text if="{{ weekTypeIndex === 0 }}" class="wk-sel">&#x5168;&#x90e8;</text>
+            <text if="{{ weekTypeIndex !== 0 }}" class="wk-btn" @click="onWeekTypeAll">&#x5168;&#x90e8;</text>
+            <text if="{{ weekTypeIndex === 1 }}" class="wk-sel">&#x5355;&#x5468;</text>
+            <text if="{{ weekTypeIndex !== 1 }}" class="wk-btn" @click="onWeekTypeOdd">&#x5355;&#x5468;</text>
+            <text if="{{ weekTypeIndex === 2 }}" class="wk-sel">&#x53cc;&#x5468;</text>
+            <text if="{{ weekTypeIndex !== 2 }}" class="wk-btn" @click="onWeekTypeEven">&#x53cc;&#x5468;</text>
+        </list-item>
+        <list-item class="space"></list-item>
+    </list>
+    <div class="btn-bar">
+        <div class="btn btn-cancel" @click="onCancel">
+            <text class="btn-t">&#x53d6;&#x6d88;</text>
+        </div>
+        <div class="btn btn-save" @click="onSave">
+            <text class="btn-t-s">&#x4fdd;&#x5b58;</text>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{
+  "strings": {
+    "hello": "Hello",
+    "world": "World",
+    "back": "Back",
+    "events": "Events",
+    "no_events": "No events",
+    "add_event": "Add Event",
+    "event_title_placeholder": "Title",
+    "event_time_placeholder": "Time (e.g. 14:00)",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "today": "Today",
+    "week_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
+    "month_names": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  }
+}

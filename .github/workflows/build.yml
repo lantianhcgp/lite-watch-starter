@@ -1,0 +1,77 @@
+name: build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - project: elcton
+            path: "."
+          - project: clan
+            path: clan
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install system deps
+        run: sudo apt-get update && sudo apt-get install -y libgl1-mesa-dev
+
+      # CLT 6.1.1.280：与工程 modelVersion 6.1.1 / faMode 匹配（勿随手升 26.x，老工程形态可能不兼容）
+      - name: Setup HarmonyOS Command Line Tools
+        id: ohos
+        uses: ErBWs/setup-ohos@v2
+        with:
+          version: 6.1.1.280
+          cache: true
+
+      - name: Ensure toolchain on PATH
+        run: |
+          for p in "$HOME/ohos-sdk/command-line-tools/bin" "$HOME/ohos-sdk/command-line-tools/tool/node/bin"; do
+            if [ -d "$p" ]; then echo "$p" >> "$GITHUB_PATH"; fi
+          done
+          if [ -d "$HOME/ohos-sdk/command-line-tools/sdk" ]; then
+            echo "HOS_SDK_HOME=$HOME/ohos-sdk/command-line-tools/sdk" >> "$GITHUB_ENV"
+          fi
+          echo "--- toolchain check ---"
+          command -v hvigorw || true
+          command -v ohpm || true
+
+      - name: Install project dependencies
+        working-directory: ${{ matrix.path }}
+        run: ohpm install --all
+
+      - name: Build unsigned App
+        working-directory: ${{ matrix.path }}
+        run: hvigorw assembleApp --mode project -p product=default -p buildMode=debug --no-daemon --accept-license
+
+      - name: Sanitize packed config.json (Lite schema)
+        run: python3 scripts/clean_config_in_app.py "${{ matrix.path }}"/build/outputs/default/*.app
+
+      - name: Sign (needs certs/app.p7b)
+        run: |
+          mkdir -p dist
+          if [ -f certs/app.p7b ]; then
+            cp -r tools/sign /tmp/sign && cd /tmp/sign
+            npm install --no-audit --no-fund
+            cd -
+            FORCE_P7B_BUNDLE=1 node /tmp/sign/sign-app-to-hap.js "${{ matrix.path }}"/build/outputs/default/*.app certs/app.p7b "dist/${{ matrix.project }}.hap"
+          else
+            echo "certs/app.p7b 不存在 → 本次只交付未签名 .app"
+          fi
+
+      - name: Collect artifacts
+        run: |
+          mkdir -p dist
+          cp "${{ matrix.path }}"/build/outputs/default/*.app dist/ 2>/dev/null || true
+          ls -la dist/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.project }}-${{ github.run_number }}
+          path: dist/
+          if-no-files-found: error

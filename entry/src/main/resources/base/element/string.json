@@ -1,0 +1,16 @@
+﻿{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "schedule module"
+    },
+    {
+      "name": "MainAbility_desc",
+      "value": "course schedule"
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "课程表"
+    }
+  ]
+}

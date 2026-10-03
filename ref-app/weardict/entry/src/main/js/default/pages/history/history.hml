@@ -1,0 +1,46 @@
+<stack class="container" on:swipe="touchmove" >
+    <div class="list" if="true">
+        <div class="title-item">
+            <text class="title">搜索历史</text>
+            <text class="title-time">{{ timeString }}</text>
+        </div>
+        <list class="list" style="height: 430px;" ref="list" @scrolltop="scrollTop" @scrollbottom="scrollBottom">
+            <list-item class="subtitle-item">
+                <div class="subtitle-item">
+                    <text class="title-tips">共{{ totalCount }}条, 最多{{ historyCount }}条</text>
+                </div>
+            </list-item>
+            <list-item class="item" for="{{ content }}" grab:click="showdetails($idx)"
+                       grab:longpress="handleDelete($idx)" style="height: {{ smoothMode ? 120 : 135 }};">
+                <div class="text_container"
+                     style="background-color : {{ RounderBackgroundValue.background }};
+                             border-radius : {{ RounderBackgroundValue.radius }};
+                             height: {{ smoothMode ? 110 : 123 }};">
+                    <text class="word">{{ $item.words }}</text>
+                    <text class="part_mean">{{ $item.showMean }}</text>
+                </div>
+            </list-item>
+            <list-item class="empty-item" if="{{ content.length === 0 }}">
+                <div class="empty-item">
+                    <image src="/common/noresult.png" class="no_result"></image>
+                    <text>暂无搜索记录</text>
+                </div>
+            </list-item>
+            <list-item if="{{ ! (content.length === 0) }}" class="item" style="height : 80px;"></list-item>
+        </list>
+    </div>
+    <div class="dialog-root-container" grab:click="dialogClick" grab:swipe="dialogSwipe" if="{{ showDialog }}">
+        <div class="dialog-container" grab:click="doNotPropagation">
+            <text class="dialog-title">提示</text>
+            <text class="dialog-text">确认删除该单词？</text>
+            <div class="dialog-button-container">
+                <input type="button" style="background-color : #1F71FF;margin-bottom: 10px;" class="dialog-button" grab:click="confirmDelete">删除</input>
+                <input type="button" style="background-color : #242424;color: crimson;" class="dialog-button" grab:click="exitDialog">取消</input>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="justify-content : center; align-items : center; flex-direction : column; background-color : black;" if="{{ showLoading }}">
+        <image style="width : 108px; height : 100px;margin-bottom: 10px;" src="/common/wait.png"></image>
+        <text>正在加载结果</text>
+    </div>
+</stack>

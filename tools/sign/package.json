@@ -1,0 +1,9 @@
+{
+  "name": "elcton-sign",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "jsrsasign": "^11.1.1",
+    "jszip": "^3.10.1"
+  }
+}

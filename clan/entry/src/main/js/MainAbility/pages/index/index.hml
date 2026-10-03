@@ -1,0 +1,21 @@
+<div class="page">
+  <div class="header">
+    <text class="nav" onclick="prevMonth">&lt;</text>
+    <text class="month-title">{{ title() }}</text>
+    <text class="nav" onclick="nextMonth">&gt;</text>
+  </div>
+  <div class="divider"></div>
+  <div class="week-row">
+    <text class="week" for="{{ weekLabels }}">{{$item}}</text>
+  </div>
+  <div class="grid-frame">
+    <div class="grid">
+      <div class="cell" for="{{ grid }}" tid="index" onclick="onPickDay($item)">
+        <text class="num" if="{{ $item.type == 'day' && !(today.year == year && today.month == month && today.day == $item.day) && $item.day != selectedDay }}">{{$item.day}}</text>
+        <text class="num-today" if="{{ $item.type == 'day' && today.year == year && today.month == month && today.day == $item.day && $item.day != selectedDay }}">{{$item.day}}</text>
+        <text class="num-selected" if="{{ $item.type == 'day' && $item.day == selectedDay }}">{{$item.day}}</text>
+      </div>
+    </div>
+  </div>
+  <text class="today-link" onclick="goToday">{{ $t('strings.today') }}</text>
+</div>

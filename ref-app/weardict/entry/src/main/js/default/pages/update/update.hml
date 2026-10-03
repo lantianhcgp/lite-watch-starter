@@ -1,0 +1,57 @@
+<stack class="container">
+    <div class="container" show="{{ isShow.main }}">
+        <div class="title-item">
+            <text class="title">检查更新</text>
+            <text class="title-time">{{ timeString }}</text>
+        </div>
+        <div class="animation-container">
+            <stack class="icon-container" style="border-color: #5EA1FF;">
+                <image class="update-animation-icon" src="/common/update-animation.png"></image>
+            </stack>
+            <text class="update-text">正在检查更新</text>
+        </div>
+    </div>
+    <div class="container" show="{{ isShow.info }}" on:swipe="handleMainSwipe">
+        <div class="title-item">
+            <text class="title">检查更新</text>
+            <text class="title-time">{{ timeString }}</text>
+        </div>
+        <div class="info-container">
+            <div class="icon-container" style="border-color: {{ updateData == -1 ? '#E84026' : (appVersionCode < cloudVersionCode ? '#5EA1FF' : '#64BB5C') }}; margin-top: 30px;">
+                <image class="update-icon" src="/common/update-{{  updateData == -1 ? 'fail' : (appVersionCode < cloudVersionCode ? 'animation' : 'check') }}.png"></image>
+            </div>
+            <text class="update-text">{{ updateData == -1 ? '检查更新失败' : (appVersionCode < cloudVersionCode ? '发现新版本' : '当前已是最新版本') }}</text>
+            <text if="{{ updateData != -1 }}" class="update-text-tips">当前版本: {{ appVersionName }} 最新版本: {{ cloudVersionName }}</text>
+            <text if="{{ updateData == -1 }}" class="update-text-tips">请检查蓝牙连接和手机网络</text>
+            <text if="{{ updateData != -1 }}" @click="handleShowUpdateLog" class="update-text-log">查看更新链接&日志 ></text>
+        </div>
+    </div>
+    <div class="container" show="{{ isShow.log }}" on:swipe="handleLogSwipe">
+        <div class="title-item">
+            <text class="title">更新日志</text>
+            <text class="title-time">{{ timeString }}</text>
+        </div>
+        <div class="info-container" if="{{ updateData[cloudVersionName] == undefined }}">
+            <div class="info-container" style="justify-content: center;">
+                <text class="update-text" style="margin-top: -20px;font-size: 38px;">该版本暂无更新\n链接/日志</text>
+            </div>
+        </div>
+        <list class="info-container" ref="log" if="{{ updateData[cloudVersionName] != undefined }}">
+            <list-item class="update-log-item" style="height: {{ updateLogTextHeight }}">
+                <div class="update-log-item" style="height: {{ updateLogTextHeight }}">
+                    <div style="width: 100%;height: 0px;" ref="topBox"></div>
+                    <text class="update-log-text" style="width: 350px;">{{ updateData[cloudVersionName].updateLog }}</text>
+                    <div style="width: 100%;height: 0px;" ref="bottomBox"></div>
+                </div>
+            </list-item>
+            <list-item class="update-log-item" style="height: 400px;" if="{{ updateData.latest.updateLink != undefined }}">
+                <div class="update-log-item" style="height: 400px;">
+                    <text class="update-log-text">扫描二维码获取更新</text>
+                    <div class="qr-container">
+                        <qrcode class="qrcode" value="{{ updateData.latest.updateLink }}"></qrcode>
+                    </div>
+                </div>
+            </list-item>
+        </list>
+    </div>
+</stack>

@@ -1,0 +1,36 @@
+<div class="page">
+  <div class="date-header">
+    <text class="day-big">{{ day }}</text>
+    <div class="date-meta">
+      <text class="weekday">{{ weekdayLabel() }}</text>
+      <text class="month-name">{{ monthLabel() }}</text>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="events-area">
+    <div class="empty" if="{{events.length == 0}}">
+      <text class="empty-text">{{ $t('strings.no_events') }}</text>
+    </div>
+    <list class="event-list" if="{{events.length > 0}}">
+      <list-item type="item" for="{{events}}" tid="id" class="event-card">
+        <div class="card-row">
+          <text class="card-time">{{$item.time}}</text>
+          <text class="card-title">{{$item.title}}</text>
+          <text class="card-del" onclick="onDelete($idx)">{{ $t('strings.delete') }}</text>
+        </div>
+      </list-item>
+    </list>
+  </div>
+  <text class="add-link" onclick="onAdd">+ {{ $t('strings.add_event') }}</text>
+  <stack class="mask" if="{{showDialog}}">
+    <div class="dialog">
+      <text class="dialog-title">{{ $t('strings.add_event') }}</text>
+      <input class="dialog-input" type="text" value="{{draftTitle}}" placeholder="{{ $t('strings.event_title_placeholder') }}" onchange="onDraftTitleChange"/>
+      <input class="dialog-input" type="text" value="{{draftTime}}" placeholder="{{ $t('strings.event_time_placeholder') }}" onchange="onDraftTimeChange"/>
+      <div class="dialog-actions">
+        <text class="dialog-cancel" onclick="hideDialog">{{ $t('strings.cancel') }}</text>
+        <text class="dialog-save" onclick="onSaveDraft">{{ $t('strings.save') }}</text>
+      </div>
+    </div>
+  </stack>
+</div>

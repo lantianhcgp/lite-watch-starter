@@ -1,0 +1,15 @@
+build/
+.preview/
+.hvigor/
+node_modules/
+oh_modules/
+local.properties
+.idea/
+*.hqw
+.certs-tmp/
+
+# 签名材料永不入库
+*.p12
+*.p7b
+*.cer
+*.csr

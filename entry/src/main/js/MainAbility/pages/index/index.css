@@ -1,0 +1,88 @@
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: #0d0d0d;
+}
+.header-bar {
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.day-label {
+    font-size: 36px;
+    color: #ffffff;
+}
+.date-label {
+    font-size: 22px;
+    color: #6c6c80;
+}
+.course-list {
+    width: 100%;
+    height: 336px;
+    flex-direction: column;
+}
+.item {
+    width: 100%;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+}
+.item-bg {
+    width: 92%;
+    height: 78px;
+    background-color: #1a1a2e;
+    border-radius: 16px;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 18px;
+}
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin-right: 16px;
+}
+.item-name {
+    font-size: 28px;
+    color: #e8e8f0;
+    margin-right: 14px;
+}
+.item-teacher {
+    font-size: 22px;
+    color: #6c6c80;
+    margin-right: 10px;
+}
+.item-time {
+    font-size: 20px;
+    color: #4a4a5e;
+}
+.empty-text {
+    font-size: 26px;
+    color: #4a4a5e;
+}
+.bottom-bar {
+    width: 100%;
+    height: 80px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.nav-btn {
+    width: 150px;
+    height: 52px;
+    background-color: #6c63ff;
+    border-radius: 26px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav-btn-text {
+    font-size: 24px;
+    color: #ffffff;
+}

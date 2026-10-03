@@ -1,0 +1,104 @@
+<stack class="stack-container">
+   <div class="container" @swipe="onswipe">
+      <div class="title-item">
+         <text class="title" @longpress="handleReplaceSearchSettings">查询单词({{search_type.toUpperCase()}})</text>
+         <text class="title-time">{{ timeString }}</text>
+      </div>
+      <div class="edit-text-container">
+         <text class="edit-text">{{ getLeftStr(typeData + inputMethod.chineseCandidateWord).str }}</text>
+         <div class="edit-text-caret"></div>
+      </div>
+
+   <!--Input Method-->
+      <div class="im-container">
+
+      <!--候选词推荐-->
+         <div class="im-sub-container" style="height : 65px; justify-content : center; align-items : center;" grab:swipe="doNotSwipe" show="{{ inputMethod.show.keyboard }}">
+            <div style="background-color : {{ RounderBackgroundValue.background }}; border-radius : {{ RounderBackgroundValue.radius }};width: 56px;height: 54px;margin-right: 2px;align-items: center;justify-content: center;" @click="keyboardReplaceCandidate">
+               <image style="width: 48px;height: 48px;"  src="{{ '/common/image/inputMethod/icon-button-keyboard-' + inputMethod.menuType + '.png'}}"></image>
+            </div>
+            <div class="im-candidate-list">
+               <list class="im-candidate-list" ref="candidate">
+                  <list-item for="{{inputMethod.candidateArr}}" class="im-candidate-item" show="{{ ! ! $item }}">
+                     <input freeze="true" class="im-candidate-text" style="background-color : {{ RounderBackgroundValue.candidateBackground}}; border-radius : {{ RounderBackgroundValue.candidateRadius}}" @click="addCandidate($item)">{{$item}}</input>
+                  </list-item>
+               </list>
+            </div>
+            <div style="background-color : {{ RounderBackgroundValue.searchBackground}}; border-radius : {{ RounderBackgroundValue.searchRadius }};width: 65px;height: 54px;margin-left: 18px; align-items: center;justify-content: center;" @click="search">
+               <image style="width: 40px;height: 40px;" src="/common/image/inputMethod/icon-button-search.png"></image>
+            </div>
+         </div>
+
+      <!--输入法按键-->
+         <div class="im-sub-container" style="height : 201px;
+                 flex-direction : column;" show="{{ inputMethod.show.keyboard }}">
+
+         <!--第一个按键和最后一个按键做特殊化处理-->
+         <!--TODO 这样做影响内存消耗，有无更好解决办法？-->
+            <div class="im-button-container">
+               <input type="button" class="im-button"
+                      value="{{ inputMethod.keyboardLayoutData[0] }}"
+                      @click="addLetter(inputMethod.keyboardLayoutData[0])"></input>
+               <input for="{{ inputMethod.keyboardLayoutDataArr[0] }}" type="button" class="im-button"
+                      value="{{ $item }}" @click="addLetter($item)"></input>
+               <input type="button" class="im-button"
+                      value="{{ inputMethod.keyboardLayoutData[9] }}"
+                      @click="addLetter(inputMethod.keyboardLayoutData[9])"></input>
+            </div>
+
+         <!--第一个按键和最后一个按键做特殊化处理-->
+            <div class="im-button-container">
+               <input type="button" class="im-button" style="width: 43px;"
+                      value="{{ inputMethod.keyboardLayoutData[10] }}"
+                      @click="addLetter(inputMethod.keyboardLayoutData[10])"></input>
+               <input for="{{ inputMethod.keyboardLayoutDataArr[1] }}" type="button"
+                      class="im-button" style="width: 43px;" value="{{ $item }}"
+                      @click="addLetter($item)"></input>
+               <input type="button" class="im-button" style="width: 43px;"
+                      value="{{ inputMethod.keyboardLayoutData[18] }}"
+                      @click="addLetter(inputMethod.keyboardLayoutData[18])"></input>
+            </div>
+
+         <!--第一个按键和最后一个按键做特殊化处理-->
+            <div class="im-button-container">
+               <input type="button" class="im-button" style="width: 58px;"
+                      value="{{ inputMethod.keyboardLayoutData[19] }}"
+                      @click="addLetter(inputMethod.keyboardLayoutData[19])"></input>
+               <input for="{{ inputMethod.keyboardLayoutDataArr[2] }}" type="button"
+                      class="im-button" style="width: 58px;" value="{{ $item }}"
+                      @click="addLetter($item)"></input>
+               <input type="button" class="im-button" style="width: 58px;"
+                      value="{{ inputMethod.keyboardLayoutData[25] }}"
+                      @click="addLetter(inputMethod.keyboardLayoutData[25])"></input>
+            </div>
+         </div>
+
+      <!--候选词-->
+         <list class="im-sub-container" style="height : 370px;" ref="list"
+               show="{{ inputMethod.show.candidate }}"
+               grab:swipe="candidateSwipe">
+            <list-item class="im-candidate-full-root-item"
+                       style="height : {{ Math.ceil(inputMethod.candidateArr.length / 4) * 77 }};">
+               <input freeze="true" class="im-candidate-full-item" style="background-color : {{ RounderBackgroundValue.candidateBackground}}; border-radius : {{ RounderBackgroundValue.candidateRadius}}"
+                      for="{{ inputMethod.show.candidate ? inputMethod.candidateArr : [] }}"
+                      value="{{ $item }}" @click="addCandidate($item)"></input>
+            </list-item>
+         </list>
+
+      <!--底部工具栏-->
+         <div class="im-bottom-tab-container">
+            <div style="background-color : {{ RounderBackgroundValue.background }}; border-radius : {{ RounderBackgroundValue.radius }};width: 67px;height: 54px;margin-right: 4px;align-items: center;justify-content: center;" @click="handleReplaceSearchSettings">
+               <image style="width: 40px;height: 40px;" src="/common/image/inputMethod/icon-button-keyboard-settings.png"></image>
+            </div>
+            <input style="background-color : {{ RounderBackgroundValue.background }}; border-radius : {{ RounderBackgroundValue.radius }};width: 232px;height: 54px;" value="{{ inputMethod.keyboardType}}" @click="switchInputMethodType"></input>
+            <div style="background-color : {{ RounderBackgroundValue.background }}; border-radius : {{ RounderBackgroundValue.radius }};width: 67px;height: 54px;margin-left: 4px;align-items: center;justify-content: center;" @click="deleteLetter" @longpress="deleteAllLetter">
+               <image style="width: 40px;height: 40px;" src="/common/image/inputMethod/icon-button-keyboard-delete.png"></image>
+            </div>
+         </div>
+      </div>
+   </div>
+<!--Toast-->
+   <div class="toast-container" if="{{ toast.show }}" style="width: {{ toast.width }} px; left: {{ toast.left }} px;">
+      <text>{{ toast.text }}</text>
+   </div>
+</stack>

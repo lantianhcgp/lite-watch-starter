@@ -1,0 +1,14 @@
+.page { width:100%; height:100%; background-color:#000000; flex-direction:column; align-items:center; }
+.header { width:100%; height:44px; margin-top:40px; padding-left:20px; padding-right:20px; align-items:center; justify-content:space-between; }
+.nav { font-size:20px; color:#FF3B30; width:36px; height:44px; text-align:center; }
+.month-title { font-size:20px; color:#FFFFFF; }
+.divider { width:60%; height:1px; background-color:#2C2C2E; margin-top:4px; }
+.week-row { width:100%; height:20px; margin-top:6px; padding-left:20px; padding-right:20px; justify-content:space-between; }
+.week { width:13%; font-size:11px; color:#6E6E73; text-align:center; }
+.grid-frame { width:90%; height:210px; margin-top:6px; border-width:1px; border-color:#2C2C2E; border-style:solid; border-radius:18px; padding:6px; }
+.grid { width:100%; height:100%; flex-wrap:wrap; justify-content:space-between; align-content:space-between; }
+.cell { width:13%; height:28px; justify-content:center; align-items:center; }
+.num { font-size:14px; color:#FFFFFF; }
+.num-today { width:28px; height:28px; border-radius:14px; background-color:#FF3B30; font-size:14px; color:#FFFFFF; text-align:center; }
+.num-selected { width:28px; height:28px; border-radius:14px; background-color:#0A84FF; font-size:14px; color:#FFFFFF; text-align:center; }
+.today-link { font-size:14px; color:#FF3B30; margin-top:10px; text-align:center; }

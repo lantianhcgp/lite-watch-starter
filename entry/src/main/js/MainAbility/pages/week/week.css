@@ -1,0 +1,133 @@
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: #0d0d0d;
+}
+.header-bar {
+    width: 100%;
+    height: 56px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.page-title {
+    font-size: 30px;
+    color: #ffffff;
+}
+.week-label {
+    font-size: 22px;
+    color: #6c6c80;
+}
+.day-tabs {
+    width: 100%;
+    height: 52px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #111122;
+}
+.day-tab {
+    width: 44px;
+    height: 36px;
+    background-color: #6c63ff;
+    border-radius: 18px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: 22px;
+    color: #ffffff;
+}
+.day-tab-inactive {
+    width: 44px;
+    height: 36px;
+    background-color: #1a1a2e;
+    border-radius: 18px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: 22px;
+    color: #6c6c80;
+}
+.course-list {
+    width: 100%;
+    height: 280px;
+}
+.item {
+    width: 100%;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+}
+.item-bg {
+    width: 92%;
+    height: 78px;
+    background-color: #1a1a2e;
+    border-radius: 16px;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 18px;
+}
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin-right: 16px;
+}
+.item-name {
+    font-size: 28px;
+    color: #e8e8f0;
+    margin-right: 14px;
+}
+.item-teacher {
+    font-size: 22px;
+    color: #6c6c80;
+    margin-right: 10px;
+}
+.item-time {
+    font-size: 20px;
+    color: #4a4a5e;
+}
+.empty-text {
+    font-size: 26px;
+    color: #4a4a5e;
+}
+.empty-bottom {
+    width: 100%;
+    height: 80px;
+}
+.bottom-bar {
+    width: 100%;
+    height: 72px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.action-btn {
+    height: 48px;
+    border-radius: 24px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.add-btn {
+    width: 48px;
+    background-color: #6c63ff;
+}
+.add-btn-text {
+    font-size: 30px;
+    color: #ffffff;
+}
+.back-btn {
+    width: 100px;
+    background-color: #2a2a3e;
+}
+.back-btn-text {
+    font-size: 24px;
+    color: #e8e8f0;
+}

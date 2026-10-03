@@ -1,0 +1,5 @@
+<stack class="container" on:swipe="onswipe">
+    <image src="/common/app_icon.png" class="icon"></image>
+    <text class="upgrade-text" if="{{ isUpgrading }}">正在更新应用</text>
+    <div class="container animation"></div>
+</stack>

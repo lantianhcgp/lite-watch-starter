@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="header-bar">
+        <text class="page-title">&#x5468;&#x89c6;&#x56fe;</text>
+        <text class="week-label">{{ weekDisplay }}</text>
+    </div>
+    <div class="day-tabs">
+        <text class="day-tab" if="{{ selectedDay === 1 }}" @click="onDaySelect(1)">&#x4e00;</text>
+        <text class="day-tab-inactive" if="{{ selectedDay !== 1 }}" @click="onDaySelect(1)">&#x4e00;</text>
+        <text class="day-tab" if="{{ selectedDay === 2 }}" @click="onDaySelect(2)">&#x4e8c;</text>
+        <text class="day-tab-inactive" if="{{ selectedDay !== 2 }}" @click="onDaySelect(2)">&#x4e8c;</text>
+        <text class="day-tab" if="{{ selectedDay === 3 }}" @click="onDaySelect(3)">&#x4e09;</text>
+        <text class="day-tab-inactive" if="{{ selectedDay !== 3 }}" @click="onDaySelect(3)">&#x4e09;</text>
+        <text class="day-tab" if="{{ selectedDay === 4 }}" @click="onDaySelect(4)">&#x56db;</text>
+        <text class="day-tab-inactive" if="{{ selectedDay !== 4 }}" @click="onDaySelect(4)">&#x56db;</text>
+        <text class="day-tab" if="{{ selectedDay === 5 }}" @click="onDaySelect(5)">&#x4e94;</text>
+        <text class="day-tab-inactive" if="{{ selectedDay !== 5 }}" @click="onDaySelect(5)">&#x4e94;</text>
+        <text class="day-tab" if="{{ selectedDay === 6 }}" @click="onDaySelect(6)">&#x516d;</text>
+        <text class="day-tab-inactive" if="{{ selectedDay !== 6 }}" @click="onDaySelect(6)">&#x516d;</text>
+        <text class="day-tab" if="{{ selectedDay === 7 }}" @click="onDaySelect(7)">&#x65e5;</text>
+        <text class="day-tab-inactive" if="{{ selectedDay !== 7 }}" @click="onDaySelect(7)">&#x65e5;</text>
+    </div>
+    <list class="course-list" ref="courseList">
+        <list-item class="item" for="{{ (idx, item) in dayCourses }}" @click="onCourseClick(item.id)">
+            <div class="item-bg">
+                <div class="status-dot" style="background-color: {{ item.statusColor }};"></div>
+                <text class="item-name">{{ item.name }}</text>
+                <text class="item-teacher">{{ item.teacher }}</text>
+                <text class="item-time">{{ item.timeRange }}</text>
+            </div>
+        </list-item>
+        <list-item class="item" if="{{ isEmpty }}">
+            <div class="item-bg">
+                <text class="empty-text">&#x8fd9;&#x5929;&#x6ca1;&#x6709;&#x8bfe;&#x7a0b;</text>
+            </div>
+        </list-item>
+        <list-item class="empty-bottom"></list-item>
+    </list>
+    <div class="bottom-bar">
+        <div class="action-btn add-btn" @click="onAddClick">
+            <text class="add-btn-text">+</text>
+        </div>
+        <div class="action-btn back-btn" @click="onBack">
+            <text class="back-btn-text">&#x8fd4;&#x56de;</text>
+        </div>
+    </div>
+</div>

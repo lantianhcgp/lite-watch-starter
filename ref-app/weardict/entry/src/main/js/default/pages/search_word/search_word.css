@@ -1,0 +1,49 @@
+._empty {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wait {
+    width: 108px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 38px;
+}
+
+.tips {
+    font-size: 30px;
+    color: rgb(128, 128, 128);
+    margin-top: 10px;
+    color: #FFC83D;
+}
+
+.progress {
+    width: 100%;
+    height: 100%;
+    color: lightskyblue;
+    background-color: transparent;
+    stroke-width: 15px;
+    start-angle: 0;
+    total-angle: 360;
+    animation-duration: 2s;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="header-bar">
+        <text class="day-label">{{ dayName }}</text>
+        <text class="date-label">{{ weekDisplay }}</text>
+    </div>
+    <list class="course-list" ref="courseList">
+        <list-item class="item" for="{{ (idx, item) in todayCourses }}" @click="onCourseClick(item.id)">
+            <div class="item-bg">
+                <div class="status-dot" style="background-color: {{ item.statusColor }};"></div>
+                <text class="item-name">{{ item.name }}</text>
+                <text class="item-teacher">{{ item.teacher }}</text>
+                <text class="item-time">{{ item.timeRange }}</text>
+            </div>
+        </list-item>
+        <list-item class="item" if="{{ isEmpty }}">
+            <div class="item-bg">
+                <text class="empty-text">&#x4eca;&#x5929;&#x6ca1;&#x6709;&#x8bfe;&#x7a0b;</text>
+            </div>
+        </list-item>
+    </list>
+    <div class="bottom-bar">
+        <div class="nav-btn" @click="onWeekViewClick">
+            <text class="nav-btn-text">&#x5468;&#x89c6;&#x56fe;</text>
+        </div>
+    </div>
+</div>

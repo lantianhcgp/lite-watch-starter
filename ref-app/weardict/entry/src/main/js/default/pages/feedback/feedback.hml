@@ -1,0 +1,10 @@
+<div class="container" on:swipe="handleSwipe">
+    <div class="title-item">
+        <text class="title">意见反馈</text>
+        <text class="title-time">{{ timeString }}</text>
+    </div>
+    <div class="qr-container">
+        <qrcode class="qrcode" value="https://docs.qq.com/form/page/DY3NvVVltd3Vka3Fi"></qrcode>
+    </div>
+    <text class="text">推荐使用微信扫码</text>
+</div>

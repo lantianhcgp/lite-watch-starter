@@ -1,0 +1,25 @@
+.animation {
+    animation-name: appear;
+    animation-duration: 250ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+    from {
+        transform: translateX(466px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes disappear {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(466px);
+    }
+}

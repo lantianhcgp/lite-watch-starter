@@ -1,0 +1,24 @@
+.page { width:100%; height:100%; background-color:#000000; flex-direction:column; align-items:center; }
+.date-header { width:100%; height:100px; margin-top:40px; justify-content:center; align-items:center; }
+.day-big { font-size:64px; color:#FFFFFF; }
+.date-meta { width:100%; height:24px; margin-top:2px; justify-content:center; align-items:center; }
+.weekday { font-size:16px; color:#FF3B30; }
+.month-name { font-size:16px; color:#6E6E73; margin-left:8px; }
+.line { width:60%; height:1px; background-color:#2C2C2E; margin-top:4px; }
+.events-area { width:100%; flex-grow:1; margin-top:12px; padding-left:20px; padding-right:20px; }
+.empty { width:100%; height:100%; justify-content:center; align-items:center; }
+.empty-text { font-size:14px; color:#6E6E73; }
+.event-list { width:100%; height:100%; }
+.event-card { width:100%; height:48px; margin-bottom:6px; border-radius:10px; background-color:#1C1C1E; }
+.card-row { width:100%; height:100%; padding-left:12px; padding-right:12px; align-items:center; }
+.card-time { font-size:14px; color:#FF3B30; width:50px; }
+.card-title { font-size:15px; color:#FFFFFF; margin-left:10px; width:50%; }
+.card-del { font-size:12px; color:#6E6E73; margin-left:8px; }
+.add-link { font-size:15px; color:#FF3B30; margin-top:8px; margin-bottom:16px; text-align:center; }
+.mask { width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; }
+.dialog { width:80%; padding:16px; border-radius:14px; background-color:#1C1C1E; flex-direction:column; align-items:center; }
+.dialog-title { font-size:16px; color:#FFFFFF; margin-bottom:12px; }
+.dialog-input { width:100%; height:34px; border-radius:8px; background-color:#2C2C2E; color:#FFFFFF; font-size:14px; margin-bottom:8px; padding:6px; }
+.dialog-actions { width:100%; height:34px; margin-top:6px; justify-content:space-around; align-items:center; }
+.dialog-cancel { font-size:14px; color:#6E6E73; }
+.dialog-save { font-size:14px; color:#0A84FF; }
