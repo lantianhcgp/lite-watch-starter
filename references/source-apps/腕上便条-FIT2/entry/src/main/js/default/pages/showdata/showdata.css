@@ -1,0 +1,94 @@
+.stack-container {
+    width: 336px;
+    height: 480px;
+}
+
+.container {
+    width: 336px;
+    height: 480px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.list {
+    width: 336px;
+    height: 300px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.item {
+    width: 336px;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+}
+
+.data {
+    font-size: 30px;
+    text-align: center;
+    width: 322px;
+    letter-spacing: 2px;
+}
+
+.button-container {
+    width: 336px;
+    height: 55px;
+    margin-top: 8px;
+    justify-content: center;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-size: 38px;
+    margin-top: 50px;
+    width: 320px;
+    text-align: center;
+}
+
+.image-container {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 45px;
+    width: 336px;
+    height: 105px;
+}
+
+.agree {
+    margin-right: 40px;
+    margin-left: 48px;
+    width: 104px;
+    height: 104px;
+    background-color: transparent;
+    background-image: url("common/agree.bin");
+}
+
+.disagree {
+    margin-left: 40px;
+    width: 104px;
+    height: 104px;
+    background-color: transparent;
+    background-image: url("common/disagree.bin");
+}
+
+.button {
+    background-color: #262626;
+    color: #5EA1FF;
+    width: 120px;
+}
+
+.button1 {
+    background-color: #262626;
+    color: #5EA1FF;
+    width: 120px;
+    margin-left: 10px;
+}

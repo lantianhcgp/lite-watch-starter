@@ -1,0 +1,20 @@
+<stack class="stack-container">
+    <div class="container" onswipe="onswipe">
+        <div class="image-container">
+            <input class="add-image" grab:click="addnewcontent"></input>
+            <input class="settings" grab:click="settings"></input>
+        </div>
+        <list class="list" ref="list">
+            <list-item class="number-item" for="{{ content }}" grab:click="showdata($idx)" grab:longpress="onlongpress($idx)">
+                <text class="content-number">{{ $item.rank }}</text>
+                <text class="content-text">{{ $item.data }}</text>
+                <image src="common/right.bin" class="right-image"></image>
+            </list-item>
+            <list-item class="number-item"></list-item>
+        </list>
+    </div>
+    <input type="button" class="exit" if="{{ showranktomuch }}" grab:click="exit"></input>
+    <div class="toast" if="{{ showranktomuch }}">
+        <text class="toast-text">个数已达上限</text>
+    </div>
+</stack>

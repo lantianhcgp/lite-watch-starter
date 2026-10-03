@@ -1,0 +1,160 @@
+.container {
+    width: 336px;
+    height: 466px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.stack-container {
+    width: 336px;
+    height: 466px;
+}
+
+.delete-stack {
+    width: 95px;
+    height: 50px;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 38px;
+    text-align: center;
+}
+
+.data {
+    margin-top: 2px;
+    font-size: 30px;
+    text-align: center;
+    width: 322px;
+    letter-spacing: 2px;
+    height: 50px;
+}
+
+.first-container {
+    width: 336px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.button-container {
+    width: 336px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 12px;
+}
+
+.all-container {
+    width: 336px;
+    height: 350px;
+    flex-direction: column;
+}
+
+.button {
+    width: 10%;
+    height: 55px;
+    font-size: 30px;
+    background-color: transparent;
+    border-radius: 0px;
+}
+
+.button-2 {
+    width: 35px;
+    height: 55px;
+    font-size: 30px;
+    background-color: transparent;
+    border-radius: 0px;
+}
+
+.button:active {
+    background-color: #4dffffff;
+}
+
+.button-2:active {
+    background-color: #4dffffff;
+}
+
+.number-button {
+    width: 40px;
+    height: 55px;
+    font-size: 30px;
+    background-color: transparent;
+    border-radius: 0px;
+}
+
+.english-button {
+    border-radius: 5px;
+    background-color: #3c4043;
+    width: 50px;
+}
+
+.delete-button {
+    margin-left: 15px;
+    border-radius: 5px;
+    background-color: #3c4043;
+    width: 80px;
+}
+
+.delete-image {
+    width: 51px;
+    height: 34px;
+    left: 172px;
+    top: 400px;
+}
+
+.image-container {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 45px;
+    width: 336px;
+    height: 105px;
+}
+
+.text {
+    font-size: 38px;
+    margin-top: 50px;
+    width: 400px;
+    height: 150px;
+    text-align: center;
+}
+
+.agree {
+    margin-right: 30px;
+    margin-left: 68px;
+    width: 104px;
+    height: 104px;
+    background-color: transparent;
+    background-image: url("common/agree.bin");
+}
+
+.disagree {
+    margin-left: 30px;
+    width: 104px;
+    height: 104px;
+    background-color: transparent;
+    background-image: url("common/disagree.bin");
+}
+
+.letters {
+    margin-top: 10px;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.image {
+    margin-top: 10px;
+    width: 45px;
+    height: 50px;
+}
+
+.candidate {
+    margin-top: 15px;
+    font-size: 38px;
+    margin-left: 6px;
+}

@@ -1,0 +1,289 @@
+.container {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 336px;
+    height: 480px;
+}
+
+.title-1 {
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    height: 40px;
+}
+
+
+.title {
+    margin-top: 20px;
+    font-size: 26px;
+    text-align: center;
+    height: 60px;
+}
+
+.main-title {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.title-item {
+    width: 336px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-container {
+    height: 480px;
+    width: 336px;
+}
+
+.item {
+    width: 336px;
+    height: 140px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.settings-text {
+    font-size: 30px;
+}
+
+.right {
+    width: 50px;
+    height: 50px;
+}
+
+.image-container {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 336px;
+    height: 105px;
+}
+
+.image {
+    margin-left: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.agree {
+    margin-right: 40px;
+    margin-left: 48px;
+    width: 104px;
+    background-color: transparent;
+    background-image: url("/common/agree.bin");
+    height: 104px;
+}
+
+.disagree {
+    margin-left: 40px;
+    background-color: transparent;
+    background-image: url("/common/disagree.bin");
+    width: 104px;
+    height: 104px;
+}
+
+.clean_success {
+    width: 336px;
+    height: 80px;
+    top: 193px;
+}
+
+.text-container {
+    width: 180px;
+    height: 95px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.noright {
+    width: 220px;
+}
+
+.text {
+    margin-top: 42px;
+    width: 320px;
+    margin-bottom: 42px;
+    text-align: center;
+}
+
+.text-1 {
+    margin-top: 30px;
+    width: 320px;
+    margin-bottom: 42px;
+    text-align: center;
+}
+
+.lock-tips-text {
+    font-size: 30px;
+    margin-top: 3px;
+    width: 300px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.gray {
+    margin-top: 2px;
+    font-size: 30px;
+    color: gray;
+}
+
+.button-active {
+    margin-top: 10px;
+    width: 200px;
+    height: 60px;
+    background-color: dodgerblue;
+}
+
+.button-inactive {
+    margin-top: 10px;
+    width: 200px;
+    height: 60px;
+    background-color: #262626;
+    color: #ccffffff;
+}
+
+.lock-settings-title {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.number-container {
+    width: 345px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 480px;
+    justify-content: center;
+}
+
+.input-number {
+    width: 92px;
+    height: 92px;
+    background-color: #262626;
+    font-size: 36px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.delete-button {
+    width: 51px;
+    height: 34px;
+    top: 380px;
+    left: 255px;
+    background-color: transparent;
+    border-radius: 0px;
+    background-image: url("common/delete_word.png");
+}
+
+.input-left {
+    margin-left: 0px;
+}
+
+.icon {
+    width: 201px;
+    height: 201px;
+}
+
+.app_name {
+    text-align: center;
+    width: 336px;
+    height: 80px;
+    font-size: 30px;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+.opensource-thanks {
+    letter-spacing: 2px;
+    margin-top: 5px;
+    color: gray;
+}
+
+.help {
+    margin-top: 5px;
+    width: 240px;
+    height: 27px;
+}
+
+.help-title {
+    font-size: 30px;
+    text-align: center;
+    width: 336px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.settings-sub-text {
+    margin-top: 2px;
+    letter-spacing: 1px;
+    color: gray;
+/*    font-size: 24px;*/
+}
+
+.exit {
+    background-color: #66000000;
+    border-radius: 0px;
+    width: 336px;
+    height: 480px;
+}
+
+.exit:active {
+    background-color: #66000000;
+}
+
+.toast {
+    width: 336px;
+    height: 80px;
+    top: 188px;
+    background-color: #fa404040;
+    border-radius: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast-text {
+    letter-spacing: 0px;
+}
+
+.thanks-container {
+    width: 330px;
+    height: 170px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thanks-title {
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.thanks-url {
+    width: 350px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 8px;
+    color: dodgerblue;
+}
+
+.switch {
+    width: 50px;
+    height: 90px;
+}
+
+.qrcode {
+    width: 188px;
+    height: 188px;
+}
+
+.error-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 320px;
+    letter-spacing: 2px;
+}

@@ -1,0 +1,93 @@
+.stack-container {
+    width: 336px;
+    height: 480px;
+}
+
+.container {
+    width: 336px;
+    height: 480px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: black;
+}
+
+.image-container {
+    margin-top: 20px;
+    width: 336px;
+    height: 90px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-image {
+    width: 90px;
+    height: 90px;
+    background-color: transparent;
+    background-image: url("common/add_small.bin");
+}
+
+.list {
+    width: 336px;
+    height: 480px;
+}
+
+.number-item {
+    width: 334px;
+    height: 100px;
+    justify-content: center;
+}
+
+.content-text {
+    text-overflow: ellipsis;
+    text-align: center;
+    width: 180px;
+    font-size: 26px;
+    height: 100px;
+    letter-spacing: 1px;
+}
+
+.content-number {
+    width: 40px;
+}
+
+.settings {
+    margin-left: 15px;
+    width: 90px;
+    background-color: transparent;
+    background-image: url("common/settings_small.bin");
+    height: 90px;
+}
+
+.right-image {
+    margin-top: 25px;
+    width: 56px;
+    height: 56px;
+}
+
+.toast {
+    width: 246px;
+    height: 80px;
+    top: 200px;
+    left: 45px;
+    background-color: #fa404040;
+    border-radius: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast-text {
+    letter-spacing: 0px;
+}
+
+.exit {
+    background-color: #66000000;
+    border-radius: 0px;
+    width: 336px;
+    height: 480px;
+}
+
+.exit:active {
+    background-color: #66000000;
+}

@@ -1,0 +1,151 @@
+.container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.list {
+    width: 100%;
+    height: 100%;
+}
+
+.title_item {
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.empty_item {
+    width: 100%;
+    height: 396px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content_item {
+    width: 100%;
+    height: 120px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.backup_text {
+    width: 268px;
+    margin-left: 60px;
+}
+
+.title {
+    font-size: 38px;
+}
+
+.title_top {
+    margin-top: 30px;
+}
+
+.add_button {
+    width: 152px;
+    height: 152px;
+    background-color: transparent;
+    background-image: url("common/add_big.png");
+}
+
+.add_text {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.image_60px {
+    width: 60px;
+    height: 60px;
+}
+
+.delete_button {
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    background-image: url("common/delete_button.png");
+    margin-left: 10px;
+}
+
+.add_item {
+    width: 100%;
+    height: 100px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.add_small_button {
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    background-image: url("common/add_backup_small.png");
+    background-size: contain;
+    margin-left: 55px;
+}
+
+.add_small_text {
+    font-size: 38px;
+    margin-left: 15px;
+}
+
+.toast_container {
+    height: 80px;
+    top: 193px;
+    background-color: #fa404040;
+    border-radius: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning_text {
+    font-size: 38px;
+    margin-top: 30px;
+    width: 320px;
+    height: 170px;
+    text-align: center;
+}
+
+.agree {
+    margin-right: 40px;
+    margin-left: 48px;
+    width: 104px;
+    height: 104px;
+    background-color: transparent;
+    background-image: url("common/agree.bin");
+}
+
+.disagree {
+    margin-left: 40px;
+    width: 104px;
+    height: 104px;
+    background-color: transparent;
+    background-image: url("common/disagree.bin");
+}
+
+.image_container {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 25px;
+    width: 336px;
+    height: 105px;
+}
+
+.tips_item {
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.tips_text {
+    letter-spacing: 1px;
+    text-align: center;
+}

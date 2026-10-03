@@ -1,0 +1,141 @@
+<stack class="container">
+    <div class="container" onswipe="onswipe" show="{{ showmain }}">
+        <list class="list-container" ref="list">
+            <list-item class="title-item">
+                <text class="main-title">设置</text>
+            </list-item>
+            <list-item class="item">
+                <image src="common/storage.bin" class="image"></image>
+                <div class="text-container noright">
+                    <text class="settings-text">应用已用空间</text>
+                    <text class="settings-sub-text">{{ length }}K</text>
+                </div>
+            </list-item>
+            <list-item class="item" grab:click="backup">
+                <image src="common/backup.bin" class="image"></image>
+                <div class="text-container">
+                    <text class="settings-text">备份</text>
+                </div>
+                <image src="common/right.bin" class="right"></image>
+            </list-item>
+            <list-item class="item" grab:click="lock" if="{{ ! islock }}">
+                <image src="common/lock.bin" class="image"></image>
+                <div class="text-container">
+                    <text class="settings-text">设置密码</text>
+                </div>
+                <image src="common/right.bin" class="right"></image>
+            </list-item>
+            <list-item class="item" grab:click="modify_lock" if="{{ islock }}">
+                <image src="common/lock.bin" class="image"></image>
+                <div class="text-container">
+                    <text class="settings-text">修改密码</text>
+                </div>
+                <image src="common/right.bin" class="right"></image>
+            </list-item>
+            <list-item class="item" grab:click="disable_lock" if="{{ islock }}">
+                <image src="common/lock.bin" class="image"></image>
+                <div class="text-container">
+                    <text class="settings-text">关闭密码</text>
+                </div>
+                <image src="common/right.bin" class="right"></image>
+            </list-item>
+            <list-item class="item" grab:click="alwaysonclick">
+                <image src="common/alwayson.bin" class="image"></image>
+                <div class="text-container" style="width : 180px;">
+                    <text class="settings-text">屏幕常亮</text>
+                    <text class="settings-sub-text" >时长:五分</text>
+                </div>
+                <switch class="switch" checked="{{ alwayson_checked }}"></switch>
+            </list-item>
+            <list-item class="item" grab:click="pinyinclick">
+                <image src="common/pinyin.bin" class="image"></image>
+                <div class="text-container" style="width : 180px;">
+                    <text class="settings-text">默认使用\n中文键盘</text>
+                </div>
+                <switch class="switch" checked="{{ pinyin_checked }}"></switch>
+            </list-item>
+            <list-item class="item" grab:click="clean">
+                <image src="common/clean.bin" class="image"></image>
+                <div class="text-container">
+                    <text class="settings-text">清除数据</text>
+                </div>
+                <image src="common/right.bin" class="right"></image>
+            </list-item>
+            <list-item class="item" grab:click="about">
+                <image src="common/about.bin" class="image"></image>
+                <div class="text-container">
+                    <text class="settings-text">关于</text>
+                </div>
+                <image src="common/right.bin" class="right"></image>
+            </list-item>
+            <list-item class="item" grab:click="sponsor">
+                <image src="common/sponsor.bin" class="image"></image>
+                <div class="text-container">
+                    <text class="settings-text">赞助</text>
+                </div>
+                <image src="common/right.bin" class="right"></image>
+            </list-item>
+            <list-item class="item"></list-item>
+        </list>
+    </div>
+    <div class="container" show="{{ showdelete }}" onswipe="deleteonswipe">
+        <text class="title-1">清除数据</text>
+        <text class="text-1">该操作将删除应用所有保存在手表本地的数据。为保证应用正常运行，清除数据后应用将自动重启。</text>
+        <div class="image-container">
+            <input class="disagree" grab:click="exit"></input>
+            <input class="agree" grab:click="agree"></input>
+        </div>
+    </div>
+    <div class="container" show="{{ showabout }}" onswipe="aboutswipe">
+        <text class="title">关于应用</text>
+        <image src="common/icon.bin" class="icon"></image>
+        <text class="app_name">腕上便条 V{{ versionName }}\n作者@cnoim</text>
+        <text class="opensource-thanks" grab:click="opensourcethanks">开源感谢 ></text>
+    </div>
+    <div class="container" show="{{ showopensource }}" onswipe="opensourceswipe">
+        <text class="title">开源感谢</text>
+        <div class="thanks-container">
+            <text class="thanks-title">LiteWearable_Tools</text>
+            <text class="thanks-url">https://github.com/alone-86/Lite\nWearable_Tools</text>
+        </div>
+        <div class="thanks-container" style="height : 190px;">
+            <text class="thanks-title">LiteWearable_InputMethod</text>
+            <text class="thanks-url">https://github.com/alone-86/LiteWear\nable_InputMethod/</text>
+        </div>
+    </div>
+    <div class="container" grab:swipe="sponsorswipe" show="{{ showsponsor }}">
+        <text class="title">赞助我</text>
+        <text class="error-text" style="text-align : center;">若您喜欢我制作的应用，您可以选择赞助我来让项目更好的发展。</text>
+        <image src="common/sponsor_qrcode.bin" class="qrcode"></image>
+        <text class="error-text" style="text-align : center;">感谢您的支持!</text>
+    </div>
+    <div class="container" grab:swipe="lockswipe" show="{{ showlock }}">
+        <text class="title">设置密码</text>
+        <text class="lock-tips-text">为应用设置密码，有效保护数据安全。</text>
+        <text class="lock-tips-text gray">提示：设置密码并不会加密该应用内的数据，仅作为保护打开策略使用。</text>
+        <input type="button" class="button-active" value="现在设置" grab:click="locksetting"></input>
+        <input type="button" class="button-inactive" value="暂不设置" grab:click="lockexit"></input>
+    </div>
+    <stack class="container" grab:swipe="locksettingswipe" show="{{ showlocksetting }}">
+        <div class="container" show="{{ showlocksetting }}">
+            <text class="lock-settings-title" style="letter-spacing : {{ letter_space }};">{{ lock_tips }}</text>
+            <div class="number-container">
+                <input type="button" grab:click="input('1')" class="input-number input-left" value="1"></input>
+                <input type="button" grab:click="input('2')" class="input-number" value="2"></input>
+                <input type="button" grab:click="input('3')" class="input-number" value="3"></input>
+                <input type="button" grab:click="input('4')" class="input-number input-left" value="4"></input>
+                <input type="button" grab:click="input('5')" class="input-number" value="5"></input>
+                <input type="button" grab:click="input('6')" class="input-number" value="6"></input>
+                <input type="button" grab:click="input('7')" class="input-number input-left" value="7"></input>
+                <input type="button" grab:click="input('8')" class="input-number" value="8"></input>
+                <input type="button" grab:click="input('9')" class="input-number" value="9"></input>
+                <input type="button" grab:click="input('0')" class="input-number input-left" value="0"></input>
+            </div>
+        </div>
+        <input type="button" class="delete-button" grab:click="delete" show="{{ showlocksetting }}"></input>
+    </stack>
+    <input type="button" class="exit" if="{{ show_success }}" grab:click="quit"></input>
+    <div class="toast" if="{{ show_success }}">
+        <text class="toast-text">数据清除成功，\n应用将自动重启</text>
+    </div>
+</stack>

@@ -1,0 +1,14 @@
+<stack class="container" onswipe="onswipe">
+    <div class="container" if="{{ main_if }}">
+        <image src="common/icon.bin" class="icon"></image>
+        <text class="app-name">腕上便条</text>
+    </div>
+    <div class="container" onswipe="onswipe" if="{{ error_if }}">
+        <image src="common/error.bin" class="error"></image>
+        <text class="error-text">致命错误，请尝试重启应用\n相关高级信息：\n错误代码：{{ error_code }}\n错误原因：{{ error_data }}</text>
+    </div>
+    <div class="container" onswipe="onswipe" if="{{ empty_if }}">
+        <input class="add-image" grab:click="addcontent"></input>
+        <text class="add-text" grab:click="addcontent">添加内容</text>
+    </div>
+</stack>

@@ -1,0 +1,46 @@
+{
+  "app": {
+    "vendor": "cnoim",
+    "bundleName": "com.cnoim.wearable12.note",
+    "version": {
+      "code": 21,
+      "name": "1.5.3"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "deviceType": [
+      "liteWearable"
+    ],
+    "abilities": [
+      {
+        "name": "default",
+        "icon": "$media:icon",
+        "label": "$string:entry_MainAbility",
+        "type": "page"
+      }
+    ],
+    "distro": {
+      "moduleType": "entry",
+      "deliveryWithInstall": true,
+      "moduleName": "entry"
+    },
+    "js": [
+      {
+        "pages": [
+          "pages/index/index",
+          "pages/content/content",
+          "pages/showdata/showdata",
+          "pages/keyboard/english/english",
+          "pages/settings/settings",
+          "pages/deletecontent/deletecontent",
+          "pages/keyboard/pinyin/pinyin",
+          "pages/setbrightness/setbrightness",
+          "pages/unlock/unlock",
+          "pages/backup/backup"
+        ],
+        "name": "default"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+<stack class="container">
+    <list class="list" ref="list" show="{{ main_if }}" grab:swipe="main_touchmove">
+        <list-item class="title_item">
+            <text class="title">备份</text>
+        </list-item>
+        <list-item class="content_item" for="{{ content.data }}">
+            <text grab:click="restore($idx)" class="backup_text">{{ $item.backup_name }}</text>
+            <input grab:click="delete_content($idx)" type="button" class="delete_button"></input>
+        </list-item>
+        <list-item class="add_item" if="{{ content_if }}">
+            <input grab:click="add" type="button" class="add_small_button"></input>
+            <text grab:click="add" class="add_small_text">添加备份</text>
+        </list-item>
+        <list-item class="tips_item" if="{{ content_if }}">
+            <text class="tips_text">提示: 设置内的"重\n置数据"，并不会\n删除备份数据。</text>
+        </list-item>
+        <list-item class="content_item" if="{{ content_if }}"></list-item>
+        <list-item class="empty_item" if="{{ empty_if }}">
+            <input grab:click="add" type="button" class="add_button"></input>
+            <text grab:click="add" class="add_text">添加备份</text>
+        </list-item>
+    </list>
+    <div class="container" show="{{ warning_if }}" grab:swipe="warning_touchmove">
+        <text class="title title_top">警告</text>
+        <text class="warning_text">{{ warning_text }}</text>
+        <div class="image_container">
+            <input class="disagree" grab:click="exit"></input>
+            <input class="agree" grab:click="confirm"></input>
+        </div>
+    </div>
+    <div class="toast_container ani" if="{{ show_toast }}"
+         style="width : {{ toast_width }} px; left : {{ toast_left }} px;">
+        <text if="{{ show_toast }}">{{ error_text }}</text>
+    </div>
+</stack>

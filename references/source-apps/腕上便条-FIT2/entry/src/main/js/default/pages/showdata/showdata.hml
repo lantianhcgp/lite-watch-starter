@@ -1,0 +1,24 @@
+<stack class="stack-container">
+    <div class="container" onswipe="onswipe" if="{{ showmian }}">
+        <text class="title">
+            查看数据
+        </text>
+        <list class="list" ref="list">
+            <list-item class="item" style="height : {{ height }} px;">
+                <text class="data">{{ showdata }}</text>
+            </list-item>
+        </list>
+        <div class="button-container">
+            <input type="button" class="button" value="修改" grab:click="changedata"></input>
+            <input type="button" class="button1" value="删除" grab:click="deletedata"></input>
+        </div>
+    </div>
+    <div class="container" onswipe="deleteonswipe" if="{{ showdelete }}">
+        <text class="title">确定删除？</text>
+        <text class="text">数据删除后不可逆，无法恢复数据，请三思。\n确认删除数据？</text>
+        <div class="image-container">
+            <input class="disagree" grab:click="exit"></input>
+            <input class="agree" grab:click="agree"></input>
+        </div>
+    </div>
+</stack>

@@ -1,0 +1,43 @@
+.container {
+    width: 336px;
+    height: 480px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.icon {
+    width: 200px;
+    height: 200px;
+}
+
+.app-name {
+    font-size: 38px;
+    margin-top: 10px;
+}
+
+.error {
+    width: 152px;
+    height: 152px;
+}
+
+.error-text {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 30px;
+    color: #a8ffffff;
+    width: 400px;
+}
+
+.add-image {
+    width: 152px;
+    height: 152px;
+    background-color: transparent;
+    background-image: url("common/add_big.bin");
+}
+
+.add-text {
+    margin-top: 24px;
+    font-size: 30px;
+}

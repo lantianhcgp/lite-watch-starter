@@ -1,0 +1,52 @@
+.stack-container {
+    width: 336px;
+    height: 480px;
+}
+
+.container {
+    width: 336px;
+    height: 480px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: black;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 38px;
+    text-align: center;
+    height: 60px;
+}
+
+.list {
+    width: 336px;
+    height: 382px;
+}
+
+.number-item {
+    width: 336px;
+    height: 100px;
+    justify-content: center;
+}
+
+.content-text {
+    text-overflow: ellipsis;
+    text-align: center;
+    width: 180px;
+    font-size: 30px;
+    height: 100px;
+}
+
+.content-number {
+    width: 40px;
+    margin-left: 20px;
+}
+
+.delete {
+    margin-top: 25px;
+    width: 56px;
+    height: 56px;
+    background-color: transparent;
+    background-image: url("common/delete.bin");
+}

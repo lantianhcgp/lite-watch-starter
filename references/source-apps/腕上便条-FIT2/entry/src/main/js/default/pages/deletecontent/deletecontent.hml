@@ -1,0 +1,13 @@
+<stack class="stack-container">
+    <div class="container" onswipe="onswipe">
+        <text class="title">批量删除</text>
+        <list class="list" ref="list">
+            <list-item class="number-item" for="{{ content }}">
+                <text class="content-number">{{ $item.rank }}</text>
+                <text class="content-text">{{ $item.data }}</text>
+                <input class="delete" grab:click="deletedata($idx)"></input>
+            </list-item>
+            <list-item class="number-item"></list-item>
+        </list>
+    </div>
+</stack>
