@@ -1,0 +1,34 @@
+.container {
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+    width: 466px;
+    margin-top: 20px;
+}
+
+.icon {
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+}
+
+.app_name {
+    text-align: center;
+    width: 466px;
+    font-size: 30px;
+    margin-top: 10px;
+    font-family: HarmonyOSCondensed-Regular;
+}
+
+.opensource-thanks {
+    letter-spacing: 1px;
+    margin-top: 5px;
+    color: rgb(128, 128, 128);
+}

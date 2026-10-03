@@ -1,0 +1,157 @@
+.list {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-item {
+    width: 100%;
+    height: 100px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.empty-item {
+    width: 100%;
+    height: 324px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item {
+    width: 100%;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.background {
+    width: 420px;
+    height: 150px;
+}
+
+.title {
+    width: 100%;
+    font-size: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.title-tips {
+    color: rgb(128, 128, 128);
+    font-size: 26px;
+}
+
+.text_container {
+    width: 100%;
+    height: 110px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.word {
+    height: 50px;
+    font-size: 38px;
+    width: 380px;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+.part_mean {
+    height: 40px;
+    width: 240px;
+    color: rgb(128, 128, 128);
+    text-align: center;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+}
+
+.no_result {
+    width: 120px;
+    height: 120px;
+    margin-top: 40px;
+}
+
+.progress {
+    left: 4px;
+    top: 4px;
+    width: 458px;
+    height: 458px;
+    stroke-width: 6px;
+    color: #414141;
+}
+
+.progress-background {
+    color: #bfbfbf;
+    background-color: #414141;
+    start-angle: 60deg;
+    total-angle: 60deg;
+}
+
+.progress-top-foreground {
+    background-color: transparent;
+    start-angle: 60deg;
+    total-angle: 60deg;
+}
+
+.progress-bottom-foreground {
+    background-color: transparent;
+    start-angle: 120deg;
+    total-angle: -60deg;
+}
+
+.slider {
+    width: 0px;
+    height: 0px;
+}
+
+.dialog-root-container {
+    width: 100%;
+    height: 100%;
+    background-color: #80000000;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.dialog-container {
+    width: 100%;
+    height: 250px;
+    border-radius: 50px;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dialog-title {
+    color: black;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.dialog-text {
+    color: black;
+    font-size: 30px;
+    margin-top: 18px;
+}
+
+.dialog-button-container {
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.dialog-button {
+    width: 130px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 10px;
+}

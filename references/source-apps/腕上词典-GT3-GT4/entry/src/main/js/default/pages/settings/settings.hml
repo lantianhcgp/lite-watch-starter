@@ -1,0 +1,245 @@
+<stack class="list">
+    <div class="container loading-container">
+        <image class="wait" src="/common/wait.png"></image>
+        <text class="wait-text">加载中，请稍候</text>
+    </div>
+    <list class="list" ref="list" on:swipe="handleSwipe" if="{{ isShow.Main }}">
+        <list-item class="title-item">
+            <div class="title-item">
+                <text class="title">设置</text>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleReplaceSearchSettings">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">搜索偏好设置</text>
+                </div>
+                <image class="right" src="common/right.png"></image>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleReplaceTheme">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">主题设置</text>
+                </div>
+                <image class="right" src="common/right.png"></image>
+            </div>
+        </list-item>
+        <list-item class="item" @click="switchCount('historyCount')">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">历史记录上限</text>
+                    <text class="settings_tips">{{ historyCount === '关闭' ? '关闭' : (historyCount + ' 条') }}</text>
+                </div>
+                <image class="right" src="common/right.png"></image>
+            </div>
+        </list-item>
+        <list-item class="item" @click="switchCount('chineseCount')">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">中文搜索上限</text>
+                    <text class="settings_tips">{{ chineseCount }} 条</text>
+                </div>
+                <image class="right" src="common/right.png"></image>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleBooleanChange('RounderBackground')">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">卡片背景</text>
+                    <text class="settings_tips">关闭可提升帧率</text>
+                </div>
+                <switch class="switch" checked="{{ RounderBackground }}"></switch>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleBooleanChange('AlwaysOn')">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">屏幕常亮</text>
+                </div>
+                <switch class="switch" checked="{{ AlwaysOn }}"></switch>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleBooleanChange('ScreenOffAlive')" if="{{ !isGt4 }}">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">息屏保活</text>
+                </div>
+                <switch class="switch" checked="{{ ScreenOffAlive }}"></switch>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleBooleanChange('isNeedSaveData')" if="{{ isGt4 }}">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">保存后台</text>
+                </div>
+                <switch class="switch" checked="{{ isNeedSaveData }}"></switch>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleBooleanChange('ShowFeedback')">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">在首页显示\n"意见反馈"</text>
+                </div>
+                <switch class="switch" checked="{{ ShowFeedback }}"></switch>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleCleanHistory">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">清除历史记录</text>
+                </div>
+                <image class="right" src="common/right.png"></image>
+            </div>
+        </list-item>
+        <list-item class="empty-item"></list-item>
+    </list>
+    <list class="list" ref="settings" if="{{ isShow.SearchSettings }}" on:swipe="handleSettingsSwipe">
+        <list-item class="title-item">
+            <div class="title-item">
+                <text class="title">搜索设置</text>
+            </div>
+        </list-item>
+        <list-item class="radio-item" @click="handleChangeDictType('a')">
+            <div class="radio-item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="select-text-container">
+                    <text class="select-text">词库 A</text>
+                    <text class="select-tips">单词详解多，推荐</text>
+                </div>
+                <input type="radio" class="radio" checked="{{ dictType === 0 }}" name="settings"
+                       value="a">
+                </input>
+            </div>
+        </list-item>
+        <list-item class="radio-item" @click="handleChangeDictType('b')">
+            <div class="radio-item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="select-text-container">
+                    <text class="select-text">词库 B</text>
+                    <text class="select-tips">覆盖单词多，备用</text>
+                </div>
+                <input type="radio" class="radio" checked="{{ dictType === 1 }}" name="settings"
+                       value="b">
+                </input>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleBooleanChange('AutoSearch')">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">无结果时自动\n搜索另一词库</text>
+                </div>
+                <switch class="switch" checked="{{ AutoSearch }}"></switch>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleBooleanChange('SaveKeyboardWord')">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">保存键盘输入\n内容</text>
+                </div>
+                <switch class="switch" checked="{{ SaveKeyboardWord }}"></switch>
+            </div>
+        </list-item>
+        <list-item class="item" @click="handleBooleanChange('CleanKeyboardAfterSearch')" if="{{ SaveKeyboardWord }}">
+            <div class="item background" freeze="true"
+                 style="background-color: {{ RounderBackgroundValue.background }};
+                         border-radius: {{ RounderBackgroundValue.radius }};">
+                <div class="text_container">
+                    <text class="settings_text">搜索单词后\n清空输入内容</text>
+                </div>
+                <switch class="switch" checked="{{ CleanKeyboardAfterSearch }}"></switch>
+            </div>
+        </list-item>
+        <list-item class="empty-item"></list-item>
+    </list>
+    <div class="list" if="true">
+        <list class="list" ref="theme" if="{{ isShow.Theme }}" on:swipe="handleThemeSwipe">
+            <list-item class="title-item">
+                <div class="title-item">
+                    <text class="title">主题设置</text>
+                </div>
+            </list-item>
+            <list-item class="theme-item" @click="handleSwitchTheme($idx)" for="{{ colorList }}">
+                <div class="theme-item background" freeze="true"
+                     style="background-color: {{ RounderBackgroundValue.background }};
+                             border-radius: {{ RounderBackgroundValue.radius }};">
+                    <div class="theme-color-background">
+                        <div freeze="true" class="theme-color" style="background-color: {{ $item.value }};">
+                            <text freeze="true" style="color: {{ colorList[$idx].textColor }};" class="theme-color-text">Aa</text>
+                        </div>
+                    </div>
+                    <text freeze="true" class="theme-name">{{ $item.name }}</text>
+                    <input class="theme-radio" type="radio" name="theme" value="{{ $item.name }}" checked="{{ $item.checked }}"></input>
+                </div>
+            </list-item>
+            <list-item class="theme-preview">
+                <div class="theme-preview">
+                    <text class="theme-preview-title">主题预览</text>
+                    <div class="theme-preview-container" style="background-color: {{ colorList[themeIndex].value }};">
+                        <text style="color: {{ colorList[themeIndex].textColor }};" class="theme-preview-text theme-preview-chinese">花朵豔麗終散落，誰人世間能長久。今日翻過高山嶺，醉生夢死不再有。</text>
+                        <text style="color: {{ colorList[themeIndex].textColor }}; font-family: {{ 'HarmonyOSCondensed-Regular' }};" class="theme-preview-text theme-preview-english">The quick brown fox jumps over the lazy dog.</text>
+                    </div>
+                </div>
+            </list-item>
+        </list>
+    </div>
+    <stack class="container" if="{{ isShow.chineseCount }}" on:swipe="countSwipe">
+        <div class="container">
+            <text class="title" style="margin-top: 30px;">设置上限值</text>
+            <text class="title-tips">值越低，性能越好</text>
+            <picker-view style="font-family: {{ isGt4 ? 'HarmonyOSHans-Medium' : 'HarmonyOSCondensed-Regular' }};
+                    selected-font-family: {{ isGt4 ? 'Harmony-Bold' : 'HarmonyOSCondensed-Regular' }}" class="select-view" ref="chineseCount"
+                         type="text" range="{{ chineseRange }}"
+                         selected="{{ defaultIndex }}" @change="selectChange">
+            </picker-view>
+            <input type="button" class="button" value="确定" @click="confirmSelect"></input>
+        </div>
+        <image src="/common/top_shadow.png" class="shadow" style="top: 105px;"></image>
+        <image src="/common/bottom_shadow.png" class="shadow" style="top: 285px;"></image>
+    </stack>
+    <stack class="container" if="{{ isShow.historyCount }}" on:swipe="countSwipe">
+        <div class="container">
+            <text class="title" style="margin-top: 30px;">设置上限值</text>
+            <text class="title-tips">值越低，性能越好</text>
+            <picker-view style="font-family: {{ isGt4 ? 'HarmonyOSHans-Medium' : 'HarmonyOSCondensed-Regular' }};
+                    selected-font-family: {{ isGt4 ? 'Harmony-Bold' : 'HarmonyOSCondensed-Regular' }}" class="select-view" ref="historyCount"
+                         type="text" range="{{ historyRange }}"
+                         selected="{{ defaultIndex }}" @change="selectChange">
+            </picker-view>
+            <input type="button" class="button" value="确定" @click="confirmSelect"></input>
+        </div>
+        <image src="/common/top_shadow.png" class="shadow" style="top: 105px;"></image>
+        <image src="/common/bottom_shadow.png" class="shadow" style="top: 285px;"></image>
+    </stack>
+<!--Toast-->
+    <div class="toast-container" if="{{ toast.show }}" style="width: {{ toast.width }} px; left: {{ toast.left }} px;">
+        <text>{{ toast.text }}</text>
+    </div>
+</stack>
+

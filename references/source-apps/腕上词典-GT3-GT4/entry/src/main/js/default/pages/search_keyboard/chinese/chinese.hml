@@ -1,0 +1,90 @@
+<stack class="stack-container">
+    <div class="container" onswipe="onswipe">
+        <text class="title" @longpress="handleReplaceSearchSettings">查询单词({{type}})</text>
+        <text class="data">{{ type_data }}</text>
+        <div class="all-container">
+            <div class="first-container">
+                <text class="letters">{{ letters }}:</text>
+                <image src="common/left.bin" class="image" onclick="last" style="opacity : {{ left }};"></image>
+                <text class="candidate" onclick="addcandidate({{ words[wordsPageIndex] }})">{{ words[wordsPageIndex] }}
+                </text>
+                <text class="candidate" onclick="addcandidate({{ words[wordsPageIndex + 1] }})">
+                    {{ words[wordsPageIndex + 1] }}</text>
+                <text class="candidate" onclick="addcandidate({{ words[wordsPageIndex + 2] }})">
+                    {{ words[wordsPageIndex + 2] }}</text>
+                <text class="candidate" onclick="addcandidate({{ words[wordsPageIndex + 3] }})">
+                    {{ words[wordsPageIndex + 3] }}</text>
+                <text class="candidate" onclick="addcandidate({{ words[wordsPageIndex + 4] }})">
+                    {{ words[wordsPageIndex + 4] }}</text>
+                <image src="common/right.bin" class="image" onclick="next" style="opacity : {{ right }};"></image>
+            </div>
+            <div class="button-container">
+                <input type="button" class="button" value="{{ letterarray[0] }}"
+                       onclick="onclick({{ letterarray[0] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[1] }}"
+                       onclick="onclick({{ letterarray[1] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[2] }}"
+                       onclick="onclick({{ letterarray[2] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[3] }}"
+                       onclick="onclick({{ letterarray[3] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[4] }}"
+                       onclick="onclick({{ letterarray[4] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[5] }}"
+                       onclick="onclick({{ letterarray[5] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[6] }}"
+                       onclick="onclick({{ letterarray[6] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[7] }}"
+                       onclick="onclick({{ letterarray[7] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[8] }}"
+                       onclick="onclick({{ letterarray[8] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[9] }}"
+                       onclick="onclick({{ letterarray[9] }})"></input>
+            </div>
+            <div class="button-container">
+                <input type="button" class="button" value="{{ letterarray[10] }}"
+                       onclick="onclick({{ letterarray[10] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[11] }}"
+                       onclick="onclick({{ letterarray[11] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[12] }}"
+                       onclick="onclick({{ letterarray[12] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[13] }}"
+                       onclick="onclick({{ letterarray[13] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[14] }}"
+                       onclick="onclick({{ letterarray[14] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[15] }}"
+                       onclick="onclick({{ letterarray[15] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[16] }}"
+                       onclick="onclick({{ letterarray[16] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[17] }}"
+                       onclick="onclick({{ letterarray[17] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[18] }}"
+                       onclick="onclick({{ letterarray[18] }})"></input>
+            </div>
+            <div class="button-container">
+                <input type="button" class="button" value="{{ letterarray[19] }}"
+                       onclick="onclick({{ letterarray[19] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[20] }}"
+                       onclick="onclick({{ letterarray[20] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[21] }}"
+                       onclick="onclick({{ letterarray[21] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[22] }}"
+                       onclick="onclick({{ letterarray[22] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[23] }}"
+                       onclick="onclick({{ letterarray[23] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[24] }}"
+                       onclick="onclick({{ letterarray[24] }})"></input>
+                <input type="button" class="button" value="{{ letterarray[25] }}"
+                       onclick="onclick({{ letterarray[25] }})"></input>
+            </div>
+            <div class="button-container">
+                <input type="button" class="english-button" value="英" grab:click="change"></input>
+                <input type="button" class="search-button" value="查询" grab:click="search"></input>
+                <input type="button" class="delete-button" onclick="delete" onlongpress="deleteall"></input>
+            </div>
+        </div>
+    </div>
+<!--Toast-->
+    <div class="toast-container" if="{{ toast.show }}" style="width: {{ toast.width }} px; left: {{ toast.left }} px;">
+        <text>{{ toast.text }}</text>
+    </div>
+</stack>

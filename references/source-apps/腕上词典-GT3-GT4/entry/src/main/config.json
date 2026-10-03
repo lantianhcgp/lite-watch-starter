@@ -1,0 +1,48 @@
+{
+  "app": {
+    "vendor": "yukino",
+    "bundleName": "com.yukino.dict.test",
+    "version": {
+      "code": 34,
+      "name": "6.4.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "deviceType": [
+      "liteWearable"
+    ],
+    "abilities": [
+      {
+        "name": "default",
+        "icon": "$media:icon",
+        "label": "$string:entry_MainAbility",
+        "type": "page"
+      }
+    ],
+    "distro": {
+      "moduleType": "entry",
+      "deliveryWithInstall": true,
+      "moduleName": "entry"
+    },
+    "js": [
+      {
+        "pages": [
+          "pages/index/index",
+          "pages/search_keyboard/english/english",
+          "pages/settings/settings",
+          "pages/about/about",
+          "pages/history/history",
+          "pages/wordbook/wordbook",
+          "pages/home/home",
+          "pages/thanks/thanks",
+          "pages/search_word/search_word",
+          "pages/show_word/show_word",
+          "pages/update/update",
+          "pages/feedback/feedback"
+        ],
+        "name": "default"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+<stack class="list">
+    <list class="list" on:swipe="onswipe" ref="list">
+        <list-item class="title-item">
+            <div class="title-item">
+                <text class="title">腕上词典</text>
+            </div>
+        </list-item>
+        <list-item class="item" for="{{ list }}" @click="$item.click">
+            <div class="item background" style="background-color : {{ RounderBackgroundValue.background }}; border-radius : {{ RounderBackgroundValue.radius }};">
+                <image class="icon" src="{{ $item.icon }}"></image>
+                <text class="text">{{ $item.name }}</text>
+                <image class="right_image" src="/common/right.png"></image>
+            </div>
+        </list-item>
+        <list-item class="empty-item"></list-item>
+    </list>
+</stack>

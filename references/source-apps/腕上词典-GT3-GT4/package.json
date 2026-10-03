@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "array-flat-polyfill": "^1.0.1",
+    "co": "^4.6.0"
+  }
+}

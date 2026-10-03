@@ -1,0 +1,344 @@
+.container {
+    width: 466px;
+    height: 466px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tips-container {
+    width: 100%;
+    height: 424px;
+    margin-top: 42px;
+    background-color: #cc000000;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tips-button {
+    width: 215px;
+    height: 70px;
+    background-color: dodgerblue;
+    margin-top: 180px;
+}
+
+.stack-container {
+    width: 466px;
+    height: 466px;
+}
+
+.delete-stack {
+    width: 95px;
+    height: 50px;
+}
+
+.title {
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.words {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.button-container {
+    width: 466px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.button {
+    width: 45px;
+    height: 70px;
+    font-size: 30px;
+    background-color: transparent;
+    border-radius: 0px;
+}
+
+.button:active {
+    background-color: #4dffffff;
+}
+
+.delete-image {
+    width: 51px;
+    height: 34px;
+    left: 300px;
+    top: 390px;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+.case_style {
+    width: 40px;
+    height: 60px;
+    background-color: transparent;
+    background-image: url("common/xiaoxie.png");
+}
+
+.case_style:checked {
+    background-image: url("common/daxie.png");
+}
+
+.change-button {
+    border-radius: 5px;
+    background-color: #3c4043;
+    width: 50px;
+}
+
+.search-button {
+    margin-left: 15px;
+    border-radius: 5px;
+    background-color: #3c4043;
+    width: 110px;
+}
+
+.delete-button {
+    margin-left: 15px;
+    border-radius: 5px;
+    background-color: #3c4043;
+    background-image: url("common/delete_word.png");
+    width: 80px;
+}
+
+.change-button {
+    border-radius: 5px;
+    background-color: #3c4043;
+    width: 50px;
+}
+
+.toast-container {
+    height: 80px;
+    top: 188px;
+    background-color: #fc404040;
+    border-radius: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast-ani {
+    animation-delay: 60ms;
+    animation-duration: 250ms;
+    animation-timing-function: ease-in;
+}
+
+@keyframes appearIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes appearOut {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+.im-container {
+    width: 100%;
+    height: 370px;
+    background-color: #262626;
+    flex-direction: column;
+}
+
+.im-candidate-list {
+    height: 65px;
+    width: 320px;
+    flex-direction: row;
+    background-color: transparent;
+}
+
+.im-bottom-tab-container {
+    width: 100%;
+    height: 72px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 4px;
+}
+
+.im-button-container {
+    width: 100%;
+    height: 78px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.im-sub-container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.im-candidate-full-root-item {
+    width: 380px;
+    left: 43px;
+    flex-wrap: wrap;
+}
+
+.im-candidate-full-item {
+    width: 90px;
+    height: 70px;
+    font-size: 38px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.im-candidate-full-item:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.im-candidate-rotation-box {
+    width: 65px;
+    height: 65px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: white;
+}
+
+.im-candidate-spinner-button {
+    width: 56px;
+    height: 60px;
+    margin-left: 6px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/common/image/inputMethod/icon-button-keyboard-spinner.png");
+}
+
+.im-candidate-spinner-button:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.im-candidate-item {
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+}
+
+.im-candidate-text {
+    width: 65px;
+    height: 65px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    font-size: 38px;
+    text-overflow: ellipsis;
+}
+
+.im-candidate-text:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.im-button {
+    background-color: #383838;
+    width: 45px;
+    height: 76px;
+    margin-left: 2px;
+    font-size: 38px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: #66000000;
+    font-family: HarmonyOSCondensed-Regular;
+/*    font-family: RobotoCondensed-Regular;*/
+}
+
+.im-button:active {
+    background-color: #80383838;
+}
+
+.im-tab-button {
+    width: 66px;
+    height: 66px;
+    padding-top: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.im-tab-button:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.im-tab-button-language-container {
+    width: 120px;
+    height: 60px;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.im-tab-button-language {
+    margin-top: 3px;
+    margin-right: 10px;
+    width: 48px;
+    height: 48px;
+}
+
+.edit-main-title {
+    width: 100%;
+    height: 30px;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 26px;
+}
+
+.edit-text {
+    width: 260px;
+    height: 40px;
+    text-align: right;
+    margin-left: 60px;
+}
+
+.edit-text-caret {
+    height: 32px;
+    width: 2px;
+    margin-top: 2px;
+    background-color: white;
+    animation-name: caretAni;
+    animation-duration: 800ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    direction: alternate;
+}
+
+.button-with-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.im-none {
+    width: 0px;
+    height: 0px;
+}
+
+.edit-text-container {
+    width: 100%;
+    height: 54px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+@keyframes caretAni {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,6 @@
+<div class="container" on:swipe="handleSwipe">
+    <div class="qr-container">
+        <qrcode class="qrcode" value="https://docs.qq.com/form/page/DY3NvVVltd3Vka3Fi"></qrcode>
+    </div>
+    <text class="title">推荐使用微信扫码</text>
+</div>

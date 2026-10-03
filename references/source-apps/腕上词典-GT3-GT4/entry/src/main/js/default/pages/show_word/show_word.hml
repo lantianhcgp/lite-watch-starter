@@ -1,0 +1,73 @@
+<stack class="stack">
+    <div class="empty-container" if="{{ isShow.Loading }}">
+        <image style="width : 108px; height : 100px;margin-bottom: 10px;" src="/common/wait.png"></image>
+        <text style="font-size: 30px;">正在加载结果</text>
+    </div>
+    <div class="list" if="true">
+        <list class="list" ref="main" show="{{ isShow.Main }}" on:swipe="mainSwipe" style="background-color: {{ colorList[themeIndex].value }};">
+            <list-item class="words-symbols-item">
+                <div class="words-symbols-item">
+                    <text class="words" style="color: {{ colorList[themeIndex].textColor }};">{{ dict.words }}</text>
+                </div>
+            </list-item>
+            <list-item class="long-text-item" style="height: {{ inner.longTextHeight + inner.overFlowHeight }}">
+                <div class="long-text-item" style="height: {{ inner.longTextHeight + inner.overFlowHeight }}">
+                    <div style="width: 100%;height: 0px;" ref="topBox"></div>
+                    <text class="part-mean" style="margin-bottom: {{ searchType === 'b' ? 20 : 0 }};color: {{ colorList[themeIndex].textColor }};">{{ dict.part }}{{ dict.mean }}</text>
+                    <text style="color: {{ colorList[themeIndex].textColor }};" class="ex" if="{{ searchType === 'a' }}">例句: {{ dict.ex }}</text>
+                    <text style="color: {{ colorList[themeIndex].textColor }};" class="tran" if="{{ searchType === 'a' }}">翻译: {{ dict.tran }}</text>
+                    <div style="width: 100%;height: 0px;" ref="bottomBox"></div>
+                    <input type="button" class="button bottom" value="查看搜索列表" grab:click="replaceMulti"
+                           if="{{ inner.isMulti }}">
+                    </input>
+                    <input type="button" class="button bottom"
+                           value="{{ inner.isSaved ? '从单词笔记删除单词' : '添加到单词笔记' }}"
+                           grab:click="saveToWordBook">
+                    </input>
+                    <input type="button" class="button" value="在词库 {{ searchType === 'a' ? 'B' : 'A' }} 中搜索"
+                           grab:click="searchAgain">
+                    </input>
+                </div>
+            </list-item>
+            <list-item class="empty-item"></list-item>
+        </list>
+    </div>
+    <div class="empty-container" if="{{ isShow.Empty }}" on:swipe="emptySwipe">
+        <image class="no-result" src="/common/noresult.png"></image>
+        <text>搜索无结果</text>
+    </div>
+    <div class="ani-container" show="{{ !isShow.Loading }}" if="{{ !isShow.Multi }}" style="animation-name: {{ (isShow.Main || isShow.Empty) ? 'appearOut' : '' }};"></div>
+    <div class="multi-result" if="true" show="{{ isShow.Multi }}" on:swipe="multiSwipe">
+        <list class="multi-list" ref="multi">
+            <list-item class="multi-title-item">
+                <div class="multi-title-item">
+                    <text class="multi-title">{{ chineseWord }}</text>
+                    <text class="multi-title-tips">共{{ inner.chineseTotalCount }}条, 最多{{ inner.chineseCount }}条</text>
+                </div>
+            </list-item>
+            <list-item class="multi-item" for="{{ inner.multiContent }}"
+                       grab:click="multiReplace($idx)">
+                <div class="multi-item background"
+                     style="background-color: {{ RounderBackgroundValue.background }};
+                             border-radius: {{ RounderBackgroundValue.radius }};">
+                    <text class="multi-word">{{ $item.words }}</text>
+                    <text class="multi-part-mean">{{ $item.showMean }}</text>
+                </div>
+            </list-item>
+            <list-item class="multi-item" style="width: 100%;" @click="chineseSearchAgain">
+                <div class="multi-item background"
+                     style="flex-direction: row; margin-left: 0px;
+                             background-color: {{ RounderBackgroundValue.background }};
+                             border-radius: {{ RounderBackgroundValue.radius }};">
+                    <text class="multi-word" style="width: 80%;">在词典 {{ searchType == 'a' ? 'B' : 'A' }} 中搜索</text>
+                    <image class="right" src="/common/right.png" style="margin-top: 8px;"></image>
+                </div>
+            </list-item>
+            <list-item class="multi-item" style="height: 80px;"></list-item>
+        </list>
+    </div>
+<!--Toast-->
+    <div class="toast-container" show="{{ toast.show }}" style="width: {{ toast.width }} px; left: {{ toast.left }} px;">
+        <text>{{ toast.text }}</text>
+    </div>
+</stack>

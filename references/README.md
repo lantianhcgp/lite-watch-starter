@@ -15,6 +15,7 @@
 | 目录 | 原始文件 | 系列 | 版本 | 构建体系 | 参考价值 |
 |---|---|---|---|---|---|
 | `Game2048-FIT3/` | 2048 v2.0.4(FIT3,4).zip | FIT3（方形 408x480） | 2.0.4 | **老 gradle hap 插件**（`com.huawei.ohos:hap:3.1.5.0`，compileSdkVersion 5/6）——与本仓库 hvigor 工程**不同代**，勿混用构建脚本 | 单页 2048 完整实现：触摸滑动、状态机、棋盘渲染（`entry/src/main/js/default/pages/index/`）；liteWearable config 样例 |
+| `腕上词典-GT3-GT4/` | 腕上词典6.4.0(GT3+GT4).zip | GT3+GT4 双系列 | 6.4.0 | 老 gradle hap 插件（同 Game2048，勿混用构建脚本） | 12 页完整应用：词库分块加载（dic_*.bin 约 6MB）、中文输入法/键盘、搜索交互——大词库与输入法实现参考 |
 
 ## AI 使用指引
 
