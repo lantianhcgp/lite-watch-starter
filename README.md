@@ -54,6 +54,7 @@ skills/huawei-lite-watch-development/SKILL.md    # Lite Wearable 开发规范（
 |---|---|
 | 课程表（页面/数据/逻辑） | `entry/src/main/js/MainAbility/`（仓库根的 elcton 工程） |
 | 日历 | `clan/entry/src/main/js/MainAbility/` |
+| 参考别人的成品实现 | `references/source-apps/`（如 Game2048-FIT3 单页 2048；注意其 gradle 构建体系勿混用） |
 | 默认课程种子数据 | `entry/src/main/resources/rawfile/default-schedule.json`（demo 数据，可直接换） |
 | 构建后 config 清洗规则 | `scripts/clean_config_in_app.py` |
 | 签名行为 | `tools/sign/sign-app-to-hap.js`（勿改逻辑，见 4 决策） |
@@ -119,6 +120,7 @@ curl -sL -H "Authorization: token $GITHUB_TOKEN" -o app.zip \
 ├── scripts/clean_config_in_app.py   # config.json 五类清洗（就地改 .app）
 ├── tools/sign/                # 纯 JS HAP 签名器（源自 kqakqakqa/hap-sign-utils, MIT）
 ├── certs/                     # 证书占位（实体不入库，见 certs/README.md）
+├── references/                # ★ 第三方参考源码库（GT/FIT 系列命名，见 references/README.md）
 ├── skills/                    # ★ Agent 技能包（见第二节）
 ├── docs/                      # 补充文档
 └── .github/workflows/build.yml      # 双工程矩阵 CI

@@ -1,0 +1,49 @@
+<stack class="container">
+  <div class="container">
+    <div class="layout" grab:swipe="touchMove">
+      <div class="item">
+        <div class="name_bg" grab:click="caiDan">
+          <text class="name">{{ name }}</text>
+        </div>
+        <div class="btn-container" style="margin-right : 7px;" grab:click="click('reset')">
+          <div class="title_bg">
+            <text class="title">分数</text>
+            <text class="scores">{{ score }}</text>
+          </div>
+          <div class="btn">
+            <text style="font-size : 26px;">重来</text>
+          </div>
+        </div>
+        <div class="btn-container" style="margin-right : 24px;" grab:click="exitGame">
+          <div class="title_bg">
+            <text class="title">最高</text>
+            <text class="scores">{{ bestscore }}</text>
+          </div>
+          <div class="btn">
+            <text style="font-size : 26px;">退出</text>
+          </div>
+        </div>
+      </div>
+    </div>
+    <stack class="stack">
+      <div class="tile-wrap" onswipe="onSwipe">
+        <div class="tile" for="{{ tiles }}" style="background-color : {{ $item.backgroundColor }}">
+          <text class="text" style="color : {{ $item.color }};">{{ $item.text }}</text>
+        </div>
+      </div>
+      <div class="subContainer" show="{{ isShow }}">
+        <text class="gameOver">游戏结束</text>
+      </div>
+    </stack>
+  </div>
+  <div class="tips-root-container" if="{{ isShowTips }}" grab:swipe="touchMove">
+    <div class="tips-container">
+      <text class="tips">继续游戏?</text>
+      <div class="tips-btn-container">
+        <input class="tips-btn" type="button" value="继续" grab:click="click('continue')"></input>
+        <input class="tips-btn" type="button" style="margin-left : 20px;" value="重来"
+          grab:click="click('reset')"></input>
+      </div>
+    </div>
+  </div>
+</stack>
