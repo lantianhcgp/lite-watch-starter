@@ -13,13 +13,13 @@ metadata:
 # HarmonyOS Lite Watch CI —— B 方案全链路（已实测装表成功）
 
 仓库 `lantianhcgp/elcton`（private，monorepo）：`elcton/` 课程表在仓库根（path="."）、
-`clan/` 日历在子目录。2026-10-03 首次全链路贯通并真机安装成功。
+`clan/` 日历在子目录、`focus/` 专注计时在子目录（2026-10-03 入仓，三工程矩阵）。2026-10-03 首次全链路贯通并真机安装成功。
 
 ## When to Use
 
 改这两个工程、要出 .hap、排查 CI/签名/装表报错、或要复刻本链路到新仓库时加载。
 
-## 链路（.github/workflows/build.yml，push 触发，matrix 双工程）
+## 链路（.github/workflows/build.yml，push 触发，matrix 三工程：elcton/clan/focus）
 
 ```
 setup-ohos@v2 (CLT 6.1.1.280, cache) → ohpm install --all
