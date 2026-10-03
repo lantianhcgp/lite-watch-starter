@@ -2,11 +2,22 @@
 
 ## 目录
 
+- [全量矩阵（含原图）](#全量矩阵含原图)
 - [使用规则](#使用规则)
+- [CI 换算用法](#ci-换算用法)
 - [已知 JS heap 档位](#已知-js-heap-档位)
 - [屏幕与适配分辨率](#屏幕与适配分辨率)
 - [API 观察](#api-观察)
 - [不确定性](#不确定性)
+
+## 全量矩阵（含原图）
+
+原始截图：`watch-model-matrix-2026-08-16.jpg`（同目录；社区整理 by kqakqakqa，2026.8.16，
+表尾附适配分辨率计算器 desmos 链接）。逐行全量转录（含代号/固件/deviceInfo/存储/WearEngine 列）
+见本 skill 所在仓库的 `references/watch-model-matrix.md`（elcton / lite-watch-starter 双仓均有）。
+
+本页保留三组浓缩视角（heap 档位、分辨率分组、API 观察）与审慎规则；查具体机型的
+代号、固件、存储、WearEngine 版本 → 看全量矩阵。
 
 ## 使用规则
 
@@ -47,6 +58,17 @@
 - GT4/GT5/GT6、FIT3/FIT4、D2 等较新设备原图多显示 target/compatible 为 API 10+，`deviceInfo` 观察值跨 API 11、12、20、21。
 - FIT2、D 等较旧方表原图显示 target/compatible 多为 API 7（带 `?`）。
 - “设备返回的 API 版本”“最高 target”“最高 compatible”不是同一字段，不能互相替代。
+
+## CI 换算用法
+
+- `build-profile.json5` 的 `compatibleSdkVersion`/`targetSdkVersion` 格式 `x.y.z(n)`，
+  n = API 档位；**必须 ≤ 目标机型「最高 compatible」**（本表），否则装表报 40/47。
+- **API10+ 档机型**（GT4/5/6、FIT3/4、D2、Runner2、Ultimate 系）：本仓实测可用
+  `compatibleSdkVersion "4.0.0(10)"` + `targetSdkVersion "6.1.1(24)"`（elcton 仓 FIT3
+  有效期内 Debug 证书装表成功 profile）；编译 SDK 可以新，兼容声明必须落在机型档位内。
+- **老档机型**：GT3 系 API7?、GT2 系 API3、FIT2/D API7 —— `4.0.0(10)` 装不上，
+  需换算更低版本串（未在本仓验证，先真机）。
+- 报安装错误时连带记录「代号 + 固件版本」（本表可查），只报营销型号无法复现。
 
 ## 不确定性
 

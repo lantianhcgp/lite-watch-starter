@@ -4,6 +4,12 @@
 （页面结构、交互逻辑、config 形态）。**版权归各位原作者**，仅供学习参考；
 若有侵权提 issue 即删。
 
+## 机型规格矩阵（华为 Lite 手表）
+
+`watch-model-matrix.md` + 原始截图 `watch-model-matrix-2026-08-16.jpg`（社区整理 by kqakqakqa，
+2026.8.16）：全机型 分辨率/适配分辨率/代号/固件/最高 target+compatible/js heap/存储/WearEngine，
+含 CI 用法（compatibleSdkVersion 上限怎么按机型选）与布局基准说明。做多机型适配先查它。
+
 ## 命名与系列约定
 
 目录名格式：`<应用>-<系列>`。括号里的 **GT / FIT 是华为的不同手表系列**

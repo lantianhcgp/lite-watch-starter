@@ -42,6 +42,11 @@ setup-ohos@v2 (CLT 6.1.1.280, cache) → ohpm install --all
 
 ## FIT3 已验证 config profile（从装成功的包逆向，改动前先对齐）
 
+> 换目标机型先查**机型规格矩阵**（`references/watch-model-matrix.md` + 原图，双仓 references/；
+> skill 侧 `huawei-lite-watch-development/references/device-compatibility.md`）：
+> compatible/target 上限按机型档位选（GT3=API7?、GT2=API3、FIT2/D=API7 都装不上 4.0.0(10)），布局用适配分辨率。
+
+
 ```
 app.apiVersion.compatible = 40000010   # 4.0.0(10) —— 表支持的老 API，新值会 40
 app.apiVersion.target     = 60101024   # 6.1.1(24)
@@ -62,7 +67,7 @@ UTF-8 无 BOM。build-profile 需显式字符串 `"compileSdkVersion": "6.1.1(24
 
 1. `bash ~/.hermes/scripts/ci-wait.sh <仓库目录>` 后台轮询（notify_on_complete，禁长 sleep）
 2. 取 artifact：`curl -L -H "Authorization: token $TOKEN"`（token 在 `~/.git-credentials`，
-   ghp_ 开头；**urllib 跟 302 到 Azure 会 401/403**）；字段 `size_in_bytes` 不是 `size`
+   token 开头；**urllib 跟 302 到 Azure 会 401/403**）；字段 `size_in_bytes` 不是 `size`
 3. 校验：signed.bin 头（`0xBE` + int32 + bundleName）== 内嵌 config 的 bundleName；
    profile 断言（compatible/deviceConfig/versionCode 对照上表）
 4. `cp → /storage/emulated/0/Documents/ → ls -la 验证 → MEDIA: 发用户`（铁律）
