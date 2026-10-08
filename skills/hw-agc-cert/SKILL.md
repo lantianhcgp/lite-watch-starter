@@ -34,7 +34,7 @@ POST cert → 200 满额(3/3) → 自动删最老 → POST cert → 200 ret.code
 | 登录 | proot Alpine 无头 Chromium（CDP 9222）+ 远程视界 `http://127.0.0.1:8777`（手机浏览器实时画面操作，用户亲手登录） |
 | 会话 | cookie + X-HD-CSRF + agcTeamId 三元组 → `session.json`(chmod 600) |
 | 自动化 | 登录自动侦测（3s 轮询 cookie，导出无需通知）；API 401/403 自愈（现场重导重试一次） |
-| 运维 | 一键重启 `bash start_login_ui.sh`；会话看门狗 cron（有效静默、失效才告警） |
+| 运维 | 一键重启 `bash start_login_ui.sh`；会话失效时 API 自愈失败才报错，届时重登一次即可（不做定时探活） |
 
 ## 核心命令
 
