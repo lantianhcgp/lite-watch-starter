@@ -20,8 +20,8 @@ GitHub Actions 链。设计目标：**人类只做两件事（签证书、装表
    - 到 [AGC 控制台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)
      创建应用（名字随意）→ 用该 CSR 签发调试证书 → 下载 `.p7b`
    - 放到仓库 `certs/app.p7b`，commit + push（**这是全链唯一必须人做的事**）
-   - 💡 2026-10 起**证书申请**已可由 Agent 半自动完成（人只做一次登录，见
-     `skills/hw-agc-cert/`）；`.p7b` 下载仍需手动，是下一个自动化目标
+   - 💡 2026-10-08 起**拿证书（含 `.p7b`）已全自动化**：Agent 一次登录后
+     证书 + Provision + `.p7b` 一条龙，见 `skills/hw-agc-cert/`
 3. **push 代码触发 CI**（改不改都行，先空跑一次验证链路）
 4. 等 Actions 变绿（首次约 5 分钟，之后有缓存更快）→ 进 run 的 **Artifacts** 下载
    `elcton-<run>` / `clan-<run>`，里面是 `*-unsigned.app` + **签名好的 `.hap`**

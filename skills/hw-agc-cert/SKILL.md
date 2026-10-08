@@ -14,9 +14,8 @@ metadata:
 
 ## When to Use
 
-- 需要申请/续期华为 AGC 调测证书（`certs/app.p7b` 建档的**前置步骤**）
+- 申请/续期华为 AGC 调测证书，或**全自动生成 `.p7b`**（`certs/app.p7b` 签名材料）
 - 查询证书名额、清单，或遇到「证书满了/要删证书」
-- 注意：`.p7b`（provision）下载**尚未自动化**，是下一个自动化目标；本流程只覆盖证书本体申请
 
 ## 状态（2026-10-08 实测闭环）
 
@@ -24,6 +23,14 @@ metadata:
 
 ```
 POST cert → 200 满额(3/3) → 自动删最老 → POST cert → 200 ret.code=0 → 新证书生成
+```
+
+同日 **p7b 全链闭环**（项目→应用→证书→设备→Provision→下载→公钥校验），
+`.p7b` 不再需要手动下载：
+
+```bash
+python3 agc_cert.py p7b --base <基础名> --app-name <名> --udid <设备>
+# 设备从账号设备库复用已注册设备；缺设备报 205389973 "no device provided"
 ```
 
 ## 架构
@@ -56,6 +63,11 @@ python3 agc_cert.py new-bundle <基础名> [--fresh]         # 随机包名防�
   - `POST /cps/harmony-cert-manage/v1/cert/list` —— 名额/清单
   - `POST /cps/harmony-cert-manage/v1/cert {csr, certName, certType:1}` —— 申请
   - `DELETE /cps/harmony-cert-manage/v1/cert {certIds:[id]}` —— 删除（DELETE 带 JSON 体）
+  - `POST /cpms/project-management-service/v1/projectList`（appList 内嵌）、
+    `POST /cpms/project-management-service/v1/projects`、`POST /amis/app-manage/v1/app` —— 项目/应用
+  - `POST /cps/device-manage/v1/device/list`、`POST /cps/device-manage/v1/device` —— 设备（Provision 必绑）
+  - `GET /cps/provision-manage/v1/provision/list?packageName=…`、
+    `POST|PUT /cps/provision-manage/v1/provision`、`POST …/provision/refresh` —— 档案（取 `provisionFileUrl` 下载）
 
 ## 策略与坑
 
@@ -65,6 +77,8 @@ python3 agc_cert.py new-bundle <基础名> [--fresh]         # 随机包名防�
 - CSR/私钥本地生成（P-256），私钥不出本机
 - `publicKeySha256` 字段编码口径未明（16 种哈希不匹配），不影响申请；.cer 无下载端点
   （建档只用证书 id）
+- 校验 `.p7b`：证书在内容 JSON 的 `development-certificate`（PEM、`\n` 转义），
+  `openssl pkcs7 -print_certs` 只能看到签名链 3 张，**不能**用它判断证书是否配对
 
 ## 安全红线
 
