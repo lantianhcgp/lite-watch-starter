@@ -1,0 +1,107 @@
+/* 取件码键盘页 · FIT3 硬约束：屏 412×484、圆角 R≈105，y≥420 危险区
+ * → 按钮底 ≤410、左右留 ≥24px
+ * 高度预算：header 56 + 显示 56 + 提示 24 + 键盘 4×50+3×6=218 + 底栏 66 = 420
+ * → 底栏起点 354，按钮 52 高 → 按钮底 ≈ 354+53 = 407 ≤410（贴边但合规）
+ * 为留余量：显示区 52、提示 20 → 实际按钮底 ≈ 399 */
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: #0B0E14;
+}
+.header-bar {
+    width: 100%;
+    height: 56px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.title {
+    font-size: 30px;
+    color: #F0F3FA;
+}
+.subtitle {
+    font-size: 17px;
+    color: #99A1B8;
+}
+.display {
+    width: 100%;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.digits {
+    font-size: 36px;
+    color: #F0F3FA;
+    letter-spacing: 6px;
+}
+.hintbox {
+    width: 100%;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.hint {
+    font-size: 15px;
+    color: #d9a441;
+}
+.pad {
+    width: 100%;
+    height: 218px;
+    padding-left: 24px;
+    padding-right: 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.key {
+    width: 116px;
+    height: 50px;
+    background-color: #1F2434;
+    border-radius: 14px;
+    justify-content: center;
+    align-items: center;
+}
+.keytext {
+    font-size: 26px;
+    color: #E8ECF4;
+}
+.bottom-bar {
+    width: 100%;
+    height: 66px;
+    padding-bottom: 12px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.nav-btn {
+    width: 150px;
+    height: 52px;
+    background-color: #6c63ff;
+    border-radius: 26px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav-btn-alt {
+    width: 150px;
+    height: 52px;
+    background-color: #1E2333;
+    border-radius: 26px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav-btn-text {
+    font-size: 24px;
+    color: #E8ECF4;
+}

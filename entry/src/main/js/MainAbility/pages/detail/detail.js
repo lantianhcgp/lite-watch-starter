@@ -15,7 +15,6 @@ export default {
         weekTypeText: '',
         color: '',
         showDeleteConfirm: false,
-        showEdit: false,
         source: 'main'
     },
     onInit: function () {
@@ -35,9 +34,12 @@ export default {
                     default: 'main',
                     success: function (src) {
                         self.source = src;
-                        self.showEdit = (src === 'week');
                         if (cid) {
+                            /* 脏检查：onInit+onShow 连读两次，同 id 跳过第二次
+                             * 全量加载渲染（性能优化 2026-10-10） */
+                            if (self.courseId === cid && self._courseLoaded) { return; }
                             self.courseId = cid;
+                            self._courseLoaded = true;
                             self.loadCourse();
                         }
                     }
@@ -65,12 +67,6 @@ export default {
             }
             page.weekTypeText = wt;
             page.color = COURSE_COLORS[course.colorIndex || 0];
-        });
-    },
-    onEdit: function () {
-        router.push({
-            uri: 'pages/add-course/add-course',
-            params: { mode: 'edit', courseId: this.courseId }
         });
     },
     onDelete: function () {

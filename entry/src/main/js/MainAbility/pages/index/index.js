@@ -42,6 +42,7 @@ export default {
                 var list = [];
                 var now = utils.getCurrentMinutes();
                 var currentIdx = -1;
+                var nextIdx = -1;
                 for (var i = 0; i < courses.length; i++) {
                     var c = courses[i];
                     var startMin = utils.timeToMinutes(c.startTime);
@@ -52,6 +53,8 @@ export default {
                     } else if (now >= startMin) {
                         statusColor = '#ffc107';
                         currentIdx = i;
+                    } else if (nextIdx < 0) {
+                        nextIdx = i;
                     }
                     list.push({
                         id: c.id, name: c.name, teacher: c.teacher,
@@ -60,15 +63,23 @@ export default {
                         statusColor: statusColor
                     });
                 }
+                /* 脏检查：onInit+onShow 会连调两次，数据没变跳过整体重建，
+                 * 避免 Lite 上的重复列表渲染（性能优化 2026-10-10） */
+                var key = JSON.stringify(list);
+                if (self._listKey === key) { return; }
+                self._listKey = key;
                 self.todayCourses = list;
                 self.isEmpty = list.length === 0;
-                if (currentIdx > 0) {
+                /* 上课中滚到当前课；没在上课滚到下一节要上的课（用户需求
+                 * 2026-10-10）；全部上完则不滚 */
+                var target = currentIdx >= 0 ? currentIdx : nextIdx;
+                if (target > 0) {
                     setTimeout(function () {
                         var listRef = self.$refs.courseList;
                         if (listRef && listRef.scrollTo) {
-                            listRef.scrollTo({ index: currentIdx });
+                            listRef.scrollTo({ index: target });
                         }
-                    }, 100);
+                    }, 32);
                 }
             });
         });
@@ -90,6 +101,9 @@ export default {
     },
     onWeekViewClick: function () {
         router.push({ uri: 'pages/week/week' });
+    },
+    onSyncClick: function () {
+        router.push({ uri: 'pages/sync/sync' });
     },
     onSwipe: function (e) {
         if (e.direction === 'right' && e.distance >= 150) { router.back(); }

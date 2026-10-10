@@ -71,9 +71,16 @@ export default {
                     statusColor: statusColor
                 });
             }
+            /* 脏检查：同一天重复 onShow 不重建列表（性能优化 2026-10-10） */
+            var key = self.selectedDay + ':' + JSON.stringify(list);
+            if (self._dayKey === key) { return; }
+            self._dayKey = key;
             self.dayCourses = list;
             self.isEmpty = list.length === 0;
         });
+    },
+    onSyncClick: function () {
+        router.push({ uri: 'pages/sync/sync' });
     },
     onCourseClick: function (courseId) {
         if (!courseId) return;
@@ -81,16 +88,13 @@ export default {
             key: 'nav_courseId',
             value: courseId,
             success: function () {
-                router.push({ uri: 'pages/course-edit/course-edit' });
-            }
-        });
-    },
-    onAddClick: function () {
-        storage.set({
-            key: 'nav_source',
-            value: 'week',
-            success: function () {
-                router.push({ uri: 'pages/add-course/add-course', params: { mode: 'add' } });
+                storage.set({
+                    key: 'nav_source',
+                    value: 'week',
+                    success: function () {
+                        router.push({ uri: 'pages/detail/detail' });
+                    }
+                });
             }
         });
     },

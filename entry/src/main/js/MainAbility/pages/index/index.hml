@@ -6,9 +6,13 @@
     <list class="course-list" ref="courseList">
         <list-item class="item" for="{{ (idx, item) in todayCourses }}" @click="onCourseClick(item.id)">
             <div class="item-bg">
-                <div class="status-dot" style="background-color: {{ item.statusColor }};"></div>
-                <text class="item-name">{{ item.name }}</text>
-                <text class="item-teacher">{{ item.teacher }}</text>
+                <div class="item-left">
+                    <div class="status-dot" style="background-color: {{ item.statusColor }};"></div>
+                    <div class="item-main">
+                        <text class="item-name">{{ item.name }}</text>
+                        <text class="item-teacher">{{ item.teacher }}</text>
+                    </div>
+                </div>
                 <text class="item-time">{{ item.timeRange }}</text>
             </div>
         </list-item>

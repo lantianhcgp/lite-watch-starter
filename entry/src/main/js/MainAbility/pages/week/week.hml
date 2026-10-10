@@ -4,27 +4,31 @@
         <text class="week-label">{{ weekDisplay }}</text>
     </div>
     <div class="day-tabs">
-        <text class="day-tab" if="{{ selectedDay === 1 }}" @click="onDaySelect(1)">&#x4e00;</text>
-        <text class="day-tab-inactive" if="{{ selectedDay !== 1 }}" @click="onDaySelect(1)">&#x4e00;</text>
-        <text class="day-tab" if="{{ selectedDay === 2 }}" @click="onDaySelect(2)">&#x4e8c;</text>
-        <text class="day-tab-inactive" if="{{ selectedDay !== 2 }}" @click="onDaySelect(2)">&#x4e8c;</text>
-        <text class="day-tab" if="{{ selectedDay === 3 }}" @click="onDaySelect(3)">&#x4e09;</text>
-        <text class="day-tab-inactive" if="{{ selectedDay !== 3 }}" @click="onDaySelect(3)">&#x4e09;</text>
-        <text class="day-tab" if="{{ selectedDay === 4 }}" @click="onDaySelect(4)">&#x56db;</text>
-        <text class="day-tab-inactive" if="{{ selectedDay !== 4 }}" @click="onDaySelect(4)">&#x56db;</text>
-        <text class="day-tab" if="{{ selectedDay === 5 }}" @click="onDaySelect(5)">&#x4e94;</text>
-        <text class="day-tab-inactive" if="{{ selectedDay !== 5 }}" @click="onDaySelect(5)">&#x4e94;</text>
-        <text class="day-tab" if="{{ selectedDay === 6 }}" @click="onDaySelect(6)">&#x516d;</text>
-        <text class="day-tab-inactive" if="{{ selectedDay !== 6 }}" @click="onDaySelect(6)">&#x516d;</text>
-        <text class="day-tab" if="{{ selectedDay === 7 }}" @click="onDaySelect(7)">&#x65e5;</text>
-        <text class="day-tab-inactive" if="{{ selectedDay !== 7 }}" @click="onDaySelect(7)">&#x65e5;</text>
+        <div class="day-tab" if="{{ selectedDay === 1 }}" @click="onDaySelect(1)"><text class="day-tab-text">&#x4e00;</text></div>
+        <div class="day-tab-inactive" if="{{ selectedDay !== 1 }}" @click="onDaySelect(1)"><text class="day-tab-text-off">&#x4e00;</text></div>
+        <div class="day-tab" if="{{ selectedDay === 2 }}" @click="onDaySelect(2)"><text class="day-tab-text">&#x4e8c;</text></div>
+        <div class="day-tab-inactive" if="{{ selectedDay !== 2 }}" @click="onDaySelect(2)"><text class="day-tab-text-off">&#x4e8c;</text></div>
+        <div class="day-tab" if="{{ selectedDay === 3 }}" @click="onDaySelect(3)"><text class="day-tab-text">&#x4e09;</text></div>
+        <div class="day-tab-inactive" if="{{ selectedDay !== 3 }}" @click="onDaySelect(3)"><text class="day-tab-text-off">&#x4e09;</text></div>
+        <div class="day-tab" if="{{ selectedDay === 4 }}" @click="onDaySelect(4)"><text class="day-tab-text">&#x56db;</text></div>
+        <div class="day-tab-inactive" if="{{ selectedDay !== 4 }}" @click="onDaySelect(4)"><text class="day-tab-text-off">&#x56db;</text></div>
+        <div class="day-tab" if="{{ selectedDay === 5 }}" @click="onDaySelect(5)"><text class="day-tab-text">&#x4e94;</text></div>
+        <div class="day-tab-inactive" if="{{ selectedDay !== 5 }}" @click="onDaySelect(5)"><text class="day-tab-text-off">&#x4e94;</text></div>
+        <div class="day-tab" if="{{ selectedDay === 6 }}" @click="onDaySelect(6)"><text class="day-tab-text">&#x516d;</text></div>
+        <div class="day-tab-inactive" if="{{ selectedDay !== 6 }}" @click="onDaySelect(6)"><text class="day-tab-text-off">&#x516d;</text></div>
+        <div class="day-tab" if="{{ selectedDay === 7 }}" @click="onDaySelect(7)"><text class="day-tab-text">&#x65e5;</text></div>
+        <div class="day-tab-inactive" if="{{ selectedDay !== 7 }}" @click="onDaySelect(7)"><text class="day-tab-text-off">&#x65e5;</text></div>
     </div>
     <list class="course-list" ref="courseList">
         <list-item class="item" for="{{ (idx, item) in dayCourses }}" @click="onCourseClick(item.id)">
             <div class="item-bg">
-                <div class="status-dot" style="background-color: {{ item.statusColor }};"></div>
-                <text class="item-name">{{ item.name }}</text>
-                <text class="item-teacher">{{ item.teacher }}</text>
+                <div class="item-left">
+                    <div class="status-dot" style="background-color: {{ item.statusColor }};"></div>
+                    <div class="item-main">
+                        <text class="item-name">{{ item.name }}</text>
+                        <text class="item-teacher">{{ item.teacher }}</text>
+                    </div>
+                </div>
                 <text class="item-time">{{ item.timeRange }}</text>
             </div>
         </list-item>
@@ -36,11 +40,11 @@
         <list-item class="empty-bottom"></list-item>
     </list>
     <div class="bottom-bar">
-        <div class="action-btn add-btn" @click="onAddClick">
-            <text class="add-btn-text">+</text>
-        </div>
         <div class="action-btn back-btn" @click="onBack">
             <text class="back-btn-text">&#x8fd4;&#x56de;</text>
+        </div>
+        <div class="action-btn sync-btn" @click="onSyncClick">
+            <text class="sync-btn-text">&#x540c;&#x6b65;</text>
         </div>
     </div>
 </div>

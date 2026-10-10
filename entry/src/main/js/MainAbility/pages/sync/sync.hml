@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="header-bar">
+        <text class="title">&#x540C;&#x6B65;</text>
+        <text class="subtitle">&#x8BFE;&#x8868;</text>
+    </div>
+    <div class="endpoint-bar">
+        <text class="endpoint-text">{{ endpoint }}</text>
+    </div>
+    <list class="probe-list">
+        <list-item class="probe-item" for="{{ (idx, item) in rows }}" @click="onRowClick(idx)">
+            <div class="probe-bg">
+                <text class="probe-name">{{ item.name }}</text>
+                <text class="probe-status" style="color: {{ item.color }};">{{ item.status }}</text>
+            </div>
+        </list-item>
+    </list>
+    <div class="detail-box">
+        <text class="detail-text">{{ detail }}</text>
+    </div>
+    <div class="bottom-bar">
+        <div class="nav-btn-alt" @click="onBack">
+            <text class="nav-btn-text">&#x8FD4;&#x56DE;</text>
+        </div>
+        <div class="nav-btn" @click="onPull">
+            <text class="nav-btn-text">&#x62C9;&#x53D6;&#x8BFE;&#x8868;</text>
+        </div>
+    </div>
+</div>

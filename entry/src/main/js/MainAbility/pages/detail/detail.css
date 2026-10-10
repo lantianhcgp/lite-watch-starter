@@ -2,7 +2,13 @@
     width: 100%;
     height: 100%;
     flex-direction: column;
-    background-color: #0d0d0d;
+    background-color: #0B0E14;
+}
+/* 主内容列：确认框弹出时整列让位（纯 flex 换位，不依赖 position，避免被排到屏幕外） */
+.main {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
 }
 .header-bar {
     width: 100%;
@@ -18,9 +24,10 @@
     width: 100%;
     height: 4px;
 }
+/* 484 - 56(标题) - 4(色条) - 72(底部) = 352：内容正好 72+4*(52+2)+64=352，删除按钮不再被裁 */
 .detail-list {
     width: 100%;
-    height: 340px;
+    height: 352px;
 }
 .detail-name-item {
     width: 100%;
@@ -35,24 +42,28 @@
 .detail-item {
     width: 100%;
     height: 52px;
+    background-color: #171B28;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 2px;
+    border-radius: 12px;
+}
+.detail-row {
+    width: 100%;
+    height: 52px;
     flex-direction: row;
     align-items: center;
     padding-left: 28px;
     padding-right: 28px;
-    background-color: #1a1a2e;
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-bottom: 3px;
-    border-radius: 12px;
 }
 .detail-label {
     font-size: 22px;
-    color: #6c6c80;
+    color: #99A1B8;
     width: 70px;
 }
 .detail-value {
     font-size: 24px;
-    color: #e8e8f0;
+    color: #F0F3FA;
     margin-left: 14px;
 }
 .action-item {
@@ -68,11 +79,8 @@
     justify-content: center;
     align-items: center;
 }
-.edit-btn {
-    background-color: #6c63ff;
-}
 .del-btn {
-    background-color: #ef5350;
+    background-color: #E5484D;
 }
 .action-btn-text {
     font-size: 24px;
@@ -87,14 +95,14 @@
 .back-btn {
     width: 150px;
     height: 48px;
-    background-color: #2a2a3e;
+    background-color: #1E2333;
     border-radius: 24px;
     justify-content: center;
     align-items: center;
 }
 .back-btn-text {
     font-size: 24px;
-    color: #e8e8f0;
+    color: #B9C0D4;
 }
 .overlay {
     width: 100%;
@@ -104,29 +112,35 @@
     align-items: center;
 }
 .dialog {
-    width: 70%;
-    flex-direction: column;
-    background-color: #1a1a2e;
-    border-radius: 20px;
-    padding: 28px;
-    align-items: center;
+  width: 82%;
+  flex-direction: column;
+  background-color: #1a1a2e;
+  border-radius: 22px;
+  height: 180px;
+  padding: 30px;
+  align-items: center;
 }
 .dialog-title {
-    font-size: 28px;
-    color: #e8e8f0;
-    margin-bottom: 24px;
+  font-size: 30px;
+  color: #e8e8f0;
+  margin-bottom: 24px;
+  height: 46px;
 }
 .dialog-row {
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
+  flex-direction: row;
+  width: 258px;
+  justify-content: space-between;
+  height: 50px;
+}
+.dialog-cancel {
+  margin-right: 22px;
 }
 .dialog-btn {
-    width: 40%;
-    height: 48px;
-    border-radius: 24px;
-    justify-content: center;
-    align-items: center;
+  width: 118px;
+  height: 50px;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
 }
 .dialog-cancel {
     background-color: #2a2a3e;
@@ -135,6 +149,7 @@
     background-color: #ef5350;
 }
 .dialog-btn-text {
-    font-size: 24px;
-    color: #ffffff;
+  font-size: 25px;
+  color: #ffffff;
+  height: 40px;
 }

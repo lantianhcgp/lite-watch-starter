@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="header-bar">
+        <text class="title">&#x53D6;&#x4EF6;&#x7801;</text>
+        <text class="subtitle">6 &#x4F4D;&#x6570;&#x5B57;</text>
+    </div>
+    <div class="display">
+        <text class="digits">{{ digits }}</text>
+    </div>
+    <div class="hintbox">
+        <text class="hint">{{ hint }}</text>
+    </div>
+    <div class="pad">
+        <div class="key" for="{{ (idx, item) in keys }}" @click="onKey(idx)">
+            <text class="keytext">{{ item }}</text>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <div class="nav-btn-alt" @click="onCancel">
+            <text class="nav-btn-text">&#x8FD4;&#x56DE;</text>
+        </div>
+        <div class="nav-btn" @click="onOk">
+            <text class="nav-btn-text">&#x786E;&#x5B9A;</text>
+        </div>
+    </div>
+</div>

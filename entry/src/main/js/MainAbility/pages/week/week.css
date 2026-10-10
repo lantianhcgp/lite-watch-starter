@@ -1,8 +1,10 @@
+/* 周视图 · 设计系统 v2（2026-10-10 UI 改版，与首页同一套 token）
+ * 高度预算：header 56 + 日期条 52 + 列表 304 + 底栏 72 = 484（FIT3 满屏） */
 .container {
     width: 100%;
     height: 100%;
     flex-direction: column;
-    background-color: #0d0d0d;
+    background-color: #0B0E14;
 }
 .header-bar {
     width: 100%;
@@ -10,91 +12,110 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 22px;
+    padding-right: 22px;
 }
 .page-title {
-    font-size: 30px;
-    color: #ffffff;
+    font-size: 28px;
+    color: #F0F3FA;
 }
 .week-label {
-    font-size: 22px;
-    color: #6c6c80;
+    font-size: 21px;
+    color: #99A1B8;
 }
+/* 日期条：去通栏底色，7 天靠两端分布，选中紫底、未选纯字——更透气 */
 .day-tabs {
     width: 100%;
     height: 52px;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: #111122;
+    padding-left: 16px;
+    padding-right: 16px;
 }
+/* div 承载背景圆、text 只放文字：真机 text 元素的 flex 居中不生效，
+ * 背景与文字会错位（2026-10-10 用户截图反馈） */
 .day-tab {
     width: 44px;
-    height: 36px;
-    background-color: #6c63ff;
-    border-radius: 18px;
+    height: 38px;
+    background-color: #6C63FF;
+    border-radius: 19px;
     justify-content: center;
     align-items: center;
-    margin-left: 4px;
-    margin-right: 4px;
+}
+.day-tab-text {
     font-size: 22px;
     color: #ffffff;
 }
 .day-tab-inactive {
     width: 44px;
-    height: 36px;
-    background-color: #1a1a2e;
-    border-radius: 18px;
+    height: 38px;
     justify-content: center;
     align-items: center;
-    margin-left: 4px;
-    margin-right: 4px;
+}
+.day-tab-text-off {
     font-size: 22px;
-    color: #6c6c80;
+    color: #626A80;
 }
 .course-list {
     width: 100%;
-    height: 280px;
+    height: 304px;
 }
 .item {
     width: 100%;
-    height: 90px;
+    height: 92px;
     justify-content: center;
     align-items: center;
 }
 .item-bg {
-    width: 92%;
+    width: 372px;
     height: 78px;
-    background-color: #1a1a2e;
+    background-color: #171B28;
     border-radius: 16px;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     padding-left: 18px;
+    padding-right: 18px;
+}
+/* 真机教训链：无显式尺寸的容器一律塌（模拟器测不出）。
+ * 显式：item-bg 372x78 → item-left 210x56 → item-main 186x56 → text 显式高 */
+.item-left {
+    flex-direction: row;
+    align-items: center;
+    width: 210px;
+    height: 56px;
 }
 .status-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
-    margin-right: 16px;
-}
-.item-name {
-    font-size: 28px;
-    color: #e8e8f0;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
     margin-right: 14px;
 }
+.item-main {
+    flex-direction: column;
+    width: 186px;
+    height: 56px;
+    justify-content: center;
+}
+.item-name {
+    font-size: 25px;
+    color: #F0F3FA;
+    height: 30px;
+}
 .item-teacher {
-    font-size: 22px;
-    color: #6c6c80;
-    margin-right: 10px;
+    font-size: 18px;
+    color: #99A1B8;
+    margin-top: 2px;
+    height: 22px;
 }
 .item-time {
-    font-size: 20px;
-    color: #4a4a5e;
+    font-size: 19px;
+    color: #99A1B8;
 }
 .empty-text {
     font-size: 26px;
-    color: #4a4a5e;
+    color: #626A80;
 }
 .empty-bottom {
     width: 100%;
@@ -115,19 +136,19 @@
     margin-left: 10px;
     margin-right: 10px;
 }
-.add-btn {
-    width: 48px;
-    background-color: #6c63ff;
-}
-.add-btn-text {
-    font-size: 30px;
-    color: #ffffff;
-}
 .back-btn {
-    width: 100px;
-    background-color: #2a2a3e;
+    width: 150px;
+    background-color: #1E2333;
 }
 .back-btn-text {
     font-size: 24px;
-    color: #e8e8f0;
+    color: #B9C0D4;
+}
+.sync-btn {
+    width: 150px;
+    background-color: #6C63FF;
+}
+.sync-btn-text {
+    font-size: 24px;
+    color: #ffffff;
 }
