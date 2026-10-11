@@ -119,8 +119,13 @@ curl -sL -H "Authorization: token $GITHUB_TOKEN" -o app.zip \
 Lite Wearable Simulator**（DevEco 同款引擎 `ace_engine_lite` + `ui_lite` + JerryScript，
 与真机同源）加载刚构建的 `.app`，artifact `sim-preview` 回传：
 
-- **412×484 原生截图**（每个工程的 index / week 页，JPEG）
-- **判定 + JS 错误清单** `results.json`（字体 / 启动渲染 / 帧 / 引擎报错，Agent 可直接消费）
+- **多档位原生截图**：6 档分辨率×形状（412×484 方(FIT3 实测)、454/466/390 圆、
+  280×456、336×480 方——官方 5 档 dd 表 + FIT3），每工程 index/week 页；按 412 屏
+  写死的布局在其它档位上的裁切/按钮错位会直接暴露在图里
+- **交互断言**：渲染后注入官方命令（`MousePress`，引擎内部转 `TouchPress`＝应用层
+  可点）→ 点按"周视图"按钮 → 断言真实跳页（前后帧分段比对，`changed` 字段）；
+  交互后帧 `*_post_*.jpg` 一并回传
+- **判定 + JS 错误清单** `results.json`（字体 / 启动渲染 / 帧 / 引擎回执 / changed，Agent 可直接消费）
 - **完整引擎日志** `frames/*.engine.log`（stdout 全文，排障回溯）
 
 **用途**：给 Agent 补上眼睛——改完 UI 不必等装表即可看图自检、对照错误日志自修，形成
@@ -133,8 +138,10 @@ Lite Wearable Simulator**（DevEco 同款引擎 `ace_engine_lite` + `ui_lite` + 
   从私有仓 `lantianhcgp/deveco-sim-ci` 拉取，二进制仅在 CI 内使用
 - 独立 workflow 文件：**revert 该条提交（或删本文件）即整体回档**，构建链不受影响
 - 手动出图：Actions → sim-preview → Run workflow（取最近一次构建的 artifact）
-- 能力边界：当前为**启动页静态渲染**；点按/滑动断言（`PointEvent`/`CrownRotate` 协议已
-  逆向）在计划中。官方 sim 渲染字体为思源黑体（真机为 HYQiHei），文本度量有细微差异
+- 能力边界：**点按跳页断言已通**（`MousePress`→内部 `TouchPress`→`@click`→router，
+  已用像素比对验证）；列表拖拽/表冠滚动暂未观察到应用层重渲染（命令 accepted 但无帧，
+  攻坚中）。`PointEvent` 过参数校验但不触发应用 click（指针语义）。官方 sim 渲染字体为
+  思源黑体（真机为 HYQiHei），文本度量有细微差异
 
 ---
 
