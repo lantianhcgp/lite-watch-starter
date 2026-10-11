@@ -55,7 +55,11 @@ jobs:
         working-directory: _sim
         env:
           CAPTURE_APPS: ${{ steps.unpack.outputs.apps }}
-        run: python3 capture.py
+        run: |
+          python3 -m pip install --quiet pillow 2>/dev/null || \
+            python3 -m pip install --quiet --user pillow 2>/dev/null || \
+            python3 -m pip install --quiet --break-system-packages pillow
+          python3 capture.py
 
       - name: 检出 hmlwsim（朋友的网页模拟器，运行时拉取·不分发）
         uses: actions/checkout@v4
