@@ -123,8 +123,9 @@ Lite Wearable Simulator**（DevEco 同款引擎 `ace_engine_lite` + `ui_lite` + 
   280×456、336×480 方——官方 5 档 dd 表 + FIT3），每工程 index/week 页；按 412 屏
   写死的布局在其它档位上的裁切/按钮错位会直接暴露在图里
 - **交互断言**：渲染后注入官方命令（`MousePress`，引擎内部转 `TouchPress`＝应用层
-  可点）→ 点按"周视图"按钮 → 断言真实跳页（前后帧分段比对，`changed` 字段）；
-  交互后帧 `*_post_*.jpg` 一并回传
+  可点）→ 点"周视图"跳页（`changed`）→ 点"返回"应用级回程（`back_confirmed`，
+  帧 md5 命中交互前集合）——**双向导航闭环已验证**；nav/back 三段帧一并回传。
+  另支持传感器运行时注入（`HeartRate`/`StepCount` 等，`args` 键=命令名）
 - **判定 + JS 错误清单** `results.json`（字体 / 启动渲染 / 帧 / 引擎回执 / changed，Agent 可直接消费）
 - **完整引擎日志** `frames/*.engine.log`（stdout 全文，排障回溯）
 
@@ -139,9 +140,11 @@ Lite Wearable Simulator**（DevEco 同款引擎 `ace_engine_lite` + `ui_lite` + 
 - 独立 workflow 文件：**revert 该条提交（或删本文件）即整体回档**，构建链不受影响
 - 手动出图：Actions → sim-preview → Run workflow（取最近一次构建的 artifact）
 - 能力边界：**点按跳页断言已通**（`MousePress`→内部 `TouchPress`→`@click`→router，
-  已用像素比对验证）；列表拖拽/表冠滚动暂未观察到应用层重渲染（命令 accepted 但无帧，
-  攻坚中）。`PointEvent` 过参数校验但不触发应用 click（指针语义）。官方 sim 渲染字体为
-  思源黑体（真机为 HYQiHei），文本度量有细微差异
+  像素比对验证）+ **应用级回程已通**（点页面自己的返回按钮，双向闭环）+ 传感器注入已通；
+  系统级 `BackClicked/CurrentRouter/GetJsonTree/TouchPress` 在 lite typeMap 均
+  Unsupported（实测，路由/结构树断言无引擎级方案）；列表拖拽/表冠未见应用层重渲染
+  （accepted 无帧）；`PointEvent` 过校验但不触发应用 click。官方 sim 字体为思源黑体
+  （真机 HYQiHei），文本度量有细微差异
 
 ---
 
