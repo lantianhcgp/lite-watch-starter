@@ -34,9 +34,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          RID=$(gh run list --workflow build --limit 1 --json databaseId --jq '.[0].databaseId')
+          RID=$(gh run list -R "${{ github.repository }}" --workflow build --status success --limit 1 --json databaseId --jq '.[0].databaseId')
           echo "download artifacts of run $RID"
-          gh run download "$RID" --dir built
+          gh run download "$RID" -R "${{ github.repository }}" --dir built
 
       - name: 检出模拟器驱动（私有仓，deploy key 只读）
         uses: actions/checkout@v4
