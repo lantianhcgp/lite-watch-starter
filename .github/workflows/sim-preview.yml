@@ -1,0 +1,68 @@
+name: sim-preview
+
+# 官方模拟器预览：build 成功后用华为官方 Lite Wearable Simulator（真机同款引擎）
+# 在 macOS runner 上渲染刚构建的 .app，回传截图 + JS 错误 + 引擎日志。
+# 独立文件：revert 本条提交（或删除本文件）即整体回档，不影响构建链。
+# 官方二进制不入库：经只读 deploy key（Secret SIM_CI_SSH_KEY）从私有仓 deveco-sim-ci 拉取。
+# public 仓 macOS runner 免费，不消耗 Actions 配额。
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [build]
+    types: [completed]
+
+jobs:
+  sim:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'master')
+    runs-on: macos-14
+    timeout-minutes: 30
+    steps:
+      - name: 取本次构建的 artifact
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: built
+
+      - name: 手动触发：取最近一次构建的 artifact
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RID=$(gh run list --workflow build --limit 1 --json databaseId --jq '.[0].databaseId')
+          echo "download artifacts of run $RID"
+          gh run download "$RID" --dir built
+
+      - name: 检出模拟器驱动（私有仓，deploy key 只读）
+        uses: actions/checkout@v4
+        with:
+          repository: lantianhcgp/deveco-sim-ci
+          ssh-key: ${{ secrets.SIM_CI_SSH_KEY }}
+          path: _sim
+
+      - name: 解包 .app → bundle
+        id: unpack
+        run: |
+          chmod +x _sim/sdk/openharmony/previewer/liteWearable/bin/Simulator
+          python3 _sim/unpack_app.py built _sim/apps
+
+      - name: 官方 Simulator 渲染采集
+        working-directory: _sim
+        env:
+          CAPTURE_APPS: ${{ steps.unpack.outputs.apps }}
+        run: python3 capture.py
+
+      - name: 上传截图 + 判定 + 引擎日志
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-preview
+          path: |
+            _sim/frames/**
+            _sim/results.json
+          if-no-files-found: ignore

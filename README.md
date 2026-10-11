@@ -113,6 +113,29 @@ curl -sL -H "Authorization: token $GITHUB_TOKEN" -o app.zip \
 
 其余（改码、构建、签名、校验、交付）全部 Agent 自治。装表结果由用户回报错误码或截图。
 
+### 7. 官方模拟器预览（sim-preview，构建成功后自动出图）
+
+`build` 成功后自动触发 `sim-preview.yml`：在 GitHub **macOS runner** 上用**华为官方
+Lite Wearable Simulator**（DevEco 同款引擎 `ace_engine_lite` + `ui_lite` + JerryScript，
+与真机同源）加载刚构建的 `.app`，artifact `sim-preview` 回传：
+
+- **412×484 原生截图**（每个工程的 index / week 页，JPEG）
+- **判定 + JS 错误清单** `results.json`（字体 / 启动渲染 / 帧 / 引擎报错，Agent 可直接消费）
+- **完整引擎日志** `frames/*.engine.log`（stdout 全文，排障回溯）
+
+**用途**：给 Agent 补上眼睛——改完 UI 不必等装表即可看图自检、对照错误日志自修，形成
+「改码 → 构建 → 官方渲染 → 看图再改」闭环；发版前兼作视觉回归。
+
+**要点**：
+
+- public 仓 macOS runner **免费**，不消耗 Actions 配额
+- 官方二进制**不入库**（华为专有）：运行时经只读 deploy key（Secret `SIM_CI_SSH_KEY`）
+  从私有仓 `lantianhcgp/deveco-sim-ci` 拉取，二进制仅在 CI 内使用
+- 独立 workflow 文件：**revert 该条提交（或删本文件）即整体回档**，构建链不受影响
+- 手动出图：Actions → sim-preview → Run workflow（取最近一次构建的 artifact）
+- 能力边界：当前为**启动页静态渲染**；点按/滑动断言（`PointEvent`/`CrownRotate` 协议已
+  逆向）在计划中。官方 sim 渲染字体为思源黑体（真机为 HYQiHei），文本度量有细微差异
+
 ---
 
 ## 三、仓库结构
@@ -126,7 +149,9 @@ curl -sL -H "Authorization: token $GITHUB_TOKEN" -o app.zip \
 ├── references/                # ★ 第三方参考源码库（GT/FIT 系列命名，见 references/README.md）
 ├── skills/                    # ★ Agent 技能包（见第二节）
 ├── docs/                      # 补充文档
-└── .github/workflows/build.yml      # 双工程矩阵 CI
+└── .github/workflows/
+    ├── build.yml                # 双工程矩阵 CI
+    └── sim-preview.yml          # 官方模拟器预览（独立文件，revert 即回档）
 ```
 
 ## 四、关键决策表（改动前必读）
