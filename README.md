@@ -145,6 +145,13 @@ Lite Wearable Simulator**（DevEco 同款引擎 `ace_engine_lite` + `ui_lite` + 
   Unsupported（实测，路由/结构树断言无引擎级方案）；列表拖拽/表冠未见应用层重渲染
   （accepted 无帧）；`PointEvent` 过校验但不触发应用 click。官方 sim 字体为思源黑体
   （真机 HYQiHei），文本度量有细微差异
+- **第二道 · hmlwsim 融合（网页模拟器）**：同一 artifact 并行产出 `frames/web/*.png`。
+  运行时拉取 [kqakqakqa/hmlwsim](https://github.com/kqakqakqa/hmlwsim)（朋友项目，浏览器端
+  解析 `.app`→HML/CSS/JS 直跑、DOM/Shadow 渲染；CI 只 checkout 使用，**不分发其代码**），
+  注入 `simweb/auto.js`（URL 参数装载 + Shadow DOM 就绪状态机）与 `simweb/drive.js`
+  （CDP 等待 `AUTO_READY` 再截图），6 档位参数与官方道逐一对齐，`frames/web/manifest.json`
+  记录成败。分工：官方道=权威保真 + 交互断言 + 引擎日志；网页道=秒级近似快照。
+  同一目标两道渲染不一致时，即可分流"应用 bug vs 引擎/适配差异"
 
 ---
 
