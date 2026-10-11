@@ -57,6 +57,19 @@ jobs:
           CAPTURE_APPS: ${{ steps.unpack.outputs.apps }}
         run: python3 capture.py
 
+      - name: 检出 hmlwsim（朋友的网页模拟器，运行时拉取·不分发）
+        uses: actions/checkout@v4
+        with:
+          repository: kqakqakqa/hmlwsim
+          path: _hmlwsim
+
+      - name: hmlwsim 第二道渲染（近似快照，与官方引擎道互补）
+        working-directory: _sim
+        run: |
+          python3 simweb/render.py --built-dir ../built --web-dir ../_hmlwsim \
+            --out-dir frames/web \
+            --chrome "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
       - name: 上传截图 + 判定 + 引擎日志
         if: always()
         uses: actions/upload-artifact@v4
